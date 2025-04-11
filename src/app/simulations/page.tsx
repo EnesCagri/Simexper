@@ -31,7 +31,7 @@ const simulations = [
     category: "Testing",
     level: "All Levels",
     duration: "15 min",
-    buildPath: "/webgl-app/Test",
+    buildPath: "/webgl-app/Basic",
   },
   {
     title: "Quantum Mechanics",

@@ -14,8 +14,15 @@ function WebGLContent() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [loadStatus, setLoadStatus] = useState<string>("Initializing...");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -91,7 +98,17 @@ function WebGLContent() {
     };
 
     loadWebGLApp();
-  }, [buildPath]);
+  }, [buildPath, mounted]);
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
+        <div className="animate-pulse text-muted-foreground">
+          Initializing...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
