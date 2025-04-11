@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-export default function WebGLPage() {
+function WebGLContent() {
   const containerRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
   const buildPath = searchParams.get("build") || "/webgl-app/Test";
@@ -103,5 +103,19 @@ export default function WebGLPage() {
         }}
       />
     </div>
+  );
+}
+
+export default function WebGLPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="animate-pulse text-muted-foreground">Loading...</div>
+        </div>
+      }
+    >
+      <WebGLContent />
+    </Suspense>
   );
 }
