@@ -13,9 +13,9 @@ function WebGLContent() {
   const buildPath = searchParams.get("build") || "/webgl-app/Test";
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [loadStatus, setLoadStatus] = useState<string>("Initializing...");
   const [mounted, setMounted] = useState(false);
 
+  // Only render the iframe after component is mounted
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -31,46 +31,35 @@ function WebGLContent() {
       try {
         setIsLoading(true);
         setError(null);
-        setLoadStatus("Creating iframe...");
 
         // Create an iframe to load your WebGL build
         const iframe = document.createElement("iframe");
-        const fullPath = `${buildPath}/index.html`;
-        console.log("Loading WebGL from:", fullPath);
-
-        iframe.src = fullPath;
+        iframe.src = `${buildPath}/index.html`;
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.border = "none";
-        iframe.allow = "fullscreen";
 
         // Handle iframe load errors
         iframe.onerror = (e) => {
           console.error("WebGL load error:", e);
           setError(
-            `Failed to load the simulation from ${fullPath}. Please check the console for details.`
+            "Failed to load the simulation. Please check the console for details."
           );
           setIsLoading(false);
         };
 
         // Handle iframe load success
         iframe.onload = () => {
-          setLoadStatus("Checking iframe content...");
           // Check if the iframe loaded successfully
           try {
             const iframeDoc =
               iframe.contentDocument || iframe.contentWindow?.document;
             if (!iframeDoc) {
-              throw new Error("Iframe document is null");
+              throw new Error("Could not access iframe document");
             }
-            if (iframeDoc.readyState !== "complete") {
-              throw new Error("Iframe document not ready");
-            }
-            console.log("WebGL iframe loaded successfully");
-            setLoadStatus("Simulation ready!");
             setIsLoading(false);
           } catch (err) {
-            console.error("Iframe load check error:", err);
+            console.error("WebGL initialization error:", err);
             setError(
               "Failed to initialize the simulation. Please check the console for details."
             );
@@ -78,20 +67,18 @@ function WebGLContent() {
           }
         };
 
-        setLoadStatus("Appending iframe...");
         container.appendChild(iframe);
 
         // Cleanup function
         return () => {
-          setLoadStatus("Cleaning up...");
           if (container.contains(iframe)) {
             container.removeChild(iframe);
           }
         };
       } catch (err) {
-        console.error("WebGL load error:", err);
+        console.error("WebGL setup error:", err);
         setError(
-          "An error occurred while loading the simulation. Please check the console for details."
+          "An error occurred while setting up the simulation. Please check the console for details."
         );
         setIsLoading(false);
       }
@@ -100,11 +87,26 @@ function WebGLContent() {
     loadWebGLApp();
   }, [buildPath, mounted]);
 
+  // Don't render the iframe container until mounted
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
-        <div className="animate-pulse text-muted-foreground">
-          Initializing...
+      <div className="min-h-screen bg-background text-foreground">
+        <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-[hsl(var(--border))]">
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/simulations">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Back to Simulations
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </nav>
+        <div className="w-full h-screen pt-16 flex items-center justify-center">
+          <div className="animate-pulse text-muted-foreground">
+            Initializing...
+          </div>
         </div>
       </div>
     );
@@ -141,7 +143,7 @@ function WebGLContent() {
       {isLoading && !error && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
           <div className="animate-pulse text-muted-foreground">
-            {loadStatus}
+            Loading simulation...
           </div>
         </div>
       )}
