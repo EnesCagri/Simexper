@@ -32,23 +32,39 @@ function WebGLContent() {
         iframe.style.border = "none";
 
         // Handle iframe load errors
-        iframe.onerror = () => {
+        iframe.onerror = (e) => {
+          console.error("WebGL load error:", e);
           setError("Failed to load the simulation. Please try again later.");
           setIsLoading(false);
         };
 
         // Handle iframe load success
         iframe.onload = () => {
-          setIsLoading(false);
+          // Check if the iframe loaded successfully
+          try {
+            const iframeDoc =
+              iframe.contentDocument || iframe.contentWindow?.document;
+            if (!iframeDoc || iframeDoc.readyState !== "complete") {
+              throw new Error("Iframe document not ready");
+            }
+            setIsLoading(false);
+          } catch (err) {
+            console.error("Iframe load check error:", err);
+            setError("Failed to initialize the simulation.");
+            setIsLoading(false);
+          }
         };
 
         container.appendChild(iframe);
 
         // Cleanup function
         return () => {
-          container.innerHTML = "";
+          if (container.contains(iframe)) {
+            container.removeChild(iframe);
+          }
         };
-      } catch {
+      } catch (err) {
+        console.error("WebGL load error:", err);
         setError("An error occurred while loading the simulation.");
         setIsLoading(false);
       }
