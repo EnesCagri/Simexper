@@ -15,47 +15,46 @@ export default function WebGLPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     // Load your WebGL application
     const loadWebGLApp = async () => {
-      if (containerRef.current) {
-        try {
-          setIsLoading(true);
-          setError(null);
+      try {
+        setIsLoading(true);
+        setError(null);
 
-          // Create an iframe to load your WebGL build
-          const iframe = document.createElement("iframe");
-          iframe.src = `${buildPath}/index.html`;
-          iframe.style.width = "100%";
-          iframe.style.height = "100%";
-          iframe.style.border = "none";
+        // Create an iframe to load your WebGL build
+        const iframe = document.createElement("iframe");
+        iframe.src = `${buildPath}/index.html`;
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
 
-          // Handle iframe load errors
-          iframe.onerror = () => {
-            setError("Failed to load the simulation. Please try again later.");
-            setIsLoading(false);
-          };
-
-          // Handle iframe load success
-          iframe.onload = () => {
-            setIsLoading(false);
-          };
-
-          containerRef.current.appendChild(iframe);
-        } catch (err) {
-          setError("An error occurred while loading the simulation.");
+        // Handle iframe load errors
+        iframe.onerror = () => {
+          setError("Failed to load the simulation. Please try again later.");
           setIsLoading(false);
-        }
+        };
+
+        // Handle iframe load success
+        iframe.onload = () => {
+          setIsLoading(false);
+        };
+
+        container.appendChild(iframe);
+
+        // Cleanup function
+        return () => {
+          container.innerHTML = "";
+        };
+      } catch {
+        setError("An error occurred while loading the simulation.");
+        setIsLoading(false);
       }
     };
 
     loadWebGLApp();
-
-    // Cleanup
-    return () => {
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
-      }
-    };
   }, [buildPath]);
 
   return (
