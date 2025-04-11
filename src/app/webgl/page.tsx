@@ -13,6 +13,7 @@ function WebGLContent() {
   const buildPath = searchParams.get("build") || "/webgl-app/Test";
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadStatus, setLoadStatus] = useState<string>("Initializing...");
 
   useEffect(() => {
     const container = containerRef.current;
@@ -23,49 +24,68 @@ function WebGLContent() {
       try {
         setIsLoading(true);
         setError(null);
+        setLoadStatus("Creating iframe...");
 
         // Create an iframe to load your WebGL build
         const iframe = document.createElement("iframe");
-        iframe.src = `${buildPath}/index.html`;
+        const fullPath = `${buildPath}/index.html`;
+        console.log("Loading WebGL from:", fullPath);
+
+        iframe.src = fullPath;
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.border = "none";
+        iframe.allow = "fullscreen";
 
         // Handle iframe load errors
         iframe.onerror = (e) => {
           console.error("WebGL load error:", e);
-          setError("Failed to load the simulation. Please try again later.");
+          setError(
+            `Failed to load the simulation from ${fullPath}. Please check the console for details.`
+          );
           setIsLoading(false);
         };
 
         // Handle iframe load success
         iframe.onload = () => {
+          setLoadStatus("Checking iframe content...");
           // Check if the iframe loaded successfully
           try {
             const iframeDoc =
               iframe.contentDocument || iframe.contentWindow?.document;
-            if (!iframeDoc || iframeDoc.readyState !== "complete") {
+            if (!iframeDoc) {
+              throw new Error("Iframe document is null");
+            }
+            if (iframeDoc.readyState !== "complete") {
               throw new Error("Iframe document not ready");
             }
+            console.log("WebGL iframe loaded successfully");
+            setLoadStatus("Simulation ready!");
             setIsLoading(false);
           } catch (err) {
             console.error("Iframe load check error:", err);
-            setError("Failed to initialize the simulation.");
+            setError(
+              "Failed to initialize the simulation. Please check the console for details."
+            );
             setIsLoading(false);
           }
         };
 
+        setLoadStatus("Appending iframe...");
         container.appendChild(iframe);
 
         // Cleanup function
         return () => {
+          setLoadStatus("Cleaning up...");
           if (container.contains(iframe)) {
             container.removeChild(iframe);
           }
         };
       } catch (err) {
         console.error("WebGL load error:", err);
-        setError("An error occurred while loading the simulation.");
+        setError(
+          "An error occurred while loading the simulation. Please check the console for details."
+        );
         setIsLoading(false);
       }
     };
@@ -104,7 +124,7 @@ function WebGLContent() {
       {isLoading && !error && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
           <div className="animate-pulse text-muted-foreground">
-            Loading simulation...
+            {loadStatus}
           </div>
         </div>
       )}
