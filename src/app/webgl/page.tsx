@@ -1,176 +1,92 @@
 "use client";
 
-import { useEffect, useRef, useState, Suspense } from "react";
+import UnityGame from "@/components/UnityGame";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, AlertCircle } from "lucide-react";
+import { ArrowLeft, Rocket, Gamepad2, Maximize2 } from "lucide-react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { useState } from "react";
 
-function WebGLContent() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const searchParams = useSearchParams();
-  const buildPath = searchParams.get("build") || "/webgl-app/Test";
-  const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [mounted, setMounted] = useState(false);
+export default function Home() {
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // Only render the iframe after component is mounted
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    const container = containerRef.current;
-    if (!container) return;
-
-    // Load your WebGL application
-    const loadWebGLApp = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
-
-        // Create an iframe to load your WebGL build
-        const iframe = document.createElement("iframe");
-        iframe.src = `${buildPath}/index.html`;
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-
-        // Handle iframe load errors
-        iframe.onerror = (e) => {
-          console.error("WebGL load error:", e);
-          setError(
-            "Failed to load the simulation. Please check the console for details."
-          );
-          setIsLoading(false);
-        };
-
-        // Handle iframe load success
-        iframe.onload = () => {
-          // Check if the iframe loaded successfully
-          try {
-            const iframeDoc =
-              iframe.contentDocument || iframe.contentWindow?.document;
-            if (!iframeDoc) {
-              throw new Error("Could not access iframe document");
-            }
-            setIsLoading(false);
-          } catch (err) {
-            console.error("WebGL initialization error:", err);
-            setError(
-              "Failed to initialize the simulation. Please check the console for details."
-            );
-            setIsLoading(false);
-          }
-        };
-
-        container.appendChild(iframe);
-
-        // Cleanup function
-        return () => {
-          if (container.contains(iframe)) {
-            container.removeChild(iframe);
-          }
-        };
-      } catch (err) {
-        console.error("WebGL setup error:", err);
-        setError(
-          "An error occurred while setting up the simulation. Please check the console for details."
-        );
-        setIsLoading(false);
-      }
-    };
-
-    loadWebGLApp();
-  }, [buildPath, mounted]);
-
-  // Don't render the iframe container until mounted
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-background text-foreground">
-        <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-[hsl(var(--border))]">
-          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/simulations">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to Simulations
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </nav>
-        <div className="w-full h-screen pt-16 flex items-center justify-center">
-          <div className="animate-pulse text-muted-foreground">
-            Initializing...
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-[hsl(var(--border))]">
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/80">
+      {/* Header */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50"
+      >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/simulations">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Simulations
+              <Link href="/simulations" className="flex items-center gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                Back
               </Link>
             </Button>
           </div>
-        </div>
-      </nav>
-
-      {/* Error Alert */}
-      {error && (
-        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md px-4">
-          <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
-        </div>
-      )}
-
-      {/* Loading State */}
-      {isLoading && !error && (
-        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="animate-pulse text-muted-foreground">
-            Loading simulation...
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleFullscreen}
+              className="flex items-center gap-2"
+            >
+              <Maximize2 className="h-4 w-4" />
+              {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+            </Button>
           </div>
         </div>
-      )}
+      </motion.nav>
 
-      {/* WebGL Container */}
-      <div
-        ref={containerRef}
-        className="w-full h-screen pt-16"
-        style={{
-          background:
-            "radial-gradient(circle at center, rgba(var(--primary),0.1), transparent 50%)",
-        }}
-      />
-    </div>
-  );
-}
-
-export default function WebGLPage() {
-  return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen bg-background flex items-center justify-center">
-          <div className="animate-pulse text-muted-foreground">Loading...</div>
+      {/* Hero Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="container mx-auto px-4 pt-24 pb-8"
+      >
+        <div className="flex items-center gap-4 mb-6">
+          <div className="p-2 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 bg-opacity-10">
+            <Rocket className="h-8 w-8 text-blue-500" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+              Unity WebGL Demo
+            </h1>
+            <p className="text-muted-foreground">
+              Interactive 3D Physics Simulation
+            </p>
+          </div>
         </div>
-      }
-    >
-      <WebGLContent />
-    </Suspense>
+
+        {/* Game Container */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="relative rounded-xl overflow-hidden border border-border/50 bg-background/50 backdrop-blur-sm"
+        >
+          <div className="absolute top-4 right-4 z-10 flex items-center gap-2 bg-background/80 backdrop-blur-sm rounded-lg p-2 border border-border/50">
+            <Gamepad2 className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Unity WebGL</span>
+          </div>
+          <UnityGame />
+        </motion.div>
+      </motion.div>
+    </div>
   );
 }

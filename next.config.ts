@@ -4,36 +4,35 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Add headers for Brotli-compressed files
+
   async headers() {
     return [
       {
-        source: "/webgl-app/:path*",
+        source: "/webgl-app/Basic/Build/:path*.js",
+        headers: [{ key: "Content-Type", value: "application/javascript" }],
+      },
+      {
+        source: "/webgl-app/Basic/Build/:path*.wasm.unityweb",
         headers: [
-          {
-            key: "Content-Encoding",
-            value: "br",
-          },
+          { key: "Content-Encoding", value: "gzip" },
+          { key: "Content-Type", value: "application/wasm" },
+        ],
+      },
+      {
+        source: "/webgl-app/Basic/Build/:path*.framework.js.unityweb",
+        headers: [
+          { key: "Content-Encoding", value: "gzip" },
+          { key: "Content-Type", value: "application/javascript" },
+        ],
+      },
+      {
+        source: "/webgl-app/Basic/Build/:path*.data.unityweb",
+        headers: [
+          { key: "Content-Encoding", value: "gzip" },
+          { key: "Content-Type", value: "application/octet-stream" },
         ],
       },
     ];
-  },
-  // Configure static file serving
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(br)$/,
-      use: [
-        {
-          loader: "file-loader",
-          options: {
-            publicPath: "/_next/static/webgl",
-            outputPath: "static/webgl",
-            name: "[name].[ext]",
-          },
-        },
-      ],
-    });
-    return config;
   },
 };
 

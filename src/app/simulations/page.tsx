@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -9,174 +9,125 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
-  Search,
+  Rocket,
   Atom,
   Waves,
-  Rocket,
-  Globe,
-  Lightbulb,
-  Scale,
-  TestTube2,
+  Gauge,
+  Microscope,
+  TestTube,
+  ArrowRight,
 } from "lucide-react";
-import Link from "next/link";
-
-const simulations = [
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-  {
-    title: "Test Simulation",
-    description: "Test the WebGL integration with this sample simulation",
-    icon: TestTube2,
-    category: "Testing",
-    level: "All Levels",
-    duration: "15 min",
-    buildPath: "/webgl-app/Basic",
-  },
-];
 
 export default function SimulationsPage() {
+  const simulations = [
+    {
+      title: "Unity WebGL Demo",
+      description: "3D Interactive Unity WebGL Demo",
+      icon: <Rocket className="h-8 w-8 text-blue-500" />,
+      href: "/webgl",
+      color: "from-blue-500 to-cyan-400",
+      comingSoon: false,
+    },
+    {
+      title: "Quantum Mechanics",
+      description: "Explore quantum phenomena and wave functions",
+      icon: <Atom className="h-8 w-8 text-purple-500" />,
+      href: "#",
+      color: "from-purple-500 to-pink-400",
+      comingSoon: true,
+    },
+    {
+      title: "Wave Physics",
+      description: "Simulate wave behavior and interference",
+      icon: <Waves className="h-8 w-8 text-cyan-500" />,
+      href: "#",
+      color: "from-cyan-500 to-blue-400",
+      comingSoon: true,
+    },
+    {
+      title: "Thermodynamics",
+      description: "Study heat transfer and energy flow",
+      icon: <Gauge className="h-8 w-8 text-orange-500" />,
+      href: "#",
+      color: "from-orange-500 to-red-400",
+      comingSoon: true,
+    },
+    {
+      title: "Optics",
+      description: "Explore light behavior and optical systems",
+      icon: <Microscope className="h-8 w-8 text-emerald-500" />,
+      href: "#",
+      color: "from-emerald-500 to-green-400",
+      comingSoon: true,
+    },
+    {
+      title: "Chemistry",
+      description: "Visualize chemical reactions and bonding",
+      icon: <TestTube className="h-8 w-8 text-rose-500" />,
+      href: "#",
+      color: "from-rose-500 to-pink-400",
+      comingSoon: true,
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-background text-foreground pt-16">
-      {/* Header */}
-      <div className="border-b border-[hsl(var(--border))] bg-background/95 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-2xl">
-            <Badge variant="outline" className="mb-4">
-              Physics Simulations
-            </Badge>
-            <h1 className="text-4xl font-bold mb-4">
-              Interactive Physics Labs
-            </h1>
-            <p className="text-muted-foreground mb-8">
-              Explore our collection of interactive physics simulations designed
-              to enhance your learning experience
-            </p>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-              <Input
-                placeholder="Search simulations..."
-                className="pl-10 border-[hsl(var(--border))] bg-card/50"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/80">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-pink-500">
+          Unity Fizik Simülasyonları
+        </h1>
+        <p className="text-xl text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Explore interactive physics simulations and experiments in your
+          browser. Learn complex concepts through hands-on virtual experiences.
+        </p>
 
-      {/* Filters */}
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-wrap gap-4">
-          <Button variant="outline" size="sm">
-            All Categories
-          </Button>
-          <Button variant="outline" size="sm">
-            Mechanics
-          </Button>
-          <Button variant="outline" size="sm">
-            Electromagnetism
-          </Button>
-          <Button variant="outline" size="sm">
-            Thermodynamics
-          </Button>
-          <Button variant="outline" size="sm">
-            Optics
-          </Button>
-          <Button variant="outline" size="sm">
-            Quantum Physics
-          </Button>
-        </div>
-      </div>
-
-      {/* Grid */}
-      <div className="container mx-auto px-4 py-8">
+        {/* Simulations Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {simulations.map((simulation, index) => {
-            const Icon = simulation.icon;
-            return (
-              <motion.div
-                key={simulation.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full border-[hsl(var(--border))] hover:border-primary/50 transition-colors bg-card/50">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <Icon className="h-6 w-6 text-primary" />
+          {simulations.map((sim, index) => (
+            <Card
+              key={index}
+              className="group relative overflow-hidden border border-border/50 bg-background/50 backdrop-blur-sm hover:border-border duration-300 transition-all hover:shadow-lg"
+            >
+              <Link href="/webgl">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div
+                      className={`p-2 rounded-xl bg-gradient-to-br ${sim.color} bg-opacity-10`}
+                    >
+                      {sim.icon}
                     </div>
-                    <CardTitle>{simulation.title}</CardTitle>
-                    <CardDescription>{simulation.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      <Badge variant="secondary">{simulation.category}</Badge>
-                      <Badge variant="outline">{simulation.level}</Badge>
-                      <Badge variant="outline">{simulation.duration}</Badge>
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        {sim.title}
+                        {sim.comingSoon && (
+                          <span className="text-xs font-normal px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+                            Coming Soon
+                          </span>
+                        )}
+                      </CardTitle>
+                      <CardDescription>{sim.description}</CardDescription>
                     </div>
-                    <Button className="w-full" asChild>
-                      <Link href={`/webgl?build=${simulation.buildPath}`}>
-                        Start Simulation
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button
+                    className="w-full group-hover:translate-x-1 transition-transform duration-300"
+                    variant={sim.comingSoon ? "secondary" : "default"}
+                  >
+                    {sim.comingSoon ? "Coming Soon" : "Launch Simulation"}
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </CardContent>
+              </Link>
+
+              {/* Gradient overlay */}
+              <div
+                className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${sim.color}`}
+              />
+            </Card>
+          ))}
         </div>
       </div>
     </div>
