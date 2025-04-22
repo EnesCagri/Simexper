@@ -77,18 +77,7 @@ export function Navbar() {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
-            {/* Search Button */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="hidden sm:flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors bg-gray-900 hover:bg-gray-800 px-4 py-2 rounded-lg group"
-            >
-              <Search className="h-4 w-4" />
-              <span className="hidden sm:block">Ara...</span>
-              <span className="hidden sm:block text-xs text-gray-500 border border-gray-800 rounded px-1.5 py-0.5 group-hover:border-gray-700 transition-colors">
-                ⌘K
-              </span>
-            </motion.button>
+            
 
             {/* Auth Buttons */}
             <div className="hidden sm:flex items-center gap-3">

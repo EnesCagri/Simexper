@@ -1,0 +1,150 @@
+{
+  "simulations": [
+    {
+      "id": "harmonic-motion",
+      "title": "Basit Harmonik Hareket",
+      "slug": "harmonic-motion",
+      "description": "Yay sistemlerinin harmonik hareketini inceleyin",
+      "category": "mekanik",
+      "difficulty": "Orta",
+      "completionTime": "20 dk",
+      "points": 100,
+      "gradient": "from-blue-500 to-cyan-500",
+      "unit": "Periyodik Hareket",
+      "unitOrder": 4,
+      "image": "/images/simulation/Resim1.png",
+      "keywords": [
+        "yay",
+        "harmonik hareket",
+        "periyot",
+        "hooke yasası",
+        "mekanik"
+      ],
+      "physicsExplanation": {
+        "formulas": ["Hooke Yasası: F = -kx", "Periyot Formülü: T = 2π√(m/k)"],
+        "concepts": [
+          "Basit harmonik hareket",
+          "Yay sabiti (k)",
+          "Kütle (m)",
+          "Genlik (A)",
+          "Periyot (T)",
+          "Frekans (f)"
+        ]
+      },
+      "learningObjectives": [
+        "Hooke yasasını anlama",
+        "Periyot ve frekans kavramlarını öğrenme",
+        "Enerji dönüşümlerini gözlemleme",
+        "Genlik ve periyot arasındaki ilişkiyi keşfetme"
+      ],
+      "reviews": [
+        {
+          "user": "Ahmet Y.",
+          "rating": 5,
+          "comment": "Çok etkileyici bir simülasyon. Yayın hareketini çok iyi anladım.",
+          "date": "2024-03-15"
+        },
+        {
+          "user": "Ayşe K.",
+          "rating": 4,
+          "comment": "Görsel olarak çok iyi, ancak biraz daha detaylı açıklama eklenebilir.",
+          "date": "2024-03-10"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/Lw7GccumVKM",
+      "detailedDescription": "Basit harmonik hareket, fiziğin temel konularından biridir ve günlük hayatta birçok yerde karşımıza çıkar. Bu simülasyon, yay-kütle sistemindeki harmonik hareketi incelemenizi sağlar. Yay sabiti (k) ve kütle (m) değerlerini değiştirerek sistemin davranışını gözlemleyebilir, periyot ve frekans gibi önemli parametreleri analiz edebilirsiniz. Simülasyon ayrıca potansiyel ve kinetik enerji dönüşümlerini görselleştirerek, enerji korunumu prensibini daha iyi anlamanızı sağlar.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Günlük Hayatta Basit Harmonik Hareket",
+            "description": "Çevremizdeki basit harmonik hareket örnekleri ve fiziksel açıklamaları",
+            "author": "Dr. Ahmet Yılmaz",
+            "date": "2024-03-15",
+            "readTime": "5 dk",
+            "slug": "fizik-egitiminde-simulasyonlarin-onemi"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Yay sabiti k olan bir yayın ucuna m kütlesi asılıyor. Sistem basit harmonik hareket yapıyor. Buna göre sistemin periyodu T'dir. Yay sabiti 4k yapılıp kütle m/4 yapılırsa yeni periyot kaç T olur?",
+            "correctAnswer": "T/2",
+            "explanation": "Basit harmonik hareketin periyot formülü T = 2π√(m/k) kullanılarak çözülür. Yeni değerler yerine konulduğunda T/2 bulunur."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 45,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 85,
+          "averageDifficulty": 3.8
+        }
+      }
+    },
+    {
+      "id": "projectile-motion",
+      "title": "Eğik Atış Hareketi",
+      "slug": "projectile-motion",
+      "description": "Eğik atış hareketini inceleyin",
+      "category": "mekanik",
+      "difficulty": "Orta",
+      "completionTime": "25 dk",
+      "points": 120,
+      "gradient": "from-blue-500 to-cyan-500",
+      "unit": "Hareket",
+      "unitOrder": 5,
+      "image": "/images/simulation/Resim2.png",
+      "keywords": ["eğik atış", "hareket", "kinematik", "mekanik", "yerçekimi"],
+      "physicsExplanation": {
+        "formulas": ["x = v₀cosθt", "y = v₀sinθt - ½gt²"],
+        "concepts": [
+          "Yatay ve dikey hareket bağımsızdır",
+          "Maksimum yükseklik ve menzil hesaplamaları"
+        ]
+      },
+      "learningObjectives": [
+        "Eğik atış hareketini analiz etme",
+        "Yatay ve düşey hareketleri ayırt etme",
+        "Menzil ve yükseklik hesaplamalarını öğrenme",
+        "Hava direncinin etkisini gözlemleme"
+      ],
+      "reviews": [
+        {
+          "user": "Mehmet S.",
+          "rating": 5,
+          "comment": "Harika bir simülasyon, eğik atışı çok iyi anladım.",
+          "date": "2024-03-12"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/v-F3YLd6oMw",
+      "detailedDescription": "Eğik atış hareketi, bir cismin hem yatay hem de düşey hareket yapmasını içeren iki boyutlu bir harekettir. Bu simülasyon, farklı başlangıç hızları ve açıları ile eğik atış hareketini incelemenizi sağlar. Hava direncinin ihmal edildiği durumda, yatay hareket sabit hızla, düşey hareket ise yerçekimi ivmesi etkisiyle gerçekleşir. Simülasyon, bu iki hareketin bağımsızlığını ve birleşik etkisini görselleştirir.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Eğik Atışın Günlük Hayattaki Örnekleri",
+            "description": "Spor ve mühendislikteki eğik atış uygulamaları",
+            "author": "Dr. Mehmet Demir",
+            "date": "2024-03-10",
+            "readTime": "6 dk",
+            "slug": "fizik-egitiminde-simulasyonlarin-onemi"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Yatay ile 30° açı yaparak 20 m/s hızla fırlatılan bir cismin menzili kaç metredir? (g=10 m/s², sin60°=0.866, cos30°=0.866)",
+            "correctAnswer": "34.64 m",
+            "explanation": "Menzil formülü R = (v²sin2θ)/g kullanılarak çözülür."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 38,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 75,
+          "averageDifficulty": 4.2
+        }
+      }
+    }
+  ]
+}

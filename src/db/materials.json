@@ -1,0 +1,79 @@
+{
+  "materials": [
+    {
+      "id": "1",
+      "slug": "fizik-temelleri",
+      "title": "Fizik Temelleri",
+      "description": "Temel fizik kavramlarını ve prensiplerini öğrenmek için kapsamlı bir video serisi. Newton'un hareket yasalarından enerji korunumuna kadar tüm temel konuları içerir.",
+      "type": "video",
+      "difficulty": "beginner",
+      "duration": "2 saat",
+      "author": "Prof. Dr. Ahmet Yılmaz",
+      "coverImage": "/images/materials/fizik-temelleri.jpg",
+      "link": "/learn/fizik-temelleri",
+      "keywords": ["mekanik", "hareket", "kuvvet", "enerji"],
+      "category": "mekanik"
+    },
+    {
+      "id": "2",
+      "slug": "modern-fizik",
+      "title": "Modern Fizik",
+      "description": "Kuantum mekaniği ve görelilik teorisi gibi modern fizik konularını detaylı bir şekilde ele alan makale serisi.",
+      "type": "article",
+      "difficulty": "advanced",
+      "author": "Dr. Zeynep Kaya",
+      "coverImage": "/images/materials/modern-fizik.jpg",
+      "link": "/learn/modern-fizik",
+      "keywords": ["kuantum", "görelilik", "modern fizik"],
+      "category": "modern-fizik",
+      "exampleQuestions": [
+        {
+          "question": "Kuantum mekaniğinin temel prensiplerini açıklayınız.",
+          "type": "open-ended",
+          "explanation": "Kuantum mekaniği, mikroskopik seviyedeki fiziksel olayları açıklayan bir teoridir. Temel prensipleri arasında dalga-parçacık ikiliği, belirsizlik ilkesi ve süperpozisyon bulunur."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "slug": "elektrik-ve-manyetizma",
+      "title": "Elektrik ve Manyetizma",
+      "description": "Elektrik ve manyetizma konularını interaktif deneylerle öğrenin. Coulomb yasası, elektrik alan, manyetik alan ve elektromanyetik indüksiyon konularını içerir.",
+      "type": "interactive",
+      "difficulty": "intermediate",
+      "author": "Doç. Dr. Mehmet Demir",
+      "coverImage": "/images/materials/elektrik-manyetizma.jpg",
+      "link": "/learn/elektrik-ve-manyetizma",
+      "keywords": ["elektrik", "manyetizma", "alan", "indüksiyon"],
+      "category": "elektrik"
+    },
+    {
+      "id": "4",
+      "slug": "termodinamik-prensipleri",
+      "title": "Termodinamik Prensipleri",
+      "description": "Isı ve enerji transferinin temel prensipleri",
+      "type": "video",
+      "difficulty": "intermediate",
+      "duration": "50 dk",
+      "author": "Dr. Ali Yıldız",
+      "coverImage": "/images/education/thermodynamics.jpg",
+      "link": "/learn/termodinamik-prensipleri",
+      "keywords": ["ısı", "enerji", "ısı transferi", "termodinamik"],
+      "category": "termodinamik"
+    },
+    {
+      "id": "5",
+      "slug": "optik-deneyleri",
+      "title": "Optik Deneyleri",
+      "description": "Işık ve optik konularında pratik deneyler",
+      "type": "interactive",
+      "difficulty": "beginner",
+      "duration": "40 dk",
+      "author": "Dr. Ayşe Demir",
+      "coverImage": "/images/education/optics.jpg",
+      "link": "/learn/optik-deneyleri",
+      "keywords": ["ışık", "optik", "ışık yayan cisimler", "ışık kırılması"],
+      "category": "optik"
+    }
+  ]
+}

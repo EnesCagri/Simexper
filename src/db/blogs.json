@@ -1,0 +1,83 @@
+{
+  "posts": [
+    {
+      "id": "fizik-egitiminde-simulasyonlarin-onemi",
+      "slug": "fizik-egitiminde-simulasyonlarin-onemi",
+      "title": "Fizik Eğitiminde Simülasyonların Önemi",
+      "excerpt": "Modern eğitimde simülasyonların rolü ve öğrenme sürecine katkıları hakkında detaylı bir inceleme.",
+      "content": "Fizik eğitiminde simülasyonların kullanımı, öğrencilerin soyut kavramları somutlaştırmasına ve karmaşık fiziksel olayları daha iyi anlamasına yardımcı olmaktadır. Bu yazıda, simülasyonların eğitime katkılarını ve modern öğrenme yöntemlerindeki yerini inceliyoruz.",
+      "date": "2024-04-15",
+      "readingTime": "5 dk",
+      "category": "egitim",
+      "image": "/images/blog/blog1.jpg",
+      "author": {
+        "name": "Dr. Ahmet Yılmaz",
+        "avatar": "/images/authors/ahmet.jpg",
+        "title": "Fizik Eğitimi Uzmanı"
+      },
+      "keywords": ["fizik eğitimi", "simülasyon", "öğrenme", "teknoloji"],
+      "relatedSimulations": ["harmonic-motion", "projectile-motion"]
+    },
+    {
+      "id": "sanal-laboratuvar-deneyimleri",
+      "slug": "sanal-laboratuvar-deneyimleri",
+      "title": "Sanal Laboratuvar Deneyimleri",
+      "excerpt": "Sanal laboratuvarların fizik eğitimindeki yeri ve gerçek deneylerle karşılaştırması.",
+      "content": "Sanal laboratuvarlar, öğrencilere güvenli ve tekrarlanabilir deney ortamları sunarak fizik öğrenimini desteklemektedir. Bu makalede, sanal laboratuvarların avantajlarını ve gerçek laboratuvar deneyimleriyle karşılaştırmasını yapıyoruz.",
+      "date": "2024-04-12",
+      "readingTime": "4 dk",
+      "category": "teknoloji",
+      "image": "/images/blog/blog2.jpg",
+      "author": {
+        "name": "Prof. Dr. Mehmet Demir",
+        "avatar": "/images/authors/mehmet.jpg",
+        "title": "Eğitim Teknolojileri Uzmanı"
+      },
+      "keywords": [
+        "sanal laboratuvar",
+        "fizik deneyleri",
+        "eğitim teknolojisi"
+      ],
+      "relatedSimulations": ["harmonic-motion"]
+    },
+    {
+      "id": "ogrenci-basarisinda-simulasyonlarin-etkisi",
+      "slug": "ogrenci-basarisinda-simulasyonlarin-etkisi",
+      "title": "Öğrenci Başarısında Simülasyonların Etkisi",
+      "excerpt": "Simülasyon tabanlı öğrenmenin öğrenci başarısına olan etkileri ve araştırma sonuçları.",
+      "content": "Yapılan araştırmalar, simülasyon destekli öğrenmenin öğrenci başarısını önemli ölçüde artırdığını göstermektedir. Bu yazıda, farklı araştırmaların sonuçlarını ve başarı faktörlerini inceliyoruz.",
+      "date": "2024-04-10",
+      "readingTime": "6 dk",
+      "category": "arastirma",
+      "image": "/images/blog/blog3.jpg",
+      "author": {
+        "name": "Dr. Ayşe Kaya",
+        "avatar": "/images/authors/ayse.jpg",
+        "title": "Eğitim Araştırmacısı"
+      },
+      "keywords": [
+        "öğrenci başarısı",
+        "eğitim araştırması",
+        "simülasyon etkisi"
+      ],
+      "relatedSimulations": ["projectile-motion"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "egitim",
+      "name": "Eğitim",
+      "description": "Fizik eğitimi ve öğretim yöntemleri"
+    },
+    {
+      "id": "teknoloji",
+      "name": "Teknoloji",
+      "description": "Eğitim teknolojileri ve yenilikler"
+    },
+    {
+      "id": "arastirma",
+      "name": "Araştırma",
+      "description": "Bilimsel araştırmalar ve sonuçlar"
+    }
+  ]
+}
