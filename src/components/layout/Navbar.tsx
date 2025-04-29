@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Menu,
@@ -13,8 +13,10 @@ import {
   GraduationCap,
   ArrowRight,
   Newspaper,
+  X,
 } from "lucide-react";
 import { useState } from "react";
+import { Logo } from "@/components/common/Logo";
 
 const navigation = [
   {
@@ -32,30 +34,25 @@ const navigation = [
     href: "/blogs",
     icon: Newspaper,
   },
+  {
+    name: "Ücretlendirme",
+    href: "/pricing",
+    icon: GraduationCap,
+  },
 ];
 
 export function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
-      <nav className="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Global">
-        <div className="relative flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0">
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-              >
-                Simexper
-              </motion.span>
-            </Link>
-          </div>
+          <Logo />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:gap-x-8">
+          <div className="hidden md:flex md:space-x-8">
             {navigation.map((item) => (
               <motion.div
                 key={item.name}
@@ -77,8 +74,6 @@ export function Navbar() {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
-            
-
             {/* Auth Buttons */}
             <div className="hidden sm:flex items-center gap-3">
               <motion.div
@@ -108,7 +103,7 @@ export function Navbar() {
               animate={{ opacity: 1, scale: 1 }}
               type="button"
               className="lg:hidden relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:text-white focus:outline-none"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Ana menüyü aç</span>
@@ -121,7 +116,7 @@ export function Navbar() {
         <motion.div
           initial={false}
           animate={
-            isMobileMenuOpen
+            mobileMenuOpen
               ? { height: "auto", opacity: 1 }
               : { height: 0, opacity: 0 }
           }
@@ -155,7 +150,7 @@ export function Navbar() {
             </div>
           </div>
         </motion.div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }

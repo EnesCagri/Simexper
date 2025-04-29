@@ -9,7 +9,7 @@
       "difficulty": "beginner",
       "duration": "2 saat",
       "author": "Prof. Dr. Ahmet Yılmaz",
-      "coverImage": "/images/materials/fizik-temelleri.jpg",
+      "coverImage": "/images/materials/material1.jpg",
       "link": "/learn/fizik-temelleri",
       "keywords": ["mekanik", "hareket", "kuvvet", "enerji"],
       "category": "mekanik"
@@ -22,7 +22,7 @@
       "type": "article",
       "difficulty": "advanced",
       "author": "Dr. Zeynep Kaya",
-      "coverImage": "/images/materials/modern-fizik.jpg",
+      "coverImage": "/images/materials/material2.jpg",
       "link": "/learn/modern-fizik",
       "keywords": ["kuantum", "görelilik", "modern fizik"],
       "category": "modern-fizik",
@@ -42,7 +42,7 @@
       "type": "interactive",
       "difficulty": "intermediate",
       "author": "Doç. Dr. Mehmet Demir",
-      "coverImage": "/images/materials/elektrik-manyetizma.jpg",
+      "coverImage": "/images/materials/material3.jpg",
       "link": "/learn/elektrik-ve-manyetizma",
       "keywords": ["elektrik", "manyetizma", "alan", "indüksiyon"],
       "category": "elektrik"
@@ -56,7 +56,7 @@
       "difficulty": "intermediate",
       "duration": "50 dk",
       "author": "Dr. Ali Yıldız",
-      "coverImage": "/images/education/thermodynamics.jpg",
+      "coverImage": "/images/materials/material4.jpg",
       "link": "/learn/termodinamik-prensipleri",
       "keywords": ["ısı", "enerji", "ısı transferi", "termodinamik"],
       "category": "termodinamik"
@@ -70,10 +70,207 @@
       "difficulty": "beginner",
       "duration": "40 dk",
       "author": "Dr. Ayşe Demir",
-      "coverImage": "/images/education/optics.jpg",
+      "coverImage": "/images/materials/material5.jpg",
       "link": "/learn/optik-deneyleri",
       "keywords": ["ışık", "optik", "ışık yayan cisimler", "ışık kırılması"],
       "category": "optik"
+    },
+    {
+      "id": "harmonic-motion",
+      "slug": "harmonic-motion",
+      "title": "Basit Harmonik Hareket Öğrenme Materyalleri",
+      "description": "Yay sistemlerinin harmonik hareketini anlamak için kapsamlı video ve interaktif içerikler. Hooke yasası, periyot ve frekans kavramlarını detaylı olarak ele alır.",
+      "type": "video",
+      "difficulty": "intermediate",
+      "duration": "45 dk",
+      "author": "Prof. Dr. Ahmet Yılmaz",
+      "coverImage": "/images/materials/material6.jpg",
+      "link": "/learn/harmonic-motion",
+      "keywords": ["yay", "harmonik hareket", "periyot", "hooke yasası"],
+      "category": "mekanik",
+      "relatedSimulation": "harmonic-motion",
+      "exampleQuestions": [
+        {
+          "question": "Bir yayın periyodu neye bağlıdır?",
+          "type": "multiple-choice",
+          "options": ["Yay sabiti (k)", "Kütle (m)", "Genlik (A)", "Hepsi"],
+          "correctAnswer": "Hepsi",
+          "explanation": "Periyot formülü T = 2π√(m/k) ile hesaplanır ve genlik de periyodu etkiler."
+        }
+      ]
+    },
+    {
+      "id": "projectile-motion-materials",
+      "slug": "projectile-motion-materials",
+      "title": "Eğik Atış Hareketi Öğrenme Materyalleri",
+      "description": "Eğik atış hareketini anlamak için detaylı video dersleri ve pratik örnekler. Yatay ve düşey hareketlerin bağımsızlığını ve menzil hesaplamalarını içerir.",
+      "type": "interactive",
+      "difficulty": "intermediate",
+      "duration": "50 dk",
+      "author": "Dr. Mehmet Demir",
+      "coverImage": "/images/materials/material1.jpg",
+      "link": "/learn/projectile-motion",
+      "keywords": ["eğik atış", "hareket", "kinematik", "mekanik"],
+      "category": "mekanik",
+      "relatedSimulation": "projectile-motion",
+      "exampleQuestions": [
+        {
+          "question": "Eğik atış hareketinde maksimum yüksekliğe ulaşma süresi neye bağlıdır?",
+          "type": "open-ended",
+          "explanation": "Maksimum yüksekliğe ulaşma süresi, başlangıç hızının düşey bileşenine ve yerçekimi ivmesine bağlıdır."
+        }
+      ]
+    },
+    {
+      "id": "wave-interference-materials",
+      "slug": "wave-interference-materials",
+      "title": "Dalga Girişimi Öğrenme Materyalleri",
+      "description": "Dalga girişimi ve kırınım olaylarını anlamak için kapsamlı video dersleri. Young deneyi ve girişim desenlerini detaylı olarak ele alır.",
+      "type": "video",
+      "difficulty": "advanced",
+      "duration": "60 dk",
+      "author": "Prof. Dr. Ayşe Yıldız",
+      "coverImage": "/images/materials/material2.jpg",
+      "link": "/learn/wave-interference",
+      "keywords": ["girişim", "kırınım", "dalga", "young deneyi"],
+      "category": "dalgalar",
+      "relatedSimulation": "wave-interference",
+      "exampleQuestions": [
+        {
+          "question": "Young deneyinde girişim deseninin oluşma koşulu nedir?",
+          "type": "open-ended",
+          "explanation": "Young deneyinde girişim deseni, iki kaynaktan çıkan dalgaların faz farkına bağlı olarak oluşur."
+        }
+      ]
+    },
+    {
+      "id": "electric-circuits-materials",
+      "slug": "electric-circuits-materials",
+      "title": "Elektrik Devreleri Öğrenme Materyalleri",
+      "description": "Seri ve paralel devreleri anlamak için interaktif içerikler. Ohm yasası ve Kirchhoff yasalarını pratik örneklerle açıklar.",
+      "type": "interactive",
+      "difficulty": "intermediate",
+      "duration": "55 dk",
+      "author": "Dr. Mehmet Kaya",
+      "coverImage": "/images/materials/material3.jpg",
+      "link": "/learn/electric-circuits",
+      "keywords": ["ohm yasası", "seri devre", "paralel devre", "elektrik"],
+      "category": "elektrik",
+      "relatedSimulation": "electric-circuits",
+      "exampleQuestions": [
+        {
+          "question": "Paralel bağlı dirençlerin eşdeğer direnci nasıl hesaplanır?",
+          "type": "multiple-choice",
+          "options": [
+            "Toplama",
+            "Çarpma",
+            "Terslerinin toplamının tersi",
+            "Bölme"
+          ],
+          "correctAnswer": "Terslerinin toplamının tersi",
+          "explanation": "Paralel bağlı dirençler için 1/Reş = 1/R1 + 1/R2 + ... formülü kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "quantum-tunneling-materials",
+      "slug": "quantum-tunneling-materials",
+      "title": "Kuantum Tünelleme Öğrenme Materyalleri",
+      "description": "Kuantum tünelleme olayını anlamak için detaylı video dersleri. Schrödinger denklemi ve tünelleme olasılığı hesaplamalarını içerir.",
+      "type": "video",
+      "difficulty": "advanced",
+      "duration": "70 dk",
+      "author": "Prof. Dr. Ali Demir",
+      "coverImage": "/images/materials/material4.jpg",
+      "link": "/learn/quantum-tunneling",
+      "keywords": ["kuantum", "tünelleme", "schrödinger", "modern fizik"],
+      "category": "kuantum",
+      "relatedSimulation": "quantum-tunneling",
+      "exampleQuestions": [
+        {
+          "question": "Kuantum tünelleme olayında tünelleme olasılığı neye bağlıdır?",
+          "type": "open-ended",
+          "explanation": "Tünelleme olasılığı, potansiyel bariyerin yüksekliği, genişliği ve parçacığın enerjisine bağlıdır."
+        }
+      ]
+    },
+    {
+      "id": "thermodynamics-materials",
+      "slug": "thermodynamics-materials",
+      "title": "Termodinamik Döngüler Öğrenme Materyalleri",
+      "description": "Carnot ve diğer termodinamik döngüleri anlamak için kapsamlı video dersleri. Isı motorları ve verim hesaplamalarını içerir.",
+      "type": "video",
+      "difficulty": "advanced",
+      "duration": "65 dk",
+      "author": "Dr. Selin Yılmaz",
+      "coverImage": "/images/materials/material5.jpg",
+      "link": "/learn/thermodynamics",
+      "keywords": ["carnot döngüsü", "ısı", "iş", "entropi"],
+      "category": "termodinamik",
+      "relatedSimulation": "thermodynamics",
+      "exampleQuestions": [
+        {
+          "question": "Carnot döngüsünün verimi neye bağlıdır?",
+          "type": "multiple-choice",
+          "options": [
+            "Sıcaklık farkı",
+            "Basınç farkı",
+            "Hacim farkı",
+            "Kütle farkı"
+          ],
+          "correctAnswer": "Sıcaklık farkı",
+          "explanation": "Carnot verimi η = 1 - Tc/Th formülü ile hesaplanır ve sıcaklık farkına bağlıdır."
+        }
+      ]
+    },
+    {
+      "id": "magnetic-fields-materials",
+      "slug": "magnetic-fields-materials",
+      "title": "Manyetik Alanlar Öğrenme Materyalleri",
+      "description": "Manyetik alanları ve etkileşimlerini anlamak için interaktif içerikler. Lorentz kuvveti ve manyetik akı kavramlarını detaylı olarak ele alır.",
+      "type": "interactive",
+      "difficulty": "intermediate",
+      "duration": "50 dk",
+      "author": "Dr. Zeynep Kaya",
+      "coverImage": "/images/materials/material6.jpg",
+      "link": "/learn/magnetic-fields",
+      "keywords": [
+        "manyetik alan",
+        "lorentz kuvveti",
+        "manyetik akı",
+        "elektromanyetizma"
+      ],
+      "category": "elektromanyetizma",
+      "relatedSimulation": "magnetic-fields",
+      "exampleQuestions": [
+        {
+          "question": "Lorentz kuvveti hangi faktörlere bağlıdır?",
+          "type": "open-ended",
+          "explanation": "Lorentz kuvveti, yük (q), hız (v) ve manyetik alan (B) vektörlerinin çapraz çarpımına bağlıdır."
+        }
+      ]
+    },
+    {
+      "id": "nuclear-physics-materials",
+      "slug": "nuclear-physics-materials",
+      "title": "Nükleer Fizik Öğrenme Materyalleri",
+      "description": "Radyoaktivite ve nükleer tepkimeleri anlamak için kapsamlı video dersleri. Yarı ömür hesaplamaları ve nükleer enerji kavramlarını içerir.",
+      "type": "video",
+      "difficulty": "advanced",
+      "duration": "75 dk",
+      "author": "Prof. Dr. Ahmet Yıldız",
+      "coverImage": "/images/materials/material1.jpg",
+      "link": "/learn/nuclear-physics",
+      "keywords": ["radyoaktivite", "yarı ömür", "fisyon", "füzyon"],
+      "category": "nükleer",
+      "relatedSimulation": "nuclear-physics",
+      "exampleQuestions": [
+        {
+          "question": "Radyoaktif bozunma sürecinde yarı ömür neye bağlıdır?",
+          "type": "open-ended",
+          "explanation": "Yarı ömür, radyoaktif maddenin türüne ve bozunma sabitine bağlıdır."
+        }
+      ]
     }
   ]
 }

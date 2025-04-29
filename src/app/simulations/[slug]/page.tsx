@@ -147,7 +147,9 @@ export default function SimulationPage() {
 
   const slug = params.slug as string;
   const simulation = getSimulationBySlug(slug);
-  const Icon = simulation ? categoryIcons[simulation.category] : Brain;
+  const Icon = simulation
+    ? categoryIcons[simulation.category] || BookOpen
+    : BookOpen;
 
   // Get related materials
   const relatedMaterials = simulation?.relatedMaterials || {

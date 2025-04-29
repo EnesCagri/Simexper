@@ -13,6 +13,8 @@
       "unit": "Periyodik Hareket",
       "unitOrder": 4,
       "image": "/images/simulation/Resim1.png",
+      "coverImage": "/images/simulation/Resim1.png",
+      "previewGif": "/images/simulation/harmonic-motion/preview.gif",
       "keywords": [
         "yay",
         "harmonik hareket",
@@ -94,6 +96,8 @@
       "unit": "Hareket",
       "unitOrder": 5,
       "image": "/images/simulation/Resim2.png",
+      "coverImage": "/images/simulation/Resim2.png",
+      "previewGif": "/images/simulation/projectile-motion/preview.gif",
       "keywords": ["eğik atış", "hareket", "kinematik", "mekanik", "yerçekimi"],
       "physicsExplanation": {
         "formulas": ["x = v₀cosθt", "y = v₀sinθt - ½gt²"],
@@ -143,6 +147,525 @@
           "lastAskedYear": "2023",
           "frequencyPercentage": 75,
           "averageDifficulty": 4.2
+        }
+      }
+    },
+    {
+      "id": "wave-interference",
+      "title": "Dalga Girişimi",
+      "slug": "wave-interference",
+      "description": "Su dalgalarının girişimini ve kırınımını inceleyin",
+      "category": "dalgalar",
+      "difficulty": "Zor",
+      "completionTime": "30 dk",
+      "points": 150,
+      "gradient": "from-purple-500 to-pink-500",
+      "unit": "Dalgalar",
+      "unitOrder": 3,
+      "image": "/images/simulation/Resim3.jpg",
+      "coverImage": "/images/simulation/Resim3.jpg",
+      "previewGif": "/images/simulation/wave-interference/preview.gif",
+      "keywords": [
+        "girişim",
+        "kırınım",
+        "dalga",
+        "faz farkı",
+        "yapıcı girişim"
+      ],
+      "physicsExplanation": {
+        "formulas": [
+          "Girişim Koşulu: Δφ = 2πΔx/λ",
+          "Yapıcı Girişim: Δx = nλ",
+          "Yıkıcı Girişim: Δx = (n+1/2)λ"
+        ],
+        "concepts": [
+          "Dalga girişimi",
+          "Kırınım",
+          "Faz farkı",
+          "Yapıcı ve yıkıcı girişim",
+          "Young deneyi"
+        ]
+      },
+      "learningObjectives": [
+        "Dalga girişimini anlama",
+        "Yapıcı ve yıkıcı girişim koşullarını öğrenme",
+        "Kırınım olayını gözlemleme",
+        "Young deneyini analiz etme"
+      ],
+      "reviews": [
+        {
+          "user": "Zeynep A.",
+          "rating": 5,
+          "comment": "Dalga girişimini çok net görebiliyorum, harika bir simülasyon.",
+          "date": "2024-03-18"
+        },
+        {
+          "user": "Can K.",
+          "rating": 4,
+          "comment": "Görsel olarak etkileyici, ancak biraz daha interaktif olabilirdi.",
+          "date": "2024-03-17"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/8YkfEft4p-w",
+      "detailedDescription": "Bu simülasyon, dalga girişimi ve kırınım olaylarını interaktif bir şekilde incelemenizi sağlar. İki kaynaktan çıkan dalgaların girişimini gözlemleyebilir, farklı dalga boyları ve faz farkları için girişim desenlerini analiz edebilirsiniz. Young deneyi prensibini uygulayarak ışık dalgalarının girişimini de inceleyebilirsiniz.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Dalga Girişiminin Teknolojideki Uygulamaları",
+            "description": "Holografi ve interferometre sistemlerinde dalga girişimi",
+            "author": "Prof. Dr. Ayşe Yıldız",
+            "date": "2024-03-16",
+            "readTime": "7 dk",
+            "slug": "dalga-girisimi-uygulamalari"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "İki noktasal kaynaktan çıkan dalgaların girişim deseninde, 3. yapıcı girişim çizgisi üzerindeki bir noktanın kaynaklara olan uzaklık farkı kaç λ'dır?",
+            "correctAnswer": "3λ",
+            "explanation": "Yapıcı girişim için uzaklık farkı tam sayı katları olmalıdır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 42,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 80,
+          "averageDifficulty": 4.5
+        }
+      }
+    },
+    {
+      "id": "electric-circuits",
+      "title": "Elektrik Devreleri",
+      "slug": "electric-circuits",
+      "description": "Seri ve paralel devreleri inceleyin",
+      "category": "elektrik",
+      "difficulty": "Orta",
+      "completionTime": "25 dk",
+      "points": 130,
+      "gradient": "from-yellow-500 to-orange-500",
+      "unit": "Elektrik",
+      "unitOrder": 2,
+      "image": "/images/simulation/Resim4.jpg",
+      "coverImage": "/images/simulation/Resim4.jpg",
+      "keywords": [
+        "ohm yasası",
+        "seri devre",
+        "paralel devre",
+        "akım",
+        "gerilim"
+      ],
+      "physicsExplanation": {
+        "formulas": [
+          "Ohm Yasası: V = IR",
+          "Seri Devre: Reş = R1 + R2 + ...",
+          "Paralel Devre: 1/Reş = 1/R1 + 1/R2 + ..."
+        ],
+        "concepts": [
+          "Elektrik akımı",
+          "Gerilim",
+          "Direnç",
+          "Seri ve paralel bağlantı",
+          "Kirchhoff yasaları"
+        ]
+      },
+      "learningObjectives": [
+        "Seri ve paralel devreleri ayırt etme",
+        "Ohm yasasını uygulama",
+        "Eşdeğer direnç hesaplama",
+        "Devre analizi yapma"
+      ],
+      "reviews": [
+        {
+          "user": "Burak M.",
+          "rating": 5,
+          "comment": "Devreleri çok iyi anladım, pratik yapmak için mükemmel.",
+          "date": "2024-03-15"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/J4Vq-xHqUo8",
+      "detailedDescription": "Bu simülasyon, temel elektrik devrelerini interaktif bir şekilde incelemenizi sağlar. Seri ve paralel devreleri oluşturabilir, farklı direnç değerleri ile deneyler yapabilirsiniz. Ohm yasasını uygulayarak akım ve gerilim değerlerini ölçebilir, Kirchhoff yasalarını test edebilirsiniz.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Günlük Hayatta Elektrik Devreleri",
+            "description": "Ev aletlerindeki elektrik devreleri ve çalışma prensipleri",
+            "author": "Dr. Mehmet Kaya",
+            "date": "2024-03-14",
+            "readTime": "6 dk",
+            "slug": "elektrik-devreleri-gunluk-hayat"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "3Ω ve 6Ω'luk iki direnç paralel bağlanıyor. Devrenin eşdeğer direnci kaç Ω'dur?",
+            "correctAnswer": "2Ω",
+            "explanation": "Paralel bağlı dirençler için 1/Reş = 1/R1 + 1/R2 formülü kullanılır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 50,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 90,
+          "averageDifficulty": 3.5
+        }
+      }
+    },
+    {
+      "id": "quantum-tunneling",
+      "title": "Kuantum Tünelleme",
+      "slug": "kuantum-tunelleme",
+      "description": "Kuantum tünelleme olayını interaktif olarak keşfedin",
+      "category": "kuantum",
+      "difficulty": "Zor",
+      "completionTime": "35 dk",
+      "points": 180,
+      "gradient": "from-purple-500 to-indigo-500",
+      "unit": "Kuantum Fiziği",
+      "unitOrder": 6,
+      "image": "/images/simulation/Resim5.jpg",
+      "coverImage": "/images/simulation/Resim5.jpg",
+      "keywords": [
+        "kuantum tünelleme",
+        "dalga fonksiyonu",
+        "potansiyel bariyer",
+        "tünelleme olasılığı",
+        "kuantum mekaniği"
+      ],
+      "physicsExplanation": {
+        "formulas": [
+          "Tünelleme Olasılığı: T ≈ e^(-2κL)",
+          "Dalga Vektörü: κ = √(2m(V-E))/ħ"
+        ],
+        "concepts": [
+          "Kuantum tünelleme",
+          "Potansiyel bariyer",
+          "Dalga fonksiyonu",
+          "Tünelleme olasılığı",
+          "Klasik ve kuantum farkı"
+        ]
+      },
+      "learningObjectives": [
+        "Kuantum tünelleme olayını anlama",
+        "Tünelleme olasılığını hesaplama",
+        "Klasik ve kuantum davranışı karşılaştırma",
+        "Uygulama alanlarını keşfetme"
+      ],
+      "reviews": [
+        {
+          "user": "Dr. Ali K.",
+          "rating": 5,
+          "comment": "Kuantum tünellemeyi görselleştirmek için mükemmel bir simülasyon.",
+          "date": "2024-03-20"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/quantum-tunneling-demo",
+      "detailedDescription": "Kuantum tünelleme, kuantum mekaniğinin en ilginç ve önemli olaylarından biridir. Bu simülasyon, bir parçacığın klasik olarak aşamayacağı bir potansiyel bariyeri kuantum mekaniksel olarak aşabilmesini gösterir. Farklı potansiyel bariyer yükseklikleri ve genişlikleri ile deneyler yaparak tünelleme olasılığını gözlemleyebilir, dalga fonksiyonunun davranışını inceleyebilirsiniz.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Kuantum Tünellemenin Teknolojideki Uygulamaları",
+            "description": "Tünel diyotları ve tarama tünelleme mikroskopları",
+            "author": "Prof. Dr. Mehmet Yılmaz",
+            "date": "2024-03-18",
+            "readTime": "8 dk",
+            "slug": "kuantum-tunelleme-uygulamalari"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Bir elektron 2 eV enerji ile 5 eV yüksekliğinde bir potansiyel bariyere çarpıyor. Bariyerin genişliği 1 nm ise tünelleme olasılığı yaklaşık olarak nedir? (m=9.1x10^-31 kg, ħ=1.05x10^-34 J.s)",
+            "correctAnswer": "0.001",
+            "explanation": "Tünelleme olasılığı formülü T ≈ e^(-2κL) kullanılarak hesaplanır."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "Kuantum tünelleme olayında, bariyer genişliği iki katına çıkarıldığında tünelleme olasılığı nasıl değişir?",
+            "correctAnswer": "Üstel olarak azalır",
+            "explanation": "Tünelleme olasılığı bariyer genişliği ile üstel olarak azalır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 52,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 90,
+          "averageDifficulty": 4.5
+        },
+        "bookRecommendations": [
+          {
+            "title": "Kuantum Fiziğine Giriş",
+            "author": "David J. Griffiths",
+            "publisher": "Pearson",
+            "year": "2020",
+            "isbn": "978-0131118928",
+            "description": "Kuantum fiziğinin temellerini anlaşılır bir dille anlatan kapsamlı bir kaynak.",
+            "chapters": [
+              "Kuantum Tünelleme",
+              "Dalga Fonksiyonları",
+              "Potansiyel Bariyerler"
+            ]
+          },
+          {
+            "title": "Modern Fizik",
+            "author": "Kenneth S. Krane",
+            "publisher": "Wiley",
+            "year": "2019",
+            "isbn": "978-1119495550",
+            "description": "Modern fiziğin temel konularını detaylı örneklerle ele alan bir ders kitabı.",
+            "chapters": ["Kuantum Mekaniği", "Atom Fiziği", "Nükleer Fizik"]
+          }
+        ],
+        "relatedSimulations": [
+          {
+            "id": "wave-function",
+            "title": "Dalga Fonksiyonu",
+            "slug": "dalga-fonksiyonu",
+            "description": "Kuantum dalga fonksiyonlarını keşfedin"
+          },
+          {
+            "id": "potential-barrier",
+            "title": "Potansiyel Bariyer",
+            "slug": "potansiyel-bariyer",
+            "description": "Farklı potansiyel bariyerleri inceleyin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thermodynamics",
+      "title": "Termodinamik Döngüler",
+      "slug": "thermodynamics",
+      "description": "Carnot ve diğer termodinamik döngüleri inceleyin",
+      "category": "termodinamik",
+      "difficulty": "Zor",
+      "completionTime": "40 dk",
+      "points": 160,
+      "gradient": "from-red-500 to-orange-500",
+      "unit": "Termodinamik",
+      "unitOrder": 3,
+      "image": "/images/simulation/Resim6.jpg",
+      "coverImage": "/images/simulation/Resim6.jpg",
+      "keywords": ["carnot döngüsü", "ısı", "iş", "entropi", "verim"],
+      "physicsExplanation": {
+        "formulas": [
+          "Carnot Verimi: η = 1 - Tc/Th",
+          "İş: W = Qh - Qc",
+          "Entropi Değişimi: ΔS = Q/T"
+        ],
+        "concepts": [
+          "Carnot döngüsü",
+          "Isı ve iş",
+          "Entropi",
+          "Termodinamik yasaları",
+          "Isı motorları"
+        ]
+      },
+      "learningObjectives": [
+        "Termodinamik döngüleri anlama",
+        "Carnot verimini hesaplama",
+        "Entropi kavramını öğrenme",
+        "Isı motorlarının çalışma prensibini kavrama"
+      ],
+      "reviews": [
+        {
+          "user": "Ece S.",
+          "rating": 4,
+          "comment": "Termodinamik döngüleri çok iyi görselleştiriyor.",
+          "date": "2024-03-11"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/8n1i-7sW3HE",
+      "detailedDescription": "Bu simülasyon, termodinamik döngüleri interaktif bir şekilde incelemenizi sağlar. Carnot döngüsünü ve diğer termodinamik döngüleri gözlemleyebilir, farklı sıcaklık ve basınç değerleri için verim hesaplamaları yapabilirsiniz. Isı motorlarının çalışma prensibini ve termodinamiğin temel yasalarını anlamak için ideal bir araçtır.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Termodinamik Döngülerin Endüstriyel Uygulamaları",
+            "description": "Buhar türbinleri ve içten yanmalı motorlarda termodinamik",
+            "author": "Dr. Selin Yılmaz",
+            "date": "2024-03-10",
+            "readTime": "7 dk",
+            "slug": "termodinamik-endustriyel-uygulamalar"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Bir Carnot motoru 500K ve 300K sıcaklıkları arasında çalışıyor. Motorun verimi nedir?",
+            "correctAnswer": "0.4",
+            "explanation": "Carnot verimi formülü η = 1 - Tc/Th kullanılarak hesaplanır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 40,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 85,
+          "averageDifficulty": 4.2
+        }
+      }
+    },
+    {
+      "id": "magnetic-fields",
+      "title": "Manyetik Alanlar",
+      "slug": "magnetic-fields",
+      "description": "Manyetik alanları ve etkileşimlerini inceleyin",
+      "category": "elektromanyetizma",
+      "difficulty": "Orta",
+      "completionTime": "25 dk",
+      "points": 140,
+      "gradient": "from-blue-500 to-indigo-500",
+      "unit": "Elektromanyetizma",
+      "unitOrder": 2,
+      "image": "/images/simulation/Resim5.jpg",
+      "coverImage": "/images/simulation/Resim5.jpg",
+      "keywords": [
+        "manyetik alan",
+        "akım",
+        "lorentz kuvveti",
+        "solenoid",
+        "manyetik akı"
+      ],
+      "physicsExplanation": {
+        "formulas": [
+          "Lorentz Kuvveti: F = q(v × B)",
+          "Biot-Savart Yasası",
+          "Manyetik Akı: Φ = BAcosθ"
+        ],
+        "concepts": [
+          "Manyetik alan",
+          "Akım ve manyetizma",
+          "Lorentz kuvveti",
+          "Manyetik akı",
+          "Solenoid"
+        ]
+      },
+      "learningObjectives": [
+        "Manyetik alan kavramını anlama",
+        "Lorentz kuvvetini hesaplama",
+        "Manyetik akıyı ölçme",
+        "Solenoid davranışını inceleme"
+      ],
+      "reviews": [
+        {
+          "user": "Kemal T.",
+          "rating": 5,
+          "comment": "Manyetik alanları çok iyi görselleştiriyor.",
+          "date": "2024-03-09"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/3hjyJpWz0mQ",
+      "detailedDescription": "Bu simülasyon, manyetik alanları ve etkileşimlerini interaktif bir şekilde incelemenizi sağlar. Farklı akım değerleri ve geometriler için manyetik alan çizgilerini gözlemleyebilir, Lorentz kuvvetini hesaplayabilirsiniz. Manyetik akı ve solenoid davranışını anlamak için ideal bir araçtır.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Manyetik Alanların Tıbbi Uygulamaları",
+            "description": "MRI ve manyetik rezonans görüntüleme",
+            "author": "Dr. Zeynep Kaya",
+            "date": "2024-03-08",
+            "readTime": "6 dk",
+            "slug": "manyetik-alanlar-tip-uygulamalari"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "0.5 T manyetik alanda 2 m/s hızla hareket eden 1.6×10^-19 C yüklü bir parçacığa etki eden Lorentz kuvveti kaç N'dur?",
+            "correctAnswer": "1.6×10^-19 N",
+            "explanation": "Lorentz kuvveti formülü F = qvB kullanılarak hesaplanır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 45,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 80,
+          "averageDifficulty": 3.8
+        }
+      }
+    },
+    {
+      "id": "nuclear-physics",
+      "title": "Nükleer Fizik",
+      "slug": "nuclear-physics",
+      "description": "Radyoaktivite ve nükleer tepkimeleri inceleyin",
+      "category": "nükleer",
+      "difficulty": "Zor",
+      "completionTime": "35 dk",
+      "points": 170,
+      "gradient": "from-green-500 to-teal-500",
+      "unit": "Modern Fizik",
+      "unitOrder": 4,
+      "image": "/images/simulation/Resim3.jpg",
+      "coverImage": "/images/simulation/Resim3.jpg",
+      "keywords": [
+        "radyoaktivite",
+        "yarı ömür",
+        "fisyon",
+        "füzyon",
+        "nükleer tepkime"
+      ],
+      "physicsExplanation": {
+        "formulas": [
+          "Yarı Ömür: N = N₀(1/2)^(t/T)",
+          "Kütle Enerji Eşdeğeri: E = mc²",
+          "Radyoaktif Bozunma: dN/dt = -λN"
+        ],
+        "concepts": [
+          "Radyoaktivite",
+          "Yarı ömür",
+          "Fisyon ve füzyon",
+          "Kütle enerji eşdeğeri",
+          "Nükleer tepkimeler"
+        ]
+      },
+      "learningObjectives": [
+        "Radyoaktiviteyi anlama",
+        "Yarı ömür hesaplamaları yapma",
+        "Fisyon ve füzyon tepkimelerini inceleme",
+        "Nükleer enerji kavramını öğrenme"
+      ],
+      "reviews": [
+        {
+          "user": "Selin A.",
+          "rating": 5,
+          "comment": "Nükleer fiziği çok iyi anlamamı sağladı.",
+          "date": "2024-03-07"
+        }
+      ],
+      "howItWorksVideo": "https://www.youtube.com/embed/FU6y1XIADdg",
+      "detailedDescription": "Bu simülasyon, nükleer fizik konularını interaktif bir şekilde incelemenizi sağlar. Radyoaktif bozunma süreçlerini gözlemleyebilir, yarı ömür hesaplamaları yapabilirsiniz. Fisyon ve füzyon tepkimelerini inceleyerek nükleer enerji kavramını daha iyi anlayabilirsiniz.",
+      "relatedMaterials": {
+        "blogPosts": [
+          {
+            "title": "Nükleer Enerjinin Geleceği",
+            "description": "Füzyon reaktörleri ve temiz enerji",
+            "author": "Prof. Dr. Ahmet Yıldız",
+            "date": "2024-03-06",
+            "readTime": "8 dk",
+            "slug": "nukleer-enerji-gelecegi"
+          }
+        ],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Yarı ömrü 5 gün olan bir radyoaktif maddenin 15 gün sonraki kütlesi başlangıçtakinin kaçta kaçı olur?",
+            "correctAnswer": "1/8",
+            "explanation": "Yarı ömür formülü N = N₀(1/2)^(t/T) kullanılarak hesaplanır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 38,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 75,
+          "averageDifficulty": 4.5
         }
       }
     }

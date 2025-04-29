@@ -2,299 +2,192 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  Check,
-  X,
-  Sparkles,
-  Users,
-  BookOpen,
-  Zap,
-  ArrowRight,
-  ChevronRight,
-  HelpCircle,
-} from "lucide-react";
+import { Check } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const plans = [
   {
-    name: "Başlangıç",
-    price: "Ücretsiz",
-    description: "Temel simülasyonlara erişim ve öğrenme başlangıcı",
+    name: "Basic",
+    description: "Bireysel öğrenciler için temel fizik simülasyonları",
+    monthlyPrice: "49",
+    annualPrice: "39",
     features: [
-      "5 temel simülasyon",
-      "Sınırlı kullanım süresi",
-      "Temel ders içerikleri",
-      "Topluluk desteği",
-      "E-posta desteği",
+      "10 GB Depolama",
+      "5 Temel Simülasyon",
+      "Temel Analiz Araçları",
+      "E-posta Desteği",
+      "Topluluk Erişimi",
     ],
-    notIncluded: [
-      "Gelişmiş simülasyonlar",
-      "Özel ders içerikleri",
-      "Öncelikli destek",
-      "İlerleme takibi",
-    ],
-    cta: "Ücretsiz Başla",
-    popular: false,
+    cta: "Ücretsiz Dene",
+    highlight: false,
   },
   {
-    name: "Öğrenci",
-    price: "₺99",
-    period: "aylık",
-    description: "Öğrenciler için kapsamlı simülasyon paketi",
+    name: "Professional",
+    description:
+      "Daha fazla simülasyon ve gelişmiş özellikler isteyen öğrenciler için",
+    monthlyPrice: "99",
+    annualPrice: "79",
     features: [
-      "Tüm simülasyonlara erişim",
-      "Sınırsız kullanım",
-      "Detaylı ders içerikleri",
-      "İlerleme takibi",
-      "Öncelikli destek",
-      "Özel ders notları",
-      "Sınav hazırlık içerikleri",
+      "100 GB Depolama",
+      "Tüm Simülasyonlara Erişim",
+      "Gelişmiş Analiz Araçları",
+      "Öncelikli Destek",
+      "API Erişimi",
+      "İlerleme Takibi",
+      "Özel Ders İçerikleri",
     ],
-    notIncluded: ["Okul lisansı", "Öğretmen paneli"],
     cta: "Hemen Başla",
-    popular: true,
+    highlight: true,
+    extraText: "+ ₺20 / öğrenci başına",
   },
   {
-    name: "Okul",
-    price: "₺499",
-    period: "aylık",
-    description: "Okullar için kapsamlı çözüm",
+    name: "Enterprise",
+    description: "Okullar ve kurumlar için özelleştirilmiş çözümler",
+    monthlyPrice: "299",
+    annualPrice: "239",
     features: [
-      "Tüm simülasyonlara erişim",
-      "Sınırsız kullanım",
-      "Öğretmen paneli",
-      "Sınıf yönetimi",
-      "İlerleme raporları",
-      "Özel ders içerikleri",
-      "7/24 destek",
-      "API erişimi",
+      "Sınırsız Depolama",
+      "Özel Simülasyonlar",
+      "Gelişmiş Raporlama",
+      "7/24 Öncelikli Destek",
+      "Özel API Geliştirme",
+      "Beyaz Etiket Çözümler",
+      "Özel Entegrasyonlar",
     ],
-    notIncluded: [],
     cta: "İletişime Geç",
-    popular: false,
-  },
-];
-
-const features = [
-  {
-    name: "Simülasyonlar",
-    icon: Sparkles,
-    description: "İnteraktif fizik simülasyonları",
-  },
-  {
-    name: "Topluluk",
-    icon: Users,
-    description: "Aktif öğrenci topluluğu",
-  },
-  {
-    name: "İçerik",
-    icon: BookOpen,
-    description: "Kapsamlı ders içerikleri",
-  },
-  {
-    name: "Destek",
-    icon: Zap,
-    description: "7/24 teknik destek",
-  },
-];
-
-const faqs = [
-  {
-    question: "Ücretsiz plan ile ne kadar süre kullanabilirim?",
-    answer:
-      "Ücretsiz plan süresiz olarak kullanılabilir. Temel simülasyonlara ve içeriklere sınırsız erişim sağlarsınız.",
-  },
-  {
-    question: "Öğrenci planına nasıl geçiş yapabilirim?",
-    answer:
-      "Hesap ayarlarınızdan istediğiniz zaman planınızı yükseltebilirsiniz. Geçiş anında gerçekleşir ve ödeme sonrası tüm özelliklere erişim sağlarsınız.",
-  },
-  {
-    question: "Okul planı için özel teklif alabilir miyim?",
-    answer:
-      "Evet, okul planı için öğrenci sayısına ve ihtiyaçlarınıza göre özel teklifler sunuyoruz. İletişim formunu doldurarak bizimle iletişime geçebilirsiniz.",
-  },
-  {
-    question: "İade politikası nedir?",
-    answer:
-      "14 gün içerisinde herhangi bir sebep belirtmeden iade talep edebilirsiniz. İade işlemi 3-5 iş günü içerisinde tamamlanır.",
+    highlight: false,
   },
 ];
 
 export default function PricingPage() {
-  return (
-    <div className="min-h-screen bg-gray-950">
-      {/* Header */}
-      <div className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gray-950">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.1),transparent_50%)]" />
-        </div>
+  const [isAnnual, setIsAnnual] = useState(false);
 
-        <div className="relative container mx-auto px-4">
+  return (
+    <div className="min-h-screen bg-[#030711] py-24">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto"
+            className="inline-flex items-center rounded-full bg-blue-950/60 px-3 py-1 text-sm text-blue-300 mb-6"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-                Fiyatlandırma
-              </span>
-            </h1>
-            <p className="text-lg text-gray-400 mb-8">
-              İhtiyaçlarınıza uygun planı seçin ve fizik öğrenimini dönüştürün
-            </p>
+            Auxit tarafından desteklenmektedir
           </motion.div>
-        </div>
-      </div>
 
-      {/* Pricing Cards */}
-      <div className="container mx-auto px-4 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-medium text-white mb-4"
+          >
+            İhtiyacınıza uygun tüm fizik
+            <br />
+            simülasyonları tek pakette
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-gray-400 text-lg max-w-2xl mx-auto mb-12"
+          >
+            Tüm simülasyonları tek bir platformda toplayın ve merkezi bir
+            öğrenme deneyimi yaşayın. Kredi kartı gerekmez.
+          </motion.p>
+
+          {/* Pricing Toggle */}
+          <div className="flex items-center justify-center gap-4 mb-16">
+            <span className="text-gray-400">Aylık</span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ${
+                isAnnual ? "bg-blue-600" : "bg-gray-700"
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
+                  isAnnual ? "translate-x-6" : "translate-x-1"
+                }`}
+              />
+            </button>
+            <span className="text-gray-400">
+              Yıllık <span className="text-blue-400">%20 indirim</span>
+            </span>
+          </div>
+        </div>
+
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {plans.map((plan) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group"
+              className={`relative rounded-2xl ${
+                plan.highlight
+                  ? "bg-blue-600 border-2 border-blue-400"
+                  : "bg-gray-900/50 border border-gray-800"
+              } backdrop-blur-sm p-8`}
             >
-              {/* Gradient Border */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-200" />
+              <div className="mb-8">
+                <h3 className="text-xl font-medium text-white mb-2">
+                  {plan.name}
+                </h3>
+                <p className="text-gray-400 text-sm min-h-[40px]">
+                  {plan.description}
+                </p>
+              </div>
 
-              {/* Pricing Card */}
-              <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-8 group-hover:border-gray-700 transition-colors h-full">
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400">
-                      En Popüler
-                    </span>
+              <div className="mb-8">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-medium text-white">₺</span>
+                  <span className="text-5xl font-medium text-white">
+                    {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                  </span>
+                  <span className="text-gray-400">/ay</span>
+                </div>
+                {plan.extraText && (
+                  <div className="text-sm text-gray-400 mt-2">
+                    {plan.extraText}
                   </div>
                 )}
-
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-center justify-center gap-1">
-                    <span className="text-4xl font-bold text-white">
-                      {plan.price}
-                    </span>
-                    {plan.period && (
-                      <span className="text-gray-400">/{plan.period}</span>
-                    )}
-                  </div>
-                  <p className="text-gray-400 mt-2">{plan.description}</p>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <Check className="w-5 h-5 text-green-400" />
-                      <span className="text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                  {plan.notIncluded.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <X className="w-5 h-5 text-gray-600" />
-                      <span className="text-gray-500">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href="/register" className="block w-full">
-                  <Button
-                    className={`w-full h-12 ${
-                      plan.popular
-                        ? "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
-                        : "bg-gray-800 hover:bg-gray-700"
-                    }`}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
               </div>
+
+              <Button
+                className={`w-full h-12 mb-8 ${
+                  plan.highlight
+                    ? "bg-white text-blue-600 hover:bg-gray-100"
+                    : "bg-blue-600 text-white hover:bg-blue-700"
+                }`}
+              >
+                {plan.cta}
+              </Button>
+
+              <ul className="space-y-4">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <Check
+                      className={`w-5 h-5 ${
+                        plan.highlight ? "text-blue-300" : "text-blue-400"
+                      }`}
+                    />
+                    <span
+                      className={
+                        plan.highlight ? "text-blue-100" : "text-gray-300"
+                      }
+                    >
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
-
-        {/* Features */}
-        <div className="max-w-4xl mx-auto mt-24">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-              Tüm Planlarda Bulunan Özellikler
-            </span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {feature.name}
-                </h3>
-                <p className="text-gray-400">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* FAQ */}
-        <div className="max-w-3xl mx-auto mt-24">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-              Sıkça Sorulan Sorular
-            </span>
-          </h2>
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={faq.question}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-6"
-              >
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-400">{faq.answer}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <Link href="/contact">
-            <Button
-              variant="outline"
-              className="h-12 px-8 group border-gray-800 hover:border-gray-700"
-            >
-              Daha fazla bilgi alın
-              <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </motion.div>
       </div>
     </div>
   );

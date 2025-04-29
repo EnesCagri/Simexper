@@ -12,6 +12,7 @@ import {
   ArrowUpRight,
   ExternalLink,
 } from "lucide-react";
+import { Logo } from "@/components/common/Logo";
 
 const navigation = {
   main: [
@@ -91,11 +92,7 @@ export function Footer() {
               viewport={{ once: true }}
               className="relative"
             >
-              <Link href="/" className="flex items-center space-x-2">
-                <span className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Simexper
-                </span>
-              </Link>
+              <Logo />
               <div className="mt-6 text-sm leading-6 text-gray-400 border-l-2 border-blue-500/20 pl-4">
                 Fizik eğitimini interaktif simülasyonlarla daha eğlenceli ve
                 anlaşılır hale getiriyoruz.

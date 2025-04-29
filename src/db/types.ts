@@ -73,6 +73,8 @@ export interface SimulationData {
   unit: string;
   unitOrder: number;
   image: string;
+  coverImage: string;
+  previewGif: string;
   keywords: string[];
   exampleQuestions?: ExampleQuestion[];
   howItWorksVideo?: string;
@@ -103,22 +105,29 @@ export interface MaterialData {
 
 // Blog types
 export interface BlogPostData {
-  readTime: string;
-  description: string;
   id: string;
-  slug: string;
   title: string;
-  excerpt: string;
+  slug: string;
   content: string;
+  excerpt: string;
+  category: string;
+  author: {
+    name: string;
+    avatar: string;
+    title?: string;
+  };
   date: string;
   readingTime: string;
-  category: string;
-  image: string;
-  author: Author;
   keywords: string[];
-  relatedSimulations?: string[];
-  likes?: number;
+  relatedMaterials: string[];
+  relatedSimulations: string[];
+  metaDescription: string;
+  metaKeywords: string[];
+  status: "draft" | "published" | "archived";
+  coverImage: string;
   views?: number;
+  likes?: number;
+  comments?: number;
 }
 
 export interface Review {

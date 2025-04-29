@@ -1,151 +1,144 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import {
-  Users,
-  Glasses,
-  Rocket,
-  Building2,
-  Users2,
-  Gamepad2,
-} from "lucide-react";
+import { Atom, BookOpen, Brain, FileText, FlaskConical } from "lucide-react";
 
-const benefits = [
-  {
-    title: "Doğru Kişilerle Buluşma",
-    description:
-      "Öğrenciler, öğretmenler ve eğitim kurumlarının kesiştiği buluşma noktası.",
-    Icon: Users,
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Şeffaf ve Erişilebilir Yapı",
-    description:
-      "Herkesin katılabileceği ve katkı sunabileceği açık bir sistem.",
-    Icon: Glasses,
-    gradient: "from-pink-500 to-red-500",
-  },
-  {
-    title: "Gerçek Potansiyele Ulaşma",
-    description: "Öğrencilerin yeteneklerini ve fikirlerini görünür kılıyoruz.",
-    Icon: Rocket,
-    gradient: "from-red-500 to-orange-500",
-  },
-];
+interface Service {
+  title: string;
+  description: string;
+  icon: any; // Lucide icon component type
+  position: "main" | "top" | "right" | "bottom" | "left";
+}
 
-const categories = [
+interface ServiceCardProps {
+  service: Service;
+  isMain?: boolean;
+}
+
+const services: Service[] = [
   {
-    title: "Bireysel Öğrenciler",
-    Icon: Users2,
+    title: "Gerçek Zamanlı İnteraktif Simülasyon",
+    description:
+      "Fizik kavramlarını gerçek zamanlı yanıt veren canlı, interaktif 3D simülasyonlar aracılığıyla deneyimleyin.",
+    icon: Atom,
+    position: "main",
   },
   {
-    title: "Eğitim Kurumları",
-    Icon: Building2,
+    title: "Eğitim Materyalleri",
+    description:
+      "Müfredatınız ve öğrenme hedeflerinizle uyumlu kapsamlı çalışma materyalleri.",
+    icon: BookOpen,
+    position: "top",
   },
   {
-    title: "Fizik Meraklıları",
-    Icon: Gamepad2,
+    title: "Kişiselleştirilmiş AI Koç",
+    description:
+      "Gelişmiş AI teknolojisi ile desteklenen kişiselleştirilmiş öğrenme rehberliği alın.",
+    icon: Brain,
+    position: "right",
+  },
+  {
+    title: "Bloglar",
+    description:
+      "Fizik eğitimi ve bilimsel keşiflerdeki en son gelişmelerden haberdar olun.",
+    icon: FileText,
+    position: "bottom",
+  },
+  {
+    title: "Test Oluşturucu",
+    description:
+      "Geçmiş sorular ve öğrenme ilerlemenize göre pratik testler oluşturun.",
+    icon: FlaskConical,
+    position: "left",
   },
 ];
 
 export function WhySimexper() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-[#030711]">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(168,85,247,0.15),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(236,72,153,0.15),transparent_50%)]" />
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_50%)]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2% 5%, rgba(59, 130, 246, 0.05) 0%, transparent 10%),
+                           radial-gradient(circle at 98% 35%, rgba(236, 72, 153, 0.05) 0%, transparent 10%),
+                           radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 10%)`,
+          }}
+        />
+      </div>
 
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Left Side - Image and Categories */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:w-1/2"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-2xl" />
-              <img
-                src="images/student-physics.jpg"
-                alt="Student exploring physics simulation"
-                className="rounded-2xl relative z-10 w-full object-cover shadow-xl"
-              />
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Neden{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
+              Simexper?
+            </span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Fizik öğrenme deneyiminizi geliştirmek için tasarlanmış kapsamlı
+            araç ve hizmetlerimizi keşfedin.
+          </p>
+        </motion.div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {services.map((service, index) => (
             <motion.div
+              key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mt-8 grid grid-cols-3 gap-4"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={service.position === "main" ? "md:col-span-2" : ""}
             >
-              {categories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-purple-500/50 transition-colors"
-                >
-                  <category.Icon className="w-6 h-6 text-purple-400" />
-                  <span className="text-sm text-gray-300 text-center">
-                    {category.title}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
+              <div className="relative group h-full">
+                {/* Card Background with Grid */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-2xl">
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: `linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                                    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
+                      backgroundSize: "20px 20px",
+                    }}
+                  />
+                </div>
 
-          {/* Right Side - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:w-1/2"
-          >
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent">
-                Neden Simexper?
-              </span>
-            </h2>
-
-            <p className="text-gray-300 mb-8 text-lg">
-              Simexper sayesinde öğrenciler fiziği interaktif bir şekilde
-              keşfeder, eğitmenler projelerini sergiler, ve herkes keyifli bir
-              öğrenme deneyiminin parçası olur.
-            </p>
-
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <Card className="bg-gray-900/50 border-gray-800 hover:border-purple-500/50 transition-all duration-300">
-                    <div className="p-6 flex items-start gap-4">
-                      <div
-                        className={`p-3 rounded-xl bg-gradient-to-br ${benefit.gradient} group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <benefit.Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                          {benefit.title}
-                        </h3>
-                        <p className="text-gray-300">{benefit.description}</p>
-                      </div>
+                {/* Card Content */}
+                <div className="relative p-8 h-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-6 h-6 text-blue-400" />
                     </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                    <h3 className="text-xl font-semibold text-white">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-400">{service.description}</p>
+
+                  {/* Connecting Nodes */}
+                  {service.position !== "main" && (
+                    <div className="absolute -inset-1 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-blue-500/50" />
+                    </div>
+                  )}
+                </div>
+
+                {/* Glowing Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
