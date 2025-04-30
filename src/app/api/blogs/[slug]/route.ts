@@ -3,14 +3,11 @@ import { getBlogPostBySlug } from "@/db/utils";
 import fs from "fs";
 import path from "path";
 
-type RouteContext = {
-  params: {
-    slug: string;
-  };
-};
-
 // GET /api/blogs/[slug] - Get a specific blog post
-export async function GET(request: NextRequest, { params }: RouteContext) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
   try {
     const post = getBlogPostBySlug(params.slug);
     if (!post) {
@@ -29,7 +26,10 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
 }
 
 // PUT /api/blogs/[slug] - Update a blog post
-export async function PUT(request: NextRequest, { params }: RouteContext) {
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
   try {
     const data = await request.json();
     const filePath = path.join(process.cwd(), "src/db/blogs.json");
@@ -66,7 +66,10 @@ export async function PUT(request: NextRequest, { params }: RouteContext) {
 }
 
 // DELETE /api/blogs/[slug] - Delete a blog post
-export async function DELETE(request: NextRequest, { params }: RouteContext) {
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
   try {
     const filePath = path.join(process.cwd(), "src/db/blogs.json");
     const fileContent = fs.readFileSync(filePath, "utf8");
