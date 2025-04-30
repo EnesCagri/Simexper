@@ -1,15 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { getBlogPostBySlug } from "@/db/utils";
 import fs from "fs";
 import path from "path";
 
 // GET /api/blogs/[slug] - Get a specific blog post
 export async function GET(
-  request: NextRequest,
-  context: { params: { slug: string } }
-): Promise<NextResponse> {
+  request: Request,
+  { params }: { params: { slug: string } }
+) {
   try {
-    const post = getBlogPostBySlug(context.params.slug);
+    const post = getBlogPostBySlug(params.slug);
     if (!post) {
       return NextResponse.json(
         { error: "Blog post not found" },
@@ -27,9 +27,9 @@ export async function GET(
 
 // PUT /api/blogs/[slug] - Update a blog post
 export async function PUT(
-  request: NextRequest,
-  context: { params: { slug: string } }
-): Promise<NextResponse> {
+  request: Request,
+  { params }: { params: { slug: string } }
+) {
   try {
     const data = await request.json();
     const filePath = path.join(process.cwd(), "src/db/blogs.json");
@@ -37,7 +37,7 @@ export async function PUT(
     const blogsData = JSON.parse(fileContent);
 
     const postIndex = blogsData.posts.findIndex(
-      (post: any) => post.slug === context.params.slug
+      (post: any) => post.slug === params.slug
     );
 
     if (postIndex === -1) {
@@ -67,16 +67,16 @@ export async function PUT(
 
 // DELETE /api/blogs/[slug] - Delete a blog post
 export async function DELETE(
-  request: NextRequest,
-  context: { params: { slug: string } }
-): Promise<NextResponse> {
+  request: Request,
+  { params }: { params: { slug: string } }
+) {
   try {
     const filePath = path.join(process.cwd(), "src/db/blogs.json");
     const fileContent = fs.readFileSync(filePath, "utf8");
     const blogsData = JSON.parse(fileContent);
 
     const postIndex = blogsData.posts.findIndex(
-      (post: any) => post.slug === context.params.slug
+      (post: any) => post.slug === params.slug
     );
 
     if (postIndex === -1) {
