@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { SimulationData } from "@/db/types";
 import { promises as fs } from "fs";
 import path from "path";
@@ -15,15 +15,12 @@ async function readSimulations(): Promise<SimulationData[]> {
   }
 }
 
-type Props = {
-  params: {
-    category: string;
-  };
-};
-
-export async function GET(_: Request, context: Props) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { category: string } }
+) {
   try {
-    const category = context.params.category;
+    const category = params.category;
     const simulations = await readSimulations();
     const filteredSimulations = simulations.filter(
       (simulation) => simulation.category === category
