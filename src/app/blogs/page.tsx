@@ -263,7 +263,7 @@ export default function BlogPage() {
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src={post.image}
+                        src={post.coverImage}
                         alt={post.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"

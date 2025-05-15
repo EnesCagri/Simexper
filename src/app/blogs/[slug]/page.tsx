@@ -105,7 +105,7 @@ export default function BlogPost() {
       {/* Header with Cover Image */}
       <div className="relative h-[60vh] w-full">
         <Image
-          src={post.image}
+          src={post.coverImage}
           alt={post.title}
           fill
           className="object-cover"
@@ -293,7 +293,7 @@ export default function BlogPost() {
                       <div className="flex items-start gap-4">
                         <div className="relative h-20 w-20 flex-shrink-0">
                           <Image
-                            src={relatedPost.image}
+                            src={relatedPost.coverImage}
                             alt={relatedPost.title}
                             fill
                             className="object-cover rounded-lg"
