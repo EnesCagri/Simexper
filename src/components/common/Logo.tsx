@@ -15,6 +15,7 @@ export function Logo({ className, showText = true }: LogoProps) {
           src="/images/general/logo.png"
           alt="Simexper Logo"
           fill
+          sizes="(max-width: 768px) 32px, 32px"
           className="object-contain"
           priority
         />

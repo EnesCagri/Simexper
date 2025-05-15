@@ -14,7 +14,9 @@
       "unitOrder": 4,
       "image": "/images/simulation/Resim1.png",
       "coverImage": "/images/simulation/Resim1.png",
-      "previewGif": "/images/simulation/harmonic-motion/preview.gif",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "11",
+
       "keywords": [
         "yay",
         "harmonik hareket",
@@ -97,7 +99,8 @@
       "unitOrder": 5,
       "image": "/images/simulation/Resim2.png",
       "coverImage": "/images/simulation/Resim2.png",
-      "previewGif": "/images/simulation/projectile-motion/preview.gif",
+      "previewGif": "/gifs/simulation/black-hole.gif",
+      "classLevel": "10",
       "keywords": ["eğik atış", "hareket", "kinematik", "mekanik", "yerçekimi"],
       "physicsExplanation": {
         "formulas": ["x = v₀cosθt", "y = v₀sinθt - ½gt²"],
@@ -164,7 +167,8 @@
       "unitOrder": 3,
       "image": "/images/simulation/Resim3.jpg",
       "coverImage": "/images/simulation/Resim3.jpg",
-      "previewGif": "/images/simulation/wave-interference/preview.gif",
+      "previewGif": "/gifs/simulation/black-hole.gif",
+      "classLevel": "12",
       "keywords": [
         "girişim",
         "kırınım",
@@ -250,6 +254,7 @@
       "unitOrder": 2,
       "image": "/images/simulation/Resim4.jpg",
       "coverImage": "/images/simulation/Resim4.jpg",
+      "classLevel": "9",
       "keywords": [
         "ohm yasası",
         "seri devre",
@@ -329,6 +334,7 @@
       "unitOrder": 6,
       "image": "/images/simulation/Resim5.jpg",
       "coverImage": "/images/simulation/Resim5.jpg",
+      "classLevel": "12",
       "keywords": [
         "kuantum tünelleme",
         "dalga fonksiyonu",
@@ -452,6 +458,7 @@
       "unitOrder": 3,
       "image": "/images/simulation/Resim6.jpg",
       "coverImage": "/images/simulation/Resim6.jpg",
+      "classLevel": "11",
       "keywords": ["carnot döngüsü", "ısı", "iş", "entropi", "verim"],
       "physicsExplanation": {
         "formulas": [
@@ -525,6 +532,7 @@
       "unitOrder": 2,
       "image": "/images/simulation/Resim5.jpg",
       "coverImage": "/images/simulation/Resim5.jpg",
+      "classLevel": "10",
       "keywords": [
         "manyetik alan",
         "akım",
@@ -604,6 +612,7 @@
       "unitOrder": 4,
       "image": "/images/simulation/Resim3.jpg",
       "coverImage": "/images/simulation/Resim3.jpg",
+      "classLevel": "12",
       "keywords": [
         "radyoaktivite",
         "yarı ömür",

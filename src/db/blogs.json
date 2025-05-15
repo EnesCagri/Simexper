@@ -1,202 +1,236 @@
 {
   "posts": [
     {
-      "id": "sanal-laboratuvar-deneyimleri",
-      "slug": "sanal-laboratuvar-deneyimleri",
-      "title": "Sanal Laboratuvar Deneyimleri",
-      "excerpt": "Sanal laboratuvarların fizik eğitimindeki yeri ve gerçek deneylerle karşılaştırması.",
-      "content": "Sanal laboratuvarlar, öğrencilere güvenli ve tekrarlanabilir deney ortamları sunarak fizik öğrenimini desteklemektedir. Bu makalede, sanal laboratuvarların avantajlarını ve gerçek laboratuvar deneyimleriyle karşılaştırmasını yapıyoruz.",
-      "date": "2024-04-12",
-      "readingTime": "4 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog1.jpg",
+      "id": "isigin-dunyasi-yansima-kirilma-olaylari",
+      "slug": "isigin-dunyasi-yansima-kirilma-olaylari",
+      "title": "Işığın Dünyası: Yansıma ve Kırılma Olayları",
+      "excerpt": "Günlük hayatımızda gözlemlediğimiz ışık kırılma ve yansıma olaylarının arkasındaki bilimsel ilkeleri keşfedeceğiz.",
+      "content": "Işığın doğası ve günlük hayatta yansıma ve kırılma olayları hakkında temel kavramları, Snell Yasası'nı ve basit deneyleri adım adım anlatıyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "5 dk",
+      "category": "fizik",
+      "image": "/images/blog/blog1.jpeg",
       "author": {
-        "name": "Prof. Dr. Mehmet Demir",
-        "avatar": "/images/authors/mehmet.jpg",
-        "title": "Eğitim Teknolojileri Uzmanı"
+        "name": "Dr. Ali Yılmaz",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Fizik Öğretmeni"
       },
-      "keywords": [
-        "sanal laboratuvar",
-        "fizik deneyleri",
-        "eğitim teknolojisi"
-      ],
-      "relatedSimulations": ["harmonic-motion"]
+      "keywords": ["yansıma", "kırılma", "ışık", "Snell Yasası"],
+      "relatedSimulations": ["reflection-refraction"]
     },
     {
-      "id": "ogrenci-basarisinda-simulasyonlarin-etkisi",
-      "slug": "ogrenci-basarisinda-simulasyonlarin-etkisi",
-      "title": "Öğrenci Başarısında Simülasyonların Etkisi",
-      "excerpt": "Simülasyon tabanlı öğrenmenin öğrenci başarısına olan etkileri ve araştırma sonuçları.",
-      "content": "Yapılan araştırmalar, simülasyon destekli öğrenmenin öğrenci başarısını önemli ölçüde artırdığını göstermektedir. Bu yazıda, farklı araştırmaların sonuçlarını ve başarı faktörlerini inceliyoruz.",
-      "date": "2024-04-10",
+      "id": "hucreyapisi-hucreyi-taniyalim",
+      "slug": "hucreyapisi-hucreyi-taniyalim",
+      "title": "Canlıların Temel Birimi: Hücreyi Tanıyalım",
+      "excerpt": "Tüm canlıların yapı taşı olan hücrenin yapısını ve işlevlerini, mikroskobik dünyada gezinerek öğreneceğiz.",
+      "content": "Prokaryot ve ökaryot hücrelerin organellerini, hücre teorisini ve mikroskop altında hücre gözlemi yöntemlerini detaylandırıyoruz.",
+      "date": "2025-05-05",
       "readingTime": "6 dk",
-      "category": "arastirma",
-      "image": "/images/blog/blog2.jpg",
+      "category": "biyoloji",
+      "image": "/images/blog/blog2.jpeg",
       "author": {
-        "name": "Dr. Ayşe Kaya",
-        "avatar": "/images/authors/ayse.jpg",
-        "title": "Eğitim Araştırmacısı"
+        "name": "Dr. Ayşe Demir",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Biyoloji Uzmanı"
       },
-      "keywords": [
-        "öğrenci başarısı",
-        "eğitim araştırması",
-        "simülasyon etkisi"
-      ],
-      "relatedSimulations": ["projectile-motion"]
+      "keywords": ["hücre", "organeller", "prokaryot", "ökaryot"],
+      "relatedSimulations": ["cell-structure"]
     },
     {
-      "id": "dalga-girisimi-uygulamalari",
-      "slug": "dalga-girisimi-uygulamalari",
-      "title": "Dalga Girişiminin Teknolojideki Uygulamaları",
-      "excerpt": "Holografi ve interferometre sistemlerinde dalga girişimi uygulamaları ve modern teknolojideki yeri.",
-      "content": "Dalga girişimi, modern teknolojide birçok önemli uygulamaya sahiptir. Holografi, interferometre sistemleri ve optik sensörler gibi alanlarda dalga girişimi prensipleri kullanılmaktadır. Bu yazıda, bu uygulamaları ve teknolojik gelişmeleri inceliyoruz.",
-      "date": "2024-04-08",
+      "id": "dunyamiz-ic-yuzu-yerkabugu-ve-depremler",
+      "slug": "dunyamiz-ic-yuzu-yerkabugu-ve-depremler",
+      "title": "Dünyamızın İç Yüzü: Yerkabuğu ve Depremler",
+      "excerpt": "Yerkabuğunun katmanları ile depremlerin oluşum mekanizmalarını, fay hatları ve sismik dalgalar eşliğinde anlatıyoruz.",
+      "content": "Dünya'nın iç yapısını, tektonik plakaların hareketini ve sismik dalgaların ölçüm yöntemlerini örneklerle açıklıyoruz.",
+      "date": "2025-05-05",
       "readingTime": "7 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog3.jpg",
+      "category": "yerbilimleri",
+      "image": "/images/blog/blog3.jpeg",
       "author": {
-        "name": "Prof. Dr. Ayşe Yıldız",
-        "avatar": "/images/authors/ayse-yildiz.jpg",
-        "title": "Optik Fizik Uzmanı"
+        "name": "Prof. Dr. Mehmet Kaya",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Jeoloji Uzmanı"
       },
       "keywords": [
-        "dalga girişimi",
-        "holografi",
-        "interferometre",
-        "optik teknoloji"
+        "yerkabugu",
+        "depremler",
+        "tektonik plakalar",
+        "sismik dalgalar"
       ],
-      "relatedSimulations": ["wave-interference"]
+      "relatedSimulations": ["earth-structure"]
     },
     {
-      "id": "elektrik-devreleri-gunluk-hayat",
-      "slug": "elektrik-devreleri-gunluk-hayat",
-      "title": "Günlük Hayatta Elektrik Devreleri",
-      "excerpt": "Ev aletlerindeki elektrik devreleri ve çalışma prensipleri hakkında detaylı bir inceleme.",
-      "content": "Elektrik devreleri günlük hayatımızın vazgeçilmez bir parçasıdır. Bu yazıda, ev aletlerindeki elektrik devrelerinin çalışma prensiplerini ve temel elektrik devre elemanlarının işlevlerini inceliyoruz.",
-      "date": "2024-04-06",
+      "id": "maddenin-halleri-kati-sivi-gaz",
+      "slug": "maddenin-halleri-kati-sivi-gaz",
+      "title": "Maddenin Halleri: Katı, Sıvı ve Gazın Sırları",
+      "excerpt": "Maddenin üç temel halinin tanımı, geçişler ve günlük hayattaki örnekleriyle öğrenme yolculuğu.",
+      "content": "Katı, sıvı ve gaz hallerinin özelliklerini, hal değişim süreçlerini ve enerji transferini deney örnekleriyle açıklıyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "5 dk",
+      "category": "kimya",
+      "image": "/images/blog/blog4.jpeg",
+      "author": {
+        "name": "Dr. Selin Yıldırım",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Kimya Öğretmeni"
+      },
+      "keywords": ["madde", "erime", "buharlaşma", "yoğunluk"],
+      "relatedSimulations": ["states-of-matter"]
+    },
+    {
+      "id": "elektrik-ve-manyetizma-gorunmeyeni-kesfetmek",
+      "slug": "elektrik-ve-manyetizma-gorunmeyeni-kesfetmek",
+      "title": "Elektrik ve Manyetizma: Görünmeyeni Keşfetmek",
+      "excerpt": "Elektriğin ve manyetizmanın temel kavramlarını basit devreler ve mıknatıs deneyleriyle ele alıyoruz.",
+      "content": "Statik elektrikten akım elektriğine, manyetik alanlardan elektromanyetizmaya kadar temel kavramları evde yapılabilecek deneylerle öğretiyoruz.",
+      "date": "2025-05-05",
       "readingTime": "6 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog4.jpg",
-      "author": {
-        "name": "Dr. Mehmet Kaya",
-        "avatar": "/images/authors/mehmet-kaya.jpg",
-        "title": "Elektrik Mühendisi"
-      },
-      "keywords": [
-        "elektrik devreleri",
-        "ev aletleri",
-        "elektrik mühendisliği"
-      ],
-      "relatedSimulations": ["electric-circuits"]
-    },
-    {
-      "id": "kuantum-tunelleme-uygulamalari",
-      "slug": "kuantum-tunelleme-uygulamalari",
-      "title": "Kuantum Tünellemenin Teknolojideki Uygulamaları",
-      "excerpt": "Tünel diyotları ve tarama tünelleme mikroskobu gibi modern teknolojilerde kuantum tünelleme uygulamaları.",
-      "content": "Kuantum tünelleme, modern teknolojide birçok önemli uygulamaya sahiptir. Tünel diyotları, tarama tünelleme mikroskobu ve kuantum bilgisayarlar gibi alanlarda kuantum tünelleme prensipleri kullanılmaktadır. Bu yazıda, bu uygulamaları ve teknolojik gelişmeleri inceliyoruz.",
-      "date": "2024-04-04",
-      "readingTime": "8 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog5.jpg",
-      "author": {
-        "name": "Prof. Dr. Ali Demir",
-        "avatar": "/images/authors/ali-demir.jpg",
-        "title": "Kuantum Fizik Uzmanı"
-      },
-      "keywords": [
-        "kuantum tünelleme",
-        "tünel diyotları",
-        "tarama tünelleme mikroskobu",
-        "kuantum teknolojisi"
-      ],
-      "relatedSimulations": ["quantum-tunneling"]
-    },
-    {
-      "id": "termodinamik-endustriyel-uygulamalar",
-      "slug": "termodinamik-endustriyel-uygulamalar",
-      "title": "Termodinamik Döngülerin Endüstriyel Uygulamaları",
-      "excerpt": "Buhar türbinleri ve içten yanmalı motorlarda termodinamik prensiplerin uygulamaları.",
-      "content": "Termodinamik döngüler, endüstriyel sistemlerde enerji dönüşümünün temelini oluşturur. Bu yazıda, buhar türbinleri, içten yanmalı motorlar ve diğer endüstriyel sistemlerde termodinamik prensiplerin uygulamalarını inceliyoruz.",
-      "date": "2024-04-02",
-      "readingTime": "7 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog6.jpg",
-      "author": {
-        "name": "Dr. Selin Yılmaz",
-        "avatar": "/images/authors/selin-yilmaz.jpg",
-        "title": "Termodinamik Uzmanı"
-      },
-      "keywords": [
-        "termodinamik",
-        "buhar türbinleri",
-        "içten yanmalı motorlar",
-        "endüstriyel uygulamalar"
-      ],
-      "relatedSimulations": ["thermodynamics"]
-    },
-    {
-      "id": "manyetik-alanlar-tip-uygulamalari",
-      "slug": "manyetik-alanlar-tip-uygulamalari",
-      "title": "Manyetik Alanların Tıbbi Uygulamaları",
-      "excerpt": "MRI ve manyetik rezonans görüntüleme sistemlerinde manyetik alanların kullanımı.",
-      "content": "Manyetik alanlar, modern tıp teknolojisinde önemli bir yere sahiptir. MRI ve manyetik rezonans görüntüleme sistemleri, manyetik alanların tıbbi uygulamalarının en önemli örnekleridir. Bu yazıda, bu teknolojilerin çalışma prensiplerini ve tıbbi uygulamalarını inceliyoruz.",
-      "date": "2024-03-31",
-      "readingTime": "6 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog7.jpg",
+      "category": "elektrik-ve-manyetizma",
+      "image": "/images/blog/blog5.jpeg",
       "author": {
         "name": "Dr. Zeynep Kaya",
-        "avatar": "/images/authors/zeynep-kaya.jpg",
-        "title": "Tıbbi Fizik Uzmanı"
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Elektrik-Elektronik Mühendisi"
       },
-      "keywords": [
-        "manyetik alanlar",
-        "MRI",
-        "manyetik rezonans",
-        "tıbbi uygulamalar"
-      ],
-      "relatedSimulations": ["magnetic-fields"]
+      "keywords": ["elektrik", "manyetizma", "devre", "elektromıknatıs"],
+      "relatedSimulations": ["electricity-magnetism"]
     },
     {
-      "id": "nukleer-enerji-gelecegi",
-      "slug": "nukleer-enerji-gelecegi",
-      "title": "Nükleer Enerjinin Geleceği",
-      "excerpt": "Füzyon reaktörleri ve temiz enerji teknolojilerinde nükleer fiziğin rolü.",
-      "content": "Nükleer enerji, geleceğin enerji ihtiyaçlarını karşılamak için önemli bir potansiyele sahiptir. Füzyon reaktörleri ve temiz enerji teknolojileri, nükleer fiziğin modern uygulamalarının örnekleridir. Bu yazıda, nükleer enerjinin geleceğini ve teknolojik gelişmeleri inceliyoruz.",
-      "date": "2024-03-29",
-      "readingTime": "8 dk",
-      "category": "teknoloji",
-      "image": "/images/blog/blog8.jpg",
+      "id": "ekosistemler-ve-biyocesitlilik",
+      "slug": "ekosistemler-ve-biyocesitlilik",
+      "title": "Ekosistemler ve Biyoçeşitlilik: Doğanın Dengesi",
+      "excerpt": "Farklı ekosistem tiplerini, enerji akışını ve canlılar arasındaki etkileşimi keşfederek biyoçeşitliliğin önemini vurguluyoruz.",
+      "content": "Karasal ve su ekosistemlerinin yapısını, besin zincirlerini ve biyoçeşitliliğin korunma yöntemlerini proje fikirleriyle sunuyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "6 dk",
+      "category": "ekosistem",
+      "image": "/images/blog/blog6.jpeg",
       "author": {
-        "name": "Prof. Dr. Ahmet Yıldız",
-        "avatar": "/images/authors/ahmet-yildiz.jpg",
-        "title": "Nükleer Fizik Uzmanı"
+        "name": "Prof. Dr. Ayşe Yıldız",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Ekoloji Uzmanı"
       },
       "keywords": [
-        "nükleer enerji",
-        "füzyon reaktörleri",
-        "temiz enerji",
-        "nükleer teknoloji"
+        "ekosistem",
+        "biyoçeşitlilik",
+        "besin zinciri",
+        "ayrıştırıcılar"
       ],
-      "relatedSimulations": ["nuclear-physics"]
+      "relatedSimulations": ["ecosystems"]
+    },
+    {
+      "id": "gunes-sistemi-ve-otesi",
+      "slug": "gunes-sistemi-ve-otesi",
+      "title": "Güneş Sistemi ve Ötesi: Uzay Keşiflerine İlk Adım",
+      "excerpt": "Güneş, gezegenler, uydular ve ötegezegen keşifleriyle uzay bilimini mercek altına alıyoruz.",
+      "content": "Güneş sistemi gezegenlerinden asteroitlere, uzay araçlarından ötegezegen arayışına kadar astronominin temel konularını anlatıyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "7 dk",
+      "category": "astronomi",
+      "image": "/images/blog/blog7.jpeg",
+      "author": {
+        "name": "Dr. Ahmet Yıldız",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Astronomi Uzmanı"
+      },
+      "keywords": ["güneş sistemi", "gezegenler", "ötegezegen", "uzay"],
+      "relatedSimulations": ["solar-system"]
+    },
+    {
+      "id": "isi-ve-sicaklik-termodinamik",
+      "slug": "isi-ve-sicaklik-termodinamik",
+      "title": "Isı ve Sıcaklık: Termometreden Termodinamiğe",
+      "excerpt": "Isı ve sıcaklık kavramlarını ayırt ederek termometre çeşitleri, ısının iletilmesi ve termodinamik ilkeleri öğreneceğiz.",
+      "content": "Sıcaklık ve ısı farkından termometre türlerine, ısı iletim yöntemlerinden termodinamiğin temel ilkelerine kadar konuyu adım adım ele alıyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "5 dk",
+      "category": "termodinamik",
+      "image": "/images/blog/blog8.jpeg",
+      "author": {
+        "name": "Dr. Selin Yılmaz",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Termodinamik Uzmanı"
+      },
+      "keywords": ["ısı", "sıcaklık", "termometre", "termodinamik"],
+      "relatedSimulations": ["heat-thermodynamics"]
+    },
+    {
+      "id": "maddelerin-siniflandirilmasi-elementler-bilesikler",
+      "slug": "maddelerin-siniflandirilmasi-elementler-bilesikler",
+      "title": "Maddelerin Sınıflandırılması: Elementler, Bileşikler ve Karışımlar",
+      "excerpt": "Periyodik tabloyu tanıyarak elementlerin ve bileşiklerin yapısını, karışımları ayırma yöntemlerini öğreneceğiz.",
+      "content": "Element, atom kavramından periyodik tablo yapısına, bileşiklerin özelliklerinden karışımları ayırma tekniklerine kadar temel kimya konularını açıklıyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "6 dk",
+      "category": "kimya",
+      "image": "/images/blog/blog9.jpeg",
+      "author": {
+        "name": "Dr. Mehmet Demir",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Kimya Araştırmacısı"
+      },
+      "keywords": ["elementler", "bileşikler", "karışım", "ayırma teknikleri"],
+      "relatedSimulations": ["elements-compounds"]
+    },
+    {
+      "id": "basinc-ve-kaldirma-kuvveti",
+      "slug": "basinc-ve-kaldirma-kuvveti",
+      "title": "Basınç ve Kaldırma Kuvveti: Fizikte Gizli Güçler",
+      "excerpt": "Basınç kavramı, sıvı ve gaz basınçları ile Archimedes prensibini inceleyerek nesnelerin yüzme ve batma davranışını açıklıyoruz.",
+      "content": "Basınç formülünden sıvı basıncı ve Pascal prensibine, Archimedes prensibi ve kaldırma kuvvetine kadar konuyu örnek deneylerle açıklıyoruz.",
+      "date": "2025-05-05",
+      "readingTime": "6 dk",
+      "category": "fizik",
+      "image": "/images/blog/blog10.jpeg",
+      "author": {
+        "name": "Prof. Dr. Zeynep Arslan",
+        "avatar": "/images/avatars/avatar1.jpeg",
+        "title": "Fizikçi"
+      },
+      "keywords": ["basınç", "archimedes", "kaldırma kuvveti", "sıvı basıncı"],
+      "relatedSimulations": ["pressure-buoyancy"]
     }
   ],
   "categories": [
     {
-      "id": "egitim",
-      "name": "Eğitim",
-      "description": "Fizik eğitimi ve öğretim yöntemleri"
+      "id": "fizik",
+      "name": "Fizik",
+      "description": "Fizik konuları"
     },
     {
-      "id": "teknoloji",
-      "name": "Teknoloji",
-      "description": "Eğitim teknolojileri ve yenilikler"
+      "id": "biyoloji",
+      "name": "Biyoloji",
+      "description": "Canlı bilimi"
     },
     {
-      "id": "arastirma",
-      "name": "Araştırma",
-      "description": "Bilimsel araştırmalar ve sonuçlar"
+      "id": "yerbilimleri",
+      "name": "Yer Bilimleri",
+      "description": "Dünya yapısı ve depremler"
+    },
+    {
+      "id": "kimya",
+      "name": "Kimya",
+      "description": "Maddenin yapısı ve tepkimeler"
+    },
+    {
+      "id": "elektrik-ve-manyetizma",
+      "name": "Elektrik ve Manyetizma",
+      "description": "Elektrik devreleri ve manyetik alanlar"
+    },
+    {
+      "id": "ekosistem",
+      "name": "Ekosistem",
+      "description": "Ekosistemler ve biyoçeşitlilik"
+    },
+    {
+      "id": "astronomi",
+      "name": "Astronomi",
+      "description": "Uzay ve gök cisimleri"
+    },
+    {
+      "id": "termodinamik",
+      "name": "Termodinamik",
+      "description": "Isı ve enerji transferi"
     }
   ]
 }

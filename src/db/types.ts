@@ -76,6 +76,7 @@ export interface SimulationData {
   coverImage: string;
   previewGif: string;
   keywords: string[];
+  classLevel: string;
   exampleQuestions?: ExampleQuestion[];
   howItWorksVideo?: string;
   relatedMaterials?: RelatedMaterials;
