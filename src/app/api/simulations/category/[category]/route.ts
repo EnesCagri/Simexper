@@ -15,12 +15,15 @@ async function readSimulations(): Promise<SimulationData[]> {
   }
 }
 
-export async function GET(
-  request: Request,
-  { params }: { params: { category: string } }
-) {
+type Props = {
+  params: {
+    category: string;
+  };
+};
+
+export async function GET(_: Request, context: Props) {
   try {
-    const category = params.category;
+    const category = context.params.category;
     const simulations = await readSimulations();
     const filteredSimulations = simulations.filter(
       (simulation) => simulation.category === category
