@@ -21,11 +21,6 @@ const sidebarItems = [
     icon: LayoutDashboard,
   },
   {
-    title: "Simülasyonlar",
-    href: "/admin/simulations",
-    icon: Video,
-  },
-  {
     title: "Materyaller",
     href: "/admin/materials",
     icon: BookOpen,
