@@ -8,15 +8,15 @@ import { BlogPostData } from "@/db/types";
 
 export default function EditBlogPage() {
   const params = useParams();
-  const { getPost } = useBlogs();
+  const { fetchPost } = useBlogs();
   const [post, setPost] = useState<BlogPostData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchPost = async () => {
+    const loadPost = async () => {
       try {
-        const data = await getPost(params.slug as string);
+        const data = await fetchPost(params.slug as string);
         setPost(data);
       } catch (err) {
         setError("Blog yazısı yüklenirken bir hata oluştu.");
@@ -26,8 +26,8 @@ export default function EditBlogPage() {
       }
     };
 
-    fetchPost();
-  }, [params.slug, getPost]);
+    loadPost();
+  }, [params.slug, fetchPost]);
 
   if (loading) {
     return (
