@@ -20,6 +20,9 @@ const simulationsData = simulations as unknown as SimulationsData;
 const materialsData = materials as unknown as MaterialsData;
 const postsData = blog as unknown as BlogData;
 
+// Export data directly
+export const simulationsList = simulationsData.simulations;
+
 // Simulation utilities
 export function getSimulations(): SimulationData[] {
   return simulationsData.simulations;

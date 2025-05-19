@@ -281,7 +281,11 @@ export default function BlogForm({
             onChange={(e) =>
               setFormData((prev) => ({
                 ...prev,
-                author: { ...prev.author, name: e.target.value },
+                author: {
+                  name: e.target.value,
+                  avatar: prev.author?.avatar || "",
+                  title: prev.author?.title,
+                },
               }))
             }
             placeholder="Yazar adı"
@@ -300,7 +304,11 @@ export default function BlogForm({
             onChange={(e) =>
               setFormData((prev) => ({
                 ...prev,
-                author: { ...prev.author, avatar: e.target.value },
+                author: {
+                  name: prev.author?.name || "",
+                  avatar: e.target.value,
+                  title: prev.author?.title,
+                },
               }))
             }
             placeholder="https://example.com/avatar.jpg"

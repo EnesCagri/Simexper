@@ -1,20 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { SimulationData } from "@/db/types";
+import { simulationsList } from "@/db/utils";
 import { promises as fs } from "fs";
 import path from "path";
 
 const dataFilePath = path.join(process.cwd(), "src/db/simulations.json");
-
-// Helper function to read simulations
-async function readSimulations(): Promise<SimulationData[]> {
-  try {
-    const data = await fs.readFile(dataFilePath, "utf8");
-    return JSON.parse(data);
-  } catch (error) {
-    console.error("Error reading simulations:", error);
-    return [];
-  }
-}
 
 // Helper function to write simulations
 async function writeSimulations(simulations: SimulationData[]): Promise<void> {
@@ -28,8 +18,7 @@ async function writeSimulations(simulations: SimulationData[]): Promise<void> {
 // GET all simulations
 export async function GET() {
   try {
-    const data = await readSimulations();
-    return NextResponse.json(data);
+    return NextResponse.json(simulationsList);
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to fetch simulations" },
@@ -39,10 +28,10 @@ export async function GET() {
 }
 
 // POST new simulation
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const simulation = await request.json();
-    const simulations = await readSimulations();
+    const simulations = [...simulationsList];
 
     // Generate slug from title
     const slug = simulation.title
@@ -80,10 +69,10 @@ export async function POST(request: Request) {
 }
 
 // PUT update simulation
-export async function PUT(request: Request) {
+export async function PUT(request: NextRequest) {
   try {
     const updatedSimulation = await request.json();
-    const simulations = await readSimulations();
+    const simulations = [...simulationsList];
 
     const index = simulations.findIndex((s) => s.id === updatedSimulation.id);
     if (index === -1) {
@@ -117,10 +106,10 @@ export async function PUT(request: Request) {
 }
 
 // DELETE simulation
-export async function DELETE(request: Request) {
+export async function DELETE(request: NextRequest) {
   try {
     const { id } = await request.json();
-    const simulations = await readSimulations();
+    const simulations = [...simulationsList];
 
     const index = simulations.findIndex((s) => s.id === id);
     if (index === -1) {
