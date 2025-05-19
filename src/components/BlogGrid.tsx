@@ -37,7 +37,6 @@ import { Input } from "@/components/ui/input";
 import { useBlogs } from "@/hooks/useBlogs";
 import { BlogPostData, SimulationData } from "@/db/types";
 import { useRouter } from "next/navigation";
-import BlogForm from "./BlogForm";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -48,8 +47,6 @@ export default function BlogGrid() {
     useBlogs();
   const [search, setSearch] = useState("");
   const [selectedPost, setSelectedPost] = useState<BlogPostData | null>(null);
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [simulations, setSimulations] = useState<SimulationData[]>([]);
 
@@ -101,11 +98,6 @@ export default function BlogGrid() {
     }
   };
 
-  const handleEdit = (post: BlogPostData) => {
-    setSelectedPost(post);
-    setIsEditModalOpen(true);
-  };
-
   const handleView = (post: BlogPostData) => {
     setSelectedPost(post);
     setIsViewModalOpen(true);
@@ -146,22 +138,6 @@ export default function BlogGrid() {
           <h1 className="text-3xl font-bold text-white">Blog Yazıları</h1>
           <p className="text-gray-400 mt-1">Tüm blog yazılarını yönetin</p>
         </div>
-        <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
-          <DialogTrigger asChild>
-            <Button className="bg-blue-500 hover:bg-blue-600">
-              <Plus className="w-4 h-4 mr-2" />
-              Yeni Blog Yazısı
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="bg-gray-900 border-gray-800 max-w-[90vw] max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold text-white">
-                Yeni Blog Yazısı
-              </DialogTitle>
-            </DialogHeader>
-            <BlogForm mode="create" simulations={simulations} />
-          </DialogContent>
-        </Dialog>
       </div>
 
       {/* Search and Filters */}
@@ -265,14 +241,6 @@ export default function BlogGrid() {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => handleEdit(post)}
-                className="text-gray-400 hover:text-white hover:bg-gray-800/50"
-              >
-                <Edit className="w-4 h-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
                 onClick={() => handleDelete(post.slug)}
                 className="text-red-400 hover:text-red-300 hover:bg-gray-800/50"
               >
@@ -282,24 +250,6 @@ export default function BlogGrid() {
           </Card>
         ))}
       </div>
-
-      {/* Edit Modal */}
-      <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-        <DialogContent className="bg-gray-900 border-gray-800 max-w-[90vw] max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-white">
-              Blog Yazısını Düzenle
-            </DialogTitle>
-          </DialogHeader>
-          {selectedPost && (
-            <BlogForm
-              mode="edit"
-              initialData={selectedPost}
-              simulations={simulations}
-            />
-          )}
-        </DialogContent>
-      </Dialog>
 
       {/* View Modal */}
       <Dialog open={isViewModalOpen} onOpenChange={setIsViewModalOpen}>
