@@ -83,6 +83,10 @@ export interface SimulationData {
   detailedDescription: string;
   learningObjectives: string[];
   reviews: Review[];
+  physicsExplanation?: {
+    formulas: string[];
+    concepts: string[];
+  };
 }
 
 // Educational Material types
