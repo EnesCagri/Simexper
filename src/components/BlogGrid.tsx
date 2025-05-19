@@ -131,29 +131,33 @@ export default function BlogGrid() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4 sm:space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
         <div>
-          <h1 className="text-3xl font-bold text-white">Blog Yazıları</h1>
-          <p className="text-gray-400 mt-1">Tüm blog yazılarını yönetin</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white">
+            Blog Yazıları
+          </h1>
+          <p className="text-sm sm:text-base text-gray-400 mt-1">
+            Tüm blog yazılarını yönetin
+          </p>
         </div>
       </div>
 
       {/* Search and Filters */}
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <Input
             placeholder="Blog yazısı ara..."
             value={search}
             onChange={(e) => handleSearch(e.target.value)}
-            className="pl-10 bg-gray-900/50 border-gray-800 h-12"
+            className="pl-10 bg-gray-900/50 border-gray-800 h-10 sm:h-12 text-sm sm:text-base"
           />
         </div>
         <Button
           variant="outline"
-          className="bg-gray-900/50 border-gray-800 h-12"
+          className="bg-gray-900/50 border-gray-800 h-10 sm:h-12 text-sm sm:text-base"
         >
           <Filter className="w-4 h-4 mr-2" />
           Filtrele
@@ -161,7 +165,7 @@ export default function BlogGrid() {
       </div>
 
       {/* Grid View */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {posts.map((post) => (
           <Card
             key={post.id}
@@ -169,7 +173,7 @@ export default function BlogGrid() {
           >
             <CardHeader className="p-0">
               {post.coverImage && (
-                <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
+                <div className="relative w-full h-40 sm:h-48 rounded-t-lg overflow-hidden">
                   <Image
                     src={post.coverImage}
                     alt={post.title}
@@ -178,50 +182,54 @@ export default function BlogGrid() {
                   />
                 </div>
               )}
-              <div className="p-6">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-blue-500/10">
-                    <FileText className="w-4 h-4 text-blue-400" />
+              <div className="p-4 sm:p-6">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 rounded-lg bg-blue-500/10">
+                    <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400" />
                   </div>
-                  <CardTitle className="text-white">{post.title}</CardTitle>
+                  <CardTitle className="text-base sm:text-lg text-white line-clamp-2">
+                    {post.title}
+                  </CardTitle>
                 </div>
-                <CardDescription className="text-gray-400 mt-2">
+                <CardDescription className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">
                   {post.category}
                 </CardDescription>
               </div>
             </CardHeader>
-            <CardContent className="px-6">
-              <p className="text-gray-400 line-clamp-3">{post.excerpt}</p>
-              <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-400">
+            <CardContent className="px-4 sm:px-6">
+              <p className="text-sm sm:text-base text-gray-400 line-clamp-3">
+                {post.excerpt}
+              </p>
+              <div className="mt-3 sm:mt-4 flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
                 <div className="flex items-center gap-1">
-                  <User className="w-4 h-4" />
+                  <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>{post.author.name}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>{post.date}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
+                  <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>{post.readingTime}</span>
                 </div>
               </div>
               {post.keywords && post.keywords.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
                   {post.keywords.slice(0, 3).map((keyword) => (
                     <Badge
                       key={keyword}
                       variant="secondary"
-                      className="bg-gray-800 text-gray-300"
+                      className="bg-gray-800 text-gray-300 text-xs"
                     >
-                      <Tag className="w-3 h-3 mr-1" />
+                      <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
                       {keyword}
                     </Badge>
                   ))}
                   {post.keywords.length > 3 && (
                     <Badge
                       variant="secondary"
-                      className="bg-gray-800 text-gray-300"
+                      className="bg-gray-800 text-gray-300 text-xs"
                     >
                       +{post.keywords.length - 3}
                     </Badge>
@@ -229,22 +237,22 @@ export default function BlogGrid() {
                 </div>
               )}
             </CardContent>
-            <CardFooter className="flex justify-end gap-2 p-6 pt-0">
+            <CardFooter className="flex justify-end gap-2 p-4 sm:p-6 pt-0">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => handleView(post)}
-                className="text-gray-400 hover:text-white hover:bg-gray-800/50"
+                className="text-gray-400 hover:text-white hover:bg-gray-800/50 h-8 sm:h-9"
               >
-                <Eye className="w-4 h-4" />
+                <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => handleDelete(post.slug)}
-                className="text-red-400 hover:text-red-300 hover:bg-gray-800/50"
+                className="text-red-400 hover:text-red-300 hover:bg-gray-800/50 h-8 sm:h-9"
               >
-                <Trash className="w-4 h-4" />
+                <Trash className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </Button>
             </CardFooter>
           </Card>
@@ -253,16 +261,16 @@ export default function BlogGrid() {
 
       {/* View Modal */}
       <Dialog open={isViewModalOpen} onOpenChange={setIsViewModalOpen}>
-        <DialogContent className="bg-gray-900 border-gray-800 max-w-[90vw] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="bg-gray-900 border-gray-800 max-w-[95vw] sm:max-w-[90vw] max-h-[90vh] overflow-y-auto p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-white">
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-white">
               Blog Yazısı Detayları
             </DialogTitle>
           </DialogHeader>
           {selectedPost && (
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {selectedPost.coverImage && (
-                <div className="relative w-full h-96 rounded-lg overflow-hidden">
+                <div className="relative w-full h-48 sm:h-96 rounded-lg overflow-hidden">
                   <Image
                     src={selectedPost.coverImage}
                     alt={selectedPost.title}
@@ -271,48 +279,48 @@ export default function BlogGrid() {
                   />
                 </div>
               )}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <img
                   src={selectedPost.author.avatar}
                   alt={selectedPost.author.name}
-                  className="w-12 h-12 rounded-full"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
                 />
                 <div>
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-base sm:text-lg font-semibold text-white">
                     {selectedPost.author.name}
                   </h3>
-                  <p className="text-gray-400">{selectedPost.date}</p>
+                  <p className="text-sm text-gray-400">{selectedPost.date}</p>
                 </div>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
                   {selectedPost.title}
                 </h2>
-                <p className="text-gray-400 text-lg mb-6">
+                <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">
                   {selectedPost.excerpt}
                 </p>
-                <div className="prose prose-invert max-w-none">
+                <div className="prose prose-invert max-w-none text-sm sm:text-base">
                   {selectedPost.content}
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {selectedPost.keywords?.map((keyword) => (
                   <Badge
                     key={keyword}
                     variant="secondary"
-                    className="bg-gray-800 text-gray-300"
+                    className="bg-gray-800 text-gray-300 text-xs"
                   >
-                    <Tag className="w-3 h-3 mr-1" />
+                    <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
                     {keyword}
                   </Badge>
                 ))}
               </div>
               {selectedPost.relatedSimulations?.length > 0 && (
-                <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-white">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white">
                     İlgili Simülasyonlar
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {selectedPost.relatedSimulations.map((simulationId) => {
                       const simulation = simulations.find(
                         (s) => s.id === simulationId
@@ -322,20 +330,20 @@ export default function BlogGrid() {
                           key={simulationId}
                           className="bg-gray-800/50 border-gray-700"
                         >
-                          <CardHeader>
-                            <CardTitle className="text-white">
+                          <CardHeader className="p-4 sm:p-6">
+                            <CardTitle className="text-base sm:text-lg text-white">
                               {simulation?.title}
                             </CardTitle>
-                            <CardDescription>
+                            <CardDescription className="text-sm">
                               {simulation?.description}
                             </CardDescription>
                           </CardHeader>
-                          <CardContent>
-                            <div className="flex items-center gap-2 text-sm text-gray-400">
-                              <Clock className="w-4 h-4" />
+                          <CardContent className="p-4 sm:p-6 pt-0">
+                            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
+                              <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                               <span>{simulation?.completionTime}</span>
                               <span>•</span>
-                              <BookOpen className="w-4 h-4" />
+                              <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                               <span>{simulation?.difficulty}</span>
                             </div>
                           </CardContent>
@@ -345,17 +353,17 @@ export default function BlogGrid() {
                   </div>
                 </div>
               )}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-400">
                 <div className="flex items-center gap-1">
-                  <Tag className="w-4 h-4" />
+                  <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Kategori: {selectedPost.category}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
+                  <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Okuma Süresi: {selectedPost.readingTime}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <BookOpen className="w-4 h-4" />
+                  <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Durum: {selectedPost.status}</span>
                 </div>
               </div>
