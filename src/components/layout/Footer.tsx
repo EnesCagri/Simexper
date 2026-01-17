@@ -277,11 +277,8 @@ export function Footer() {
                   className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
                 />
               </motion.div>
-              <span className="inline-flex items-center space-x-1 text-sm text-gray-400">
-                <span>Built with</span>
-                <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent font-semibold">
-                  Next.js
-                </span>
+              <span className="text-sm text-gray-400">
+                Nils Kodlama ürünüdür
               </span>
             </div>
           </div>
