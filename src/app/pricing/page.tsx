@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 const plans = [
   {
@@ -61,7 +60,6 @@ const plans = [
 ];
 
 export default function PricingPage() {
-  const [isAnnual, setIsAnnual] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#030711] py-24">
@@ -98,25 +96,7 @@ export default function PricingPage() {
             öğrenme deneyimi yaşayın. Kredi kartı gerekmez.
           </motion.p>
 
-          {/* Pricing Toggle */}
-          <div className="flex items-center justify-center gap-4 mb-16">
-            <span className="text-gray-400">Aylık</span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 ${
-                isAnnual ? "bg-blue-600" : "bg-gray-700"
-              }`}
-            >
-              <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
-                  isAnnual ? "translate-x-6" : "translate-x-1"
-                }`}
-              />
-            </button>
-            <span className="text-gray-400">
-              Yıllık <span className="text-blue-400">%20 indirim</span>
-            </span>
-          </div>
+          {/* Pricing Toggle removed */}
         </div>
 
         {/* Pricing Cards */}
@@ -142,20 +122,7 @@ export default function PricingPage() {
                 </p>
               </div>
 
-              <div className="mb-8">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-medium text-white">₺</span>
-                  <span className="text-5xl font-medium text-white">
-                    {isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                  </span>
-                  <span className="text-gray-400">/ay</span>
-                </div>
-                {plan.extraText && (
-                  <div className="text-sm text-gray-400 mt-2">
-                    {plan.extraText}
-                  </div>
-                )}
-              </div>
+              {/* Price section removed */}
 
               <Button
                 className={`w-full h-12 mb-8 ${

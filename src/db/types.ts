@@ -84,6 +84,7 @@ export interface SimulationData {
   learningObjectives: string[];
   reviews: Review[];
   physicsExplanation?: PhysicsExplanation;
+  webglPath?: string;
 }
 
 // Educational Material types

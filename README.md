@@ -29,6 +29,29 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Simülasyon Ekleme
+
+Yeni bir Unity WebGL simülasyonu eklemek için:
+
+1. Unity WebGL build'inizi `public/webgl-app/<klasör-adı>/` klasörüne ekleyin
+2. Simülasyonu eklemek için script çalıştırın:
+   ```bash
+   node scripts/add-simulation.js "Simülasyon Adı" "WebGL-Klasör-Adı"
+   ```
+3. `src/db/simulations.json` dosyasında simülasyon içeriğini düzenleyin:
+   - Kazanımlar (learningObjectives)
+   - Fizik açıklaması (physicsExplanation)
+   - Çıkmış sorular (relatedMaterials.examQuestions)
+   - Detaylı açıklama (detailedDescription)
+
+Detaylı bilgi için: `scripts/SIMULATION_TEMPLATE.md`
+
+### Örnek
+
+```bash
+node scripts/add-simulation.js "Kaldırma Kuvveti" "Buouncy"
+```
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

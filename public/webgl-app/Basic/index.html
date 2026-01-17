@@ -108,8 +108,58 @@
         })
           .then((unityInstance) => {
             loadingBar.style.display = "none";
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
+            
+            // Override fullscreen button click
+            fullscreenButton.onclick = (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log("Fullscreen button clicked in iframe");
+              
+              // Always send postMessage to parent first
+              if (window.parent && window.parent !== window) {
+                console.log("Sending postMessage to parent window");
+                
+                // Send multiple times with different origins for maximum compatibility
+                const message = { 
+                  type: "unity-fullscreen",
+                  source: "unity-webgl",
+                  timestamp: Date.now()
+                };
+                
+                // Method 1: Send with wildcard origin (most compatible)
+                try {
+                  window.parent.postMessage(message, "*");
+                  console.log("PostMessage sent with *");
+                } catch (err) {
+                  console.error("Error sending postMessage with *:", err);
+                }
+                
+                // Method 2: Send with current origin
+                try {
+                  window.parent.postMessage(message, window.location.origin);
+                  console.log("PostMessage sent with origin:", window.location.origin);
+                } catch (err) {
+                  console.log("Could not send with origin");
+                }
+                
+                // Method 3: Try with parent origin if accessible
+                try {
+                  if (window.parent.location && window.parent.location.origin) {
+                    window.parent.postMessage(message, window.parent.location.origin);
+                    console.log("PostMessage sent with parent origin");
+                  }
+                } catch (err) {
+                  console.log("Could not access parent origin (cross-origin)");
+                }
+              } else {
+                console.log("No parent window, using Unity native fullscreen");
+                // Fallback: try Unity's native fullscreen
+                try {
+                  unityInstance.SetFullscreen(1);
+                } catch (err) {
+                  console.error("Unity fullscreen failed:", err);
+                }
+              }
             };
           })
           .catch((message) => {

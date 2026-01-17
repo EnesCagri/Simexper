@@ -18,6 +18,8 @@ import {
   FilterX,
   X,
   ChevronDown,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -172,39 +174,115 @@ export default function SimulationsPage() {
     <div className="min-h-screen w-full bg-gradient-to-b from-[#0d47a1] to-black pb-20">
       <div className="container mx-auto px-4 py-8">
         {/* Hero Section */}
-        <section className="relative w-full flex flex-col items-center justify-center py-20 mb-16 overflow-hidden">
+        <section className="relative w-full flex flex-col items-center justify-center py-24 mb-16 overflow-hidden">
           {/* Background Effects */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-blue-800/20 to-black/90 backdrop-blur-sm" />
-          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-
-          {/* Animated Background Circles */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-black/90" />
+          
+          {/* Animated Gradient Orbs */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-blue-500/10 blur-3xl"
+            className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
             animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.2, 0.3],
+              scale: [1, 1.3, 1],
+              opacity: [0.3, 0.5, 0.3],
+              x: [0, 50, 0],
+              y: [0, -30, 0],
             }}
             transition={{
-              duration: 8,
+              duration: 10,
               repeat: Infinity,
               ease: "easeInOut",
             }}
           />
+          <motion.div
+            className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.4, 1],
+              opacity: [0.3, 0.5, 0.3],
+              x: [0, -50, 0],
+              y: [0, 30, 0],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          {/* Stats Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative z-10 flex gap-8 mb-12"
+          >
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-sm text-gray-300">11+ Simülasyon</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+              <Sparkles className="w-4 h-4 text-yellow-400" />
+              <span className="text-sm text-gray-300">Yeni Eklemeler</span>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="relative z-10 text-center mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Simülasyonlar Dünyasına Hoş Geldin!
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="inline-block mb-6"
+            >
+              <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm px-6 py-3 rounded-full border border-blue-500/20">
+                <Sparkles className="w-5 h-5 text-blue-400 animate-pulse" />
+                <span className="text-sm font-medium bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  İnteraktif Öğrenme Deneyimi
+                </span>
+              </div>
+            </motion.div>
+
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-tight">
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white">
+                Fizik Simülasyonları
+              </span>
+              <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                Dünyasına Hoş Geldin!
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Fizik kavramlarını interaktif simülasyonlarla keşfet, deneyimle ve
-              öğren. En popüler simülasyonları hemen dene veya kategorilere göz
-              at!
-            </p>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
+            >
+              Fizik kavramlarını{" "}
+              <span className="text-blue-400 font-semibold">interaktif simülasyonlarla</span>{" "}
+              keşfet, deneyimle ve öğren. En popüler simülasyonları hemen dene!
+            </motion.p>
+
+            {/* Quick Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-wrap gap-4 justify-center"
+            >
+              <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-full font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40">
+                <span className="flex items-center gap-2">
+                  Keşfetmeye Başla
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </button>
+              <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full font-semibold text-white border border-white/20 transition-all duration-300 hover:scale-105">
+                Popüler Simülasyonlar
+              </button>
+            </motion.div>
           </motion.div>
 
           {/* Category Selector */}

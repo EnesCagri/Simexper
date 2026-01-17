@@ -190,22 +190,329 @@ export default function SimulationPage() {
   };
 
   const generateQuestion = () => {
-    // This is a sample question - you can expand this to generate different questions based on the simulation type
-    const question: ExampleQuestion = {
-      question: "Basit harmonik harekette periyot neye bağlı değildir?",
-      type: "multiple-choice",
-      options: [
-        "Yay sabiti (k)",
-        "Kütle (m)",
-        "Genlik (A)",
-        "Yerçekimi ivmesi (g)",
-        "Başlangıç hızı (v₀)",
+    if (!simulation) return;
+
+    // Question bank for each simulation based on slug
+    const questionBanks: Record<string, ExampleQuestion[]> = {
+      "kaldirma-kuvveti": [
+        {
+          question: "Yoğunluğu 800 kg/m³ olan bir cisim, yoğunluğu 1000 kg/m³ olan suya bırakılıyor. Cismin durumu nasıl olur?",
+          type: "multiple-choice",
+          options: [
+            "Cisim yüzer",
+            "Cisim batar",
+            "Cisim askıda kalır",
+            "Cismin durumu kütlesine bağlıdır",
+            "Cismin durumu hacmine bağlıdır",
+          ],
+          correctAnswer: 0,
+          explanation: "Cismin yoğunluğu (800 kg/m³) suyun yoğunluğundan (1000 kg/m³) küçük olduğu için cisim yüzer. Archimedes prensibine göre, cismin yoğunluğu sıvının yoğunluğundan küçükse cisim yüzer.",
+        },
+        {
+          question: "Bir cismin kaldırma kuvveti hangi faktörlere bağlıdır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece cismin kütlesine",
+            "Sadece sıvının yoğunluğuna",
+            "Sıvının yoğunluğu, cismin batan hacmi ve yerçekimi ivmesi",
+            "Sadece cismin hacmine",
+            "Sadece sıvının sıcaklığına",
+          ],
+          correctAnswer: 2,
+          explanation: "Kaldırma kuvveti F = ρgV formülü ile hesaplanır. Burada ρ sıvının yoğunluğu, g yerçekimi ivmesi, V ise cismin batan hacmidir.",
+        },
+        {
+          question: "Archimedes prensibine göre, bir cismin kaldırma kuvveti neye eşittir?",
+          type: "multiple-choice",
+          options: [
+            "Cismin ağırlığına",
+            "Cismin yer değiştirdiği sıvının ağırlığına",
+            "Cismin kütlesine",
+            "Sıvının basıncına",
+            "Cismin hacmine",
+          ],
+          correctAnswer: 1,
+          explanation: "Archimedes prensibine göre, bir cisme etki eden kaldırma kuvveti, cismin yer değiştirdiği sıvının ağırlığına eşittir.",
+        },
       ],
-      correctAnswer: 2, // 0-based index
-      explanation:
-        "Basit harmonik harekette periyot T = 2π√(m/k) formülü ile hesaplanır. Genlik (A) periyodu etkilemez.",
+      "yenilenebilir-enerji": [
+        {
+          question: "Aşağıdakilerden hangisi yenilenebilir enerji kaynağı değildir?",
+          type: "multiple-choice",
+          options: [
+            "Güneş enerjisi",
+            "Rüzgar enerjisi",
+            "Kömür",
+            "Hidroelektrik enerji",
+            "Jeotermal enerji",
+          ],
+          correctAnswer: 2,
+          explanation: "Kömür fosil yakıttır ve yenilenebilir değildir. Güneş, rüzgar, hidroelektrik ve jeotermal enerji yenilenebilir enerji kaynaklarıdır.",
+        },
+        {
+          question: "Güneş panellerinin çalışma prensibi nedir?",
+          type: "multiple-choice",
+          options: [
+            "Fotoelektrik etki",
+            "Termodinamik döngü",
+            "Manyetik indüksiyon",
+            "Kimyasal reaksiyon",
+            "Nükleer fisyon",
+          ],
+          correctAnswer: 0,
+          explanation: "Güneş panelleri fotovoltaik hücreler kullanarak güneş ışığını doğrudan elektrik enerjisine dönüştürür. Bu işlem fotoelektrik etki prensibine dayanır.",
+        },
+      ],
+      "yercekimi": [
+        {
+          question: "Yerçekimi kuvveti hangi faktörlere bağlıdır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece kütleye",
+            "Sadece mesafeye",
+            "Kütleye ve mesafenin karesine",
+            "Sadece hıza",
+            "Sadece ivmeye",
+          ],
+          correctAnswer: 2,
+          explanation: "Yerçekimi kuvveti F = G(m₁m₂)/r² formülü ile hesaplanır. Burada G evrensel çekim sabiti, m₁ ve m₂ kütleler, r ise mesafedir. Kuvvet kütlelerle doğru, mesafenin karesiyle ters orantılıdır.",
+        },
+        {
+          question: "Dünya yüzeyinde yerçekimi ivmesi yaklaşık olarak kaç m/s²'dir?",
+          type: "multiple-choice",
+          options: ["9.8", "10", "8.9", "11.2", "7.5"],
+          correctAnswer: 0,
+          explanation: "Dünya yüzeyinde yerçekimi ivmesi yaklaşık 9.8 m/s²'dir. Bu değer deniz seviyesinde ve ekvatorda biraz farklılık gösterebilir.",
+        },
+      ],
+      "golge-ve-aydinlanma": [
+        {
+          question: "Gölge oluşumu hangi optik prensibe dayanır?",
+          type: "multiple-choice",
+          options: [
+            "Işığın doğrusal yayılması",
+            "Işığın kırılması",
+            "Işığın yansıması",
+            "Işığın girişimi",
+            "Işığın kırınımı",
+          ],
+          correctAnswer: 0,
+          explanation: "Gölge oluşumu, ışığın doğrusal yayılması prensibine dayanır. Işık kaynağından çıkan ışınlar doğrusal olarak yayılır ve opak cisimler tarafından engellenerek gölge oluşturur.",
+        },
+        {
+          question: "Aydınlanma şiddeti hangi faktörlere bağlıdır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece ışık kaynağının gücüne",
+            "Işık kaynağının gücü ve mesafenin karesine",
+            "Sadece mesafeye",
+            "Sadece açıya",
+            "Sadece ortamın sıcaklığına",
+          ],
+          correctAnswer: 1,
+          explanation: "Aydınlanma şiddeti E = I/r² formülü ile hesaplanır. Burada I ışık kaynağının şiddeti, r ise mesafedir. Aydınlanma, ışık kaynağının şiddetiyle doğru, mesafenin karesiyle ters orantılıdır.",
+        },
+      ],
+      "hava-direnci": [
+        {
+          question: "Hava direnci kuvveti hangi faktörlere bağlıdır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece hıza",
+            "Sadece cismin şekline",
+            "Hızın karesi, hava yoğunluğu, cismin kesit alanı ve sürükleme katsayısı",
+            "Sadece cismin kütlesine",
+            "Sadece sıcaklığa",
+          ],
+          correctAnswer: 2,
+          explanation: "Hava direnci F = ½ρv²CdA formülü ile hesaplanır. Burada ρ hava yoğunluğu, v hız, Cd sürükleme katsayısı, A ise cismin kesit alanıdır.",
+        },
+      ],
+      "isi-alisverisi": [
+        {
+          question: "Isı ve sıcaklık arasındaki fark nedir?",
+          type: "multiple-choice",
+          options: [
+            "Isı enerji, sıcaklık ise ölçümdür",
+            "Isı ve sıcaklık aynı şeydir",
+            "Isı sıcaklıktan daha küçük bir birimdir",
+            "Isı sadece katılarda, sıcaklık sadece sıvılarda ölçülür",
+            "Isı ve sıcaklık arasında fark yoktur",
+          ],
+          correctAnswer: 0,
+          explanation: "Isı bir enerji türüdür ve joule (J) ile ölçülür. Sıcaklık ise bir ölçümdür ve derece Celsius (°C) veya Kelvin (K) ile ölçülür. Isı, sıcaklık farkından dolayı transfer olan enerjidir.",
+        },
+        {
+          question: "Isı transferi hangi yollarla gerçekleşir?",
+          type: "multiple-choice",
+          options: [
+            "Sadece iletim",
+            "Sadece konveksiyon",
+            "İletim, konveksiyon ve ışıma",
+            "Sadece ışıma",
+            "Sadece difüzyon",
+          ],
+          correctAnswer: 2,
+          explanation: "Isı transferi üç yolla gerçekleşir: iletim (katılarda), konveksiyon (sıvı ve gazlarda) ve ışıma (tüm ortamlarda, boşlukta bile).",
+        },
+      ],
+      "laser-ve-ayna-yansimlari": [
+        {
+          question: "Yansıma yasasına göre, gelme açısı ve yansıma açısı arasındaki ilişki nedir?",
+          type: "multiple-choice",
+          options: [
+            "Gelme açısı yansıma açısından büyüktür",
+            "Gelme açısı yansıma açısından küçüktür",
+            "Gelme açısı yansıma açısına eşittir",
+            "Açılar arasında ilişki yoktur",
+            "Açılar toplamı 90°'dir",
+          ],
+          correctAnswer: 2,
+          explanation: "Yansıma yasasına göre, gelme açısı (θi) yansıma açısına (θr) eşittir: θi = θr. Bu yasa tüm yansımalar için geçerlidir.",
+        },
+        {
+          question: "Laser ışığının özelliklerinden hangisi doğrudur?",
+          type: "multiple-choice",
+          options: [
+            "Laser ışığı dağınıktır",
+            "Laser ışığı tek renklidir ve tutarlıdır",
+            "Laser ışığı çok geniş bir spektruma sahiptir",
+            "Laser ışığı sadece görünür bölgededir",
+            "Laser ışığı düşük yoğunlukludur",
+          ],
+          correctAnswer: 1,
+          explanation: "Laser (Light Amplification by Stimulated Emission of Radiation) ışığı tek renkli (monokromatik), tutarlı (koherent) ve yönlendirilmiş (düşük dağılımlı) bir ışık demetidir.",
+        },
+      ],
+      "ph-olcucu": [
+        {
+          question: "pH değeri 7'den küçük olan bir çözelti nasıl tanımlanır?",
+          type: "multiple-choice",
+          options: ["Bazik", "Asidik", "Nötr", "Tuzlu", "Alkali"],
+          correctAnswer: 1,
+          explanation: "pH değeri 0-14 arasında ölçülür. pH < 7 asidik, pH = 7 nötr, pH > 7 bazik (alkali) çözeltileri gösterir.",
+        },
+        {
+          question: "pH = -log[H⁺] formülünde [H⁺] neyi temsil eder?",
+          type: "multiple-choice",
+          options: [
+            "Hidroksit iyonu konsantrasyonu",
+            "Hidrojen iyonu konsantrasyonu",
+            "Su molekülü sayısı",
+            "Asit molekülü sayısı",
+            "Baz molekülü sayısı",
+          ],
+          correctAnswer: 1,
+          explanation: "[H⁺] hidrojen iyonu (proton) konsantrasyonunu temsil eder. pH değeri, hidrojen iyonu konsantrasyonunun negatif logaritmasıdır.",
+        },
+      ],
+      "ses-dalgalari": [
+        {
+          question: "Ses dalgalarının hızı hangi faktörlere bağlıdır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece frekansa",
+            "Sadece genliğe",
+            "Ortamın sıcaklığına ve özelliklerine",
+            "Sadece dalga boyuna",
+            "Sadece kaynağın gücüne",
+          ],
+          correctAnswer: 2,
+          explanation: "Ses hızı ortamın özelliklerine (yoğunluk, elastiklik modülü) ve sıcaklığına bağlıdır. Havada yaklaşık 343 m/s, suda 1500 m/s, çelikte 5000 m/s'dir.",
+        },
+        {
+          question: "Ses dalgasının frekansı ile dalga boyu arasındaki ilişki nedir?",
+          type: "multiple-choice",
+          options: [
+            "Frekans = Hız / Dalga boyu",
+            "Dalga boyu = Hız × Frekans",
+            "Frekans ve dalga boyu arasında ilişki yoktur",
+            "Frekans = Dalga boyu / Hız",
+            "Frekans = Hız × Dalga boyu",
+          ],
+          correctAnswer: 0,
+          explanation: "Ses dalgası için v = fλ formülü geçerlidir. Burada v hız, f frekans, λ dalga boyudur. Dolayısıyla f = v/λ'dır.",
+        },
+      ],
+      "tork-tahteravalli": [
+        {
+          question: "Tork (moment) hangi faktörlere bağlıdır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece kuvvete",
+            "Sadece mesafeye",
+            "Kuvvet ve kuvvet kolu (mesafe)",
+            "Sadece açıya",
+            "Sadece kütleye",
+          ],
+          correctAnswer: 2,
+          explanation: "Tork τ = r × F formülü ile hesaplanır. Burada r kuvvet kolu (mesafe), F ise kuvvettir. Tork, kuvvet ve kuvvet kolunun çarpımına eşittir.",
+        },
+        {
+          question: "Bir tahteravallinin dengede olması için gerekli koşul nedir?",
+          type: "multiple-choice",
+          options: [
+            "Her iki taraftaki kütleler eşit olmalıdır",
+            "Her iki taraftaki kuvvetler eşit olmalıdır",
+            "Her iki taraftaki torklar eşit olmalıdır (Στ = 0)",
+            "Her iki taraftaki hızlar eşit olmalıdır",
+            "Her iki taraftaki enerjiler eşit olmalıdır",
+          ],
+          correctAnswer: 2,
+          explanation: "Denge koşulu için toplam tork sıfır olmalıdır: Στ = 0. Bu, her iki taraftaki torkların eşit olması anlamına gelir. Kütleler eşit olmasa bile, mesafeler ayarlanarak denge sağlanabilir.",
+        },
+      ],
+      "elementler": [
+        {
+          question: "Periyodik tabloda elementler nasıl sıralanmıştır?",
+          type: "multiple-choice",
+          options: [
+            "Sadece kütle numarasına göre",
+            "Atom numarasına (proton sayısına) göre",
+            "Sadece elektron sayısına göre",
+            "Sadece izotop sayısına göre",
+            "Alfabetik sıraya göre",
+          ],
+          correctAnswer: 1,
+          explanation: "Periyodik tabloda elementler atom numarasına (proton sayısına) göre artan sırada dizilmiştir. Modern periyodik yasa, elementlerin özelliklerinin atom numaralarına periyodik olarak bağlı olduğunu söyler.",
+        },
+        {
+          question: "Aynı periyotta (yatay sırada) soldan sağa gidildikçe atom yarıçapı nasıl değişir?",
+          type: "multiple-choice",
+          options: [
+            "Artar",
+            "Azalır",
+            "Değişmez",
+            "Önce artar sonra azalır",
+            "Rastgele değişir",
+          ],
+          correctAnswer: 1,
+          explanation: "Aynı periyotta soldan sağa gidildikçe atom numarası artar, çekirdek yükü artar ve elektronlar daha güçlü çekilir. Bu nedenle atom yarıçapı azalır.",
+        },
+      ],
     };
-    setCurrentQuestion(question);
+
+    // Get questions for this simulation or use default
+    const questions = questionBanks[simulation.slug] || [
+      {
+        question: `${simulation.title} simülasyonu ile ilgili temel kavramları anladınız mı?`,
+        type: "multiple-choice" as const,
+        options: [
+          "Evet, tüm kavramları anladım",
+          "Kısmen anladım",
+          "Hayır, daha fazla pratik yapmam gerekiyor",
+          "Simülasyonu henüz tamamlamadım",
+        ],
+        correctAnswer: 0,
+        explanation: `${simulation.title} simülasyonu ile ilgili kavramları daha iyi anlamak için simülasyonu tekrar deneyebilir ve ilgili materyalleri inceleyebilirsiniz.`,
+      },
+    ];
+
+    // Randomly select a question from the bank
+    const randomQuestion =
+      questions[Math.floor(Math.random() * questions.length)];
+
+    setCurrentQuestion(randomQuestion);
     setSelectedAnswer(null);
     setShowFeedback(false);
     setShowQuestionModal(true);
@@ -376,6 +683,8 @@ export default function SimulationPage() {
 
             {/* Simulation Container */}
             <motion.div
+              id="simulation-container"
+              data-simulation-slug={slug}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}

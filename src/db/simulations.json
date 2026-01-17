@@ -1,680 +1,759 @@
 {
   "simulations": [
     {
-      "id": "harmonic-motion",
-      "title": "Basit Harmonik Hareket",
-      "slug": "harmonic-motion",
-      "description": "Yay sistemlerinin harmonik hareketini inceleyin",
+      "id": "kaldirma-kuvveti",
+      "title": "Kaldırma Kuvveti",
+      "slug": "kaldirma-kuvveti",
+      "description": "Kaldırma kuvveti ve sıvıların kaldırma kuvvetini inceleyin",
       "category": "mekanik",
       "difficulty": "Orta",
       "completionTime": "20 dk",
       "points": 100,
       "gradient": "from-blue-500 to-cyan-500",
-      "unit": "Periyodik Hareket",
-      "unitOrder": 4,
-      "image": "/images/simulation/Resim1.png",
-      "coverImage": "/images/simulation/Resim1.png",
+      "unit": "Kuvvet ve Hareket",
+      "unitOrder": 1,
+      "image": "/images/simulation/KaldırmaGorsel.png",
+      "coverImage": "/images/simulation/KaldırmaGorsel.png",
       "previewGif": "/gifs/simulation/blackhole.gif",
-      "classLevel": "11",
-
-      "keywords": [
-        "yay",
-        "harmonik hareket",
-        "periyot",
-        "hooke yasası",
-        "mekanik"
-      ],
-      "physicsExplanation": {
-        "formulas": ["Hooke Yasası: F = -kx", "Periyot Formülü: T = 2π√(m/k)"],
-        "concepts": [
-          "Basit harmonik hareket",
-          "Yay sabiti (k)",
-          "Kütle (m)",
-          "Genlik (A)",
-          "Periyot (T)",
-          "Frekans (f)"
-        ]
-      },
-      "learningObjectives": [
-        "Hooke yasasını anlama",
-        "Periyot ve frekans kavramlarını öğrenme",
-        "Enerji dönüşümlerini gözlemleme",
-        "Genlik ve periyot arasındaki ilişkiyi keşfetme"
-      ],
-      "reviews": [
-        {
-          "user": "Ahmet Y.",
-          "rating": 5,
-          "comment": "Çok etkileyici bir simülasyon. Yayın hareketini çok iyi anladım.",
-          "date": "2024-03-15"
-        },
-        {
-          "user": "Ayşe K.",
-          "rating": 4,
-          "comment": "Görsel olarak çok iyi, ancak biraz daha detaylı açıklama eklenebilir.",
-          "date": "2024-03-10"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/Lw7GccumVKM",
-      "detailedDescription": "Basit harmonik hareket, fiziğin temel konularından biridir ve günlük hayatta birçok yerde karşımıza çıkar. Bu simülasyon, yay-kütle sistemindeki harmonik hareketi incelemenizi sağlar. Yay sabiti (k) ve kütle (m) değerlerini değiştirerek sistemin davranışını gözlemleyebilir, periyot ve frekans gibi önemli parametreleri analiz edebilirsiniz. Simülasyon ayrıca potansiyel ve kinetik enerji dönüşümlerini görselleştirerek, enerji korunumu prensibini daha iyi anlamanızı sağlar.",
-      "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Günlük Hayatta Basit Harmonik Hareket",
-            "description": "Çevremizdeki basit harmonik hareket örnekleri ve fiziksel açıklamaları",
-            "author": "Dr. Ahmet Yılmaz",
-            "date": "2024-03-15",
-            "readTime": "5 dk",
-            "slug": "fizik-egitiminde-simulasyonlarin-onemi"
-          }
-        ],
-        "examQuestions": [
-          {
-            "year": "2023",
-            "examType": "AYT",
-            "question": "Yay sabiti k olan bir yayın ucuna m kütlesi asılıyor. Sistem basit harmonik hareket yapıyor. Buna göre sistemin periyodu T'dir. Yay sabiti 4k yapılıp kütle m/4 yapılırsa yeni periyot kaç T olur?",
-            "correctAnswer": "T/2",
-            "explanation": "Basit harmonik hareketin periyot formülü T = 2π√(m/k) kullanılarak çözülür. Yeni değerler yerine konulduğunda T/2 bulunur."
-          }
-        ],
-        "examStats": {
-          "totalQuestions": 45,
-          "lastAskedYear": "2023",
-          "frequencyPercentage": 85,
-          "averageDifficulty": 3.8
-        }
-      }
-    },
-    {
-      "id": "projectile-motion",
-      "title": "Eğik Atış Hareketi",
-      "slug": "projectile-motion",
-      "description": "Eğik atış hareketini inceleyin",
-      "category": "mekanik",
-      "difficulty": "Orta",
-      "completionTime": "25 dk",
-      "points": 120,
-      "gradient": "from-blue-500 to-cyan-500",
-      "unit": "Hareket",
-      "unitOrder": 5,
-      "image": "/images/simulation/Resim2.png",
-      "coverImage": "/images/simulation/Resim2.png",
-      "previewGif": "/gifs/simulation/black-hole.gif",
-      "classLevel": "10",
-      "keywords": ["eğik atış", "hareket", "kinematik", "mekanik", "yerçekimi"],
-      "physicsExplanation": {
-        "formulas": ["x = v₀cosθt", "y = v₀sinθt - ½gt²"],
-        "concepts": [
-          "Yatay ve dikey hareket bağımsızdır",
-          "Maksimum yükseklik ve menzil hesaplamaları"
-        ]
-      },
-      "learningObjectives": [
-        "Eğik atış hareketini analiz etme",
-        "Yatay ve düşey hareketleri ayırt etme",
-        "Menzil ve yükseklik hesaplamalarını öğrenme",
-        "Hava direncinin etkisini gözlemleme"
-      ],
-      "reviews": [
-        {
-          "user": "Mehmet S.",
-          "rating": 5,
-          "comment": "Harika bir simülasyon, eğik atışı çok iyi anladım.",
-          "date": "2024-03-12"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/v-F3YLd6oMw",
-      "detailedDescription": "Eğik atış hareketi, bir cismin hem yatay hem de düşey hareket yapmasını içeren iki boyutlu bir harekettir. Bu simülasyon, farklı başlangıç hızları ve açıları ile eğik atış hareketini incelemenizi sağlar. Hava direncinin ihmal edildiği durumda, yatay hareket sabit hızla, düşey hareket ise yerçekimi ivmesi etkisiyle gerçekleşir. Simülasyon, bu iki hareketin bağımsızlığını ve birleşik etkisini görselleştirir.",
-      "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Eğik Atışın Günlük Hayattaki Örnekleri",
-            "description": "Spor ve mühendislikteki eğik atış uygulamaları",
-            "author": "Dr. Mehmet Demir",
-            "date": "2024-03-10",
-            "readTime": "6 dk",
-            "slug": "fizik-egitiminde-simulasyonlarin-onemi"
-          }
-        ],
-        "examQuestions": [
-          {
-            "year": "2023",
-            "examType": "AYT",
-            "question": "Yatay ile 30° açı yaparak 20 m/s hızla fırlatılan bir cismin menzili kaç metredir? (g=10 m/s², sin60°=0.866, cos30°=0.866)",
-            "correctAnswer": "34.64 m",
-            "explanation": "Menzil formülü R = (v²sin2θ)/g kullanılarak çözülür."
-          }
-        ],
-        "examStats": {
-          "totalQuestions": 38,
-          "lastAskedYear": "2023",
-          "frequencyPercentage": 75,
-          "averageDifficulty": 4.2
-        }
-      }
-    },
-    {
-      "id": "wave-interference",
-      "title": "Dalga Girişimi",
-      "slug": "wave-interference",
-      "description": "Su dalgalarının girişimini ve kırınımını inceleyin",
-      "category": "dalgalar",
-      "difficulty": "Zor",
-      "completionTime": "30 dk",
-      "points": 150,
-      "gradient": "from-purple-500 to-pink-500",
-      "unit": "Dalgalar",
-      "unitOrder": 3,
-      "image": "/images/simulation/Resim3.jpg",
-      "coverImage": "/images/simulation/Resim3.jpg",
-      "previewGif": "/gifs/simulation/black-hole.gif",
-      "classLevel": "12",
-      "keywords": [
-        "girişim",
-        "kırınım",
-        "dalga",
-        "faz farkı",
-        "yapıcı girişim"
-      ],
+      "classLevel": "8",
+      "keywords": ["kaldırma kuvveti", "sıvılar", "archimedes", "yoğunluk"],
       "physicsExplanation": {
         "formulas": [
-          "Girişim Koşulu: Δφ = 2πΔx/λ",
-          "Yapıcı Girişim: Δx = nλ",
-          "Yıkıcı Girişim: Δx = (n+1/2)λ"
+          "Archimedes Prensibi: F = ρgV",
+          "Yoğunluk: ρ = m/V",
+          "Kaldırma Kuvveti = Ağırlık (yüzme durumunda)",
+          "Kaldırma Kuvveti > Ağırlık (yüzme)",
+          "Kaldırma Kuvveti < Ağırlık (batma)"
         ],
         "concepts": [
-          "Dalga girişimi",
-          "Kırınım",
-          "Faz farkı",
-          "Yapıcı ve yıkıcı girişim",
-          "Young deneyi"
+          "Kaldırma kuvveti",
+          "Archimedes prensibi",
+          "Yoğunluk",
+          "Sıvı basıncı",
+          "Yüzme, batma ve askıda kalma koşulları",
+          "Görünen ağırlık"
         ]
       },
       "learningObjectives": [
-        "Dalga girişimini anlama",
-        "Yapıcı ve yıkıcı girişim koşullarını öğrenme",
-        "Kırınım olayını gözlemleme",
-        "Young deneyini analiz etme"
+        "Kaldırma kuvvetini ve Archimedes prensibini anlama",
+        "Yoğunluk kavramını ve yoğunluk farkının kaldırma kuvvetine etkisini öğrenme",
+        "Cisimlerin sıvı içindeki davranışlarını (yüzme, batma, askıda kalma) kavrama",
+        "Kaldırma kuvvetinin günlük hayattaki uygulamalarını keşfetme"
       ],
-      "reviews": [
-        {
-          "user": "Zeynep A.",
-          "rating": 5,
-          "comment": "Dalga girişimini çok net görebiliyorum, harika bir simülasyon.",
-          "date": "2024-03-18"
-        },
-        {
-          "user": "Can K.",
-          "rating": 4,
-          "comment": "Görsel olarak etkileyici, ancak biraz daha interaktif olabilirdi.",
-          "date": "2024-03-17"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/8YkfEft4p-w",
-      "detailedDescription": "Bu simülasyon, dalga girişimi ve kırınım olaylarını interaktif bir şekilde incelemenizi sağlar. İki kaynaktan çıkan dalgaların girişimini gözlemleyebilir, farklı dalga boyları ve faz farkları için girişim desenlerini analiz edebilirsiniz. Young deneyi prensibini uygulayarak ışık dalgalarının girişimini de inceleyebilirsiniz.",
+      "reviews": [],
+      "detailedDescription": "Kaldırma kuvveti simülasyonu ile sıvıların kaldırma kuvvetini interaktif olarak inceleyin. Archimedes prensibini görselleştirerek, farklı yoğunluktaki cisimlerin sıvı içindeki davranışlarını keşfedin. Cisimlerin yoğunluğunu ve sıvının yoğunluğunu değiştirerek kaldırma kuvvetinin nasıl etkilendiğini gözlemleyin.",
+      "webglPath": "/webgl-app/Buouncy",
       "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Dalga Girişiminin Teknolojideki Uygulamaları",
-            "description": "Holografi ve interferometre sistemlerinde dalga girişimi",
-            "author": "Prof. Dr. Ayşe Yıldız",
-            "date": "2024-03-16",
-            "readTime": "7 dk",
-            "slug": "dalga-girisimi-uygulamalari"
-          }
-        ],
+        "blogPosts": [],
         "examQuestions": [
           {
             "year": "2023",
             "examType": "AYT",
-            "question": "İki noktasal kaynaktan çıkan dalgaların girişim deseninde, 3. yapıcı girişim çizgisi üzerindeki bir noktanın kaynaklara olan uzaklık farkı kaç λ'dır?",
-            "correctAnswer": "3λ",
-            "explanation": "Yapıcı girişim için uzaklık farkı tam sayı katları olmalıdır."
-          }
-        ],
-        "examStats": {
-          "totalQuestions": 42,
-          "lastAskedYear": "2023",
-          "frequencyPercentage": 80,
-          "averageDifficulty": 4.5
-        }
-      }
-    },
-    {
-      "id": "electric-circuits",
-      "title": "Elektrik Devreleri",
-      "slug": "electric-circuits",
-      "description": "Seri ve paralel devreleri inceleyin",
-      "category": "elektrik",
-      "difficulty": "Orta",
-      "completionTime": "25 dk",
-      "points": 130,
-      "gradient": "from-yellow-500 to-orange-500",
-      "unit": "Elektrik",
-      "unitOrder": 2,
-      "image": "/images/simulation/Resim4.jpg",
-      "coverImage": "/images/simulation/Resim4.jpg",
-      "classLevel": "9",
-      "keywords": [
-        "ohm yasası",
-        "seri devre",
-        "paralel devre",
-        "akım",
-        "gerilim"
-      ],
-      "physicsExplanation": {
-        "formulas": [
-          "Ohm Yasası: V = IR",
-          "Seri Devre: Reş = R1 + R2 + ...",
-          "Paralel Devre: 1/Reş = 1/R1 + 1/R2 + ..."
-        ],
-        "concepts": [
-          "Elektrik akımı",
-          "Gerilim",
-          "Direnç",
-          "Seri ve paralel bağlantı",
-          "Kirchhoff yasaları"
-        ]
-      },
-      "learningObjectives": [
-        "Seri ve paralel devreleri ayırt etme",
-        "Ohm yasasını uygulama",
-        "Eşdeğer direnç hesaplama",
-        "Devre analizi yapma"
-      ],
-      "reviews": [
-        {
-          "user": "Burak M.",
-          "rating": 5,
-          "comment": "Devreleri çok iyi anladım, pratik yapmak için mükemmel.",
-          "date": "2024-03-15"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/J4Vq-xHqUo8",
-      "detailedDescription": "Bu simülasyon, temel elektrik devrelerini interaktif bir şekilde incelemenizi sağlar. Seri ve paralel devreleri oluşturabilir, farklı direnç değerleri ile deneyler yapabilirsiniz. Ohm yasasını uygulayarak akım ve gerilim değerlerini ölçebilir, Kirchhoff yasalarını test edebilirsiniz.",
-      "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Günlük Hayatta Elektrik Devreleri",
-            "description": "Ev aletlerindeki elektrik devreleri ve çalışma prensipleri",
-            "author": "Dr. Mehmet Kaya",
-            "date": "2024-03-14",
-            "readTime": "6 dk",
-            "slug": "elektrik-devreleri-gunluk-hayat"
-          }
-        ],
-        "examQuestions": [
-          {
-            "year": "2023",
-            "examType": "AYT",
-            "question": "3Ω ve 6Ω'luk iki direnç paralel bağlanıyor. Devrenin eşdeğer direnci kaç Ω'dur?",
-            "correctAnswer": "2Ω",
-            "explanation": "Paralel bağlı dirençler için 1/Reş = 1/R1 + 1/R2 formülü kullanılır."
-          }
-        ],
-        "examStats": {
-          "totalQuestions": 50,
-          "lastAskedYear": "2023",
-          "frequencyPercentage": 90,
-          "averageDifficulty": 3.5
-        }
-      }
-    },
-    {
-      "id": "quantum-tunneling",
-      "title": "Kuantum Tünelleme",
-      "slug": "kuantum-tunelleme",
-      "description": "Kuantum tünelleme olayını interaktif olarak keşfedin",
-      "category": "kuantum",
-      "difficulty": "Zor",
-      "completionTime": "35 dk",
-      "points": 180,
-      "gradient": "from-purple-500 to-indigo-500",
-      "unit": "Kuantum Fiziği",
-      "unitOrder": 6,
-      "image": "/images/simulation/Resim5.jpg",
-      "coverImage": "/images/simulation/Resim5.jpg",
-      "classLevel": "12",
-      "keywords": [
-        "kuantum tünelleme",
-        "dalga fonksiyonu",
-        "potansiyel bariyer",
-        "tünelleme olasılığı",
-        "kuantum mekaniği"
-      ],
-      "physicsExplanation": {
-        "formulas": [
-          "Tünelleme Olasılığı: T ≈ e^(-2κL)",
-          "Dalga Vektörü: κ = √(2m(V-E))/ħ"
-        ],
-        "concepts": [
-          "Kuantum tünelleme",
-          "Potansiyel bariyer",
-          "Dalga fonksiyonu",
-          "Tünelleme olasılığı",
-          "Klasik ve kuantum farkı"
-        ]
-      },
-      "learningObjectives": [
-        "Kuantum tünelleme olayını anlama",
-        "Tünelleme olasılığını hesaplama",
-        "Klasik ve kuantum davranışı karşılaştırma",
-        "Uygulama alanlarını keşfetme"
-      ],
-      "reviews": [
-        {
-          "user": "Dr. Ali K.",
-          "rating": 5,
-          "comment": "Kuantum tünellemeyi görselleştirmek için mükemmel bir simülasyon.",
-          "date": "2024-03-20"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/quantum-tunneling-demo",
-      "detailedDescription": "Kuantum tünelleme, kuantum mekaniğinin en ilginç ve önemli olaylarından biridir. Bu simülasyon, bir parçacığın klasik olarak aşamayacağı bir potansiyel bariyeri kuantum mekaniksel olarak aşabilmesini gösterir. Farklı potansiyel bariyer yükseklikleri ve genişlikleri ile deneyler yaparak tünelleme olasılığını gözlemleyebilir, dalga fonksiyonunun davranışını inceleyebilirsiniz.",
-      "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Kuantum Tünellemenin Teknolojideki Uygulamaları",
-            "description": "Tünel diyotları ve tarama tünelleme mikroskopları",
-            "author": "Prof. Dr. Mehmet Yılmaz",
-            "date": "2024-03-18",
-            "readTime": "8 dk",
-            "slug": "kuantum-tunelleme-uygulamalari"
-          }
-        ],
-        "examQuestions": [
-          {
-            "year": "2023",
-            "examType": "AYT",
-            "question": "Bir elektron 2 eV enerji ile 5 eV yüksekliğinde bir potansiyel bariyere çarpıyor. Bariyerin genişliği 1 nm ise tünelleme olasılığı yaklaşık olarak nedir? (m=9.1x10^-31 kg, ħ=1.05x10^-34 J.s)",
-            "correctAnswer": "0.001",
-            "explanation": "Tünelleme olasılığı formülü T ≈ e^(-2κL) kullanılarak hesaplanır."
+            "question": "Yoğunluğu 800 kg/m³ olan bir cisim, yoğunluğu 1000 kg/m³ olan suya bırakılıyor. Cismin su içindeki durumu nasıl olur?",
+            "correctAnswer": "Cisim yüzer",
+            "explanation": "Cismin yoğunluğu (800 kg/m³) suyun yoğunluğundan (1000 kg/m³) küçük olduğu için cisim yüzer. Archimedes prensibine göre, cismin yoğunluğu sıvının yoğunluğundan küçükse cisim yüzer."
           },
           {
             "year": "2022",
-            "examType": "AYT",
-            "question": "Kuantum tünelleme olayında, bariyer genişliği iki katına çıkarıldığında tünelleme olasılığı nasıl değişir?",
-            "correctAnswer": "Üstel olarak azalır",
-            "explanation": "Tünelleme olasılığı bariyer genişliği ile üstel olarak azalır."
+            "examType": "TYT",
+            "question": "Bir cismin kaldırma kuvveti hangi faktörlere bağlıdır?",
+            "correctAnswer": "Sıvının yoğunluğu, cismin batan hacmi ve yerçekimi ivmesi",
+            "explanation": "Kaldırma kuvveti F = ρgV formülü ile hesaplanır. Burada ρ sıvının yoğunluğu, g yerçekimi ivmesi, V ise cismin batan hacmidir."
           }
         ],
         "examStats": {
           "totalQuestions": 52,
           "lastAskedYear": "2023",
-          "frequencyPercentage": 90,
-          "averageDifficulty": 4.5
-        },
-        "bookRecommendations": [
-          {
-            "title": "Kuantum Fiziğine Giriş",
-            "author": "David J. Griffiths",
-            "publisher": "Pearson",
-            "year": "2020",
-            "isbn": "978-0131118928",
-            "description": "Kuantum fiziğinin temellerini anlaşılır bir dille anlatan kapsamlı bir kaynak.",
-            "chapters": [
-              "Kuantum Tünelleme",
-              "Dalga Fonksiyonları",
-              "Potansiyel Bariyerler"
-            ]
-          },
-          {
-            "title": "Modern Fizik",
-            "author": "Kenneth S. Krane",
-            "publisher": "Wiley",
-            "year": "2019",
-            "isbn": "978-1119495550",
-            "description": "Modern fiziğin temel konularını detaylı örneklerle ele alan bir ders kitabı.",
-            "chapters": ["Kuantum Mekaniği", "Atom Fiziği", "Nükleer Fizik"]
-          }
-        ],
-        "relatedSimulations": [
-          {
-            "id": "wave-function",
-            "title": "Dalga Fonksiyonu",
-            "slug": "dalga-fonksiyonu",
-            "description": "Kuantum dalga fonksiyonlarını keşfedin"
-          },
-          {
-            "id": "potential-barrier",
-            "title": "Potansiyel Bariyer",
-            "slug": "potansiyel-bariyer",
-            "description": "Farklı potansiyel bariyerleri inceleyin"
-          }
-        ]
-      }
-    },
-    {
-      "id": "thermodynamics",
-      "title": "Termodinamik Döngüler",
-      "slug": "thermodynamics",
-      "description": "Carnot ve diğer termodinamik döngüleri inceleyin",
-      "category": "termodinamik",
-      "difficulty": "Zor",
-      "completionTime": "40 dk",
-      "points": 160,
-      "gradient": "from-red-500 to-orange-500",
-      "unit": "Termodinamik",
-      "unitOrder": 3,
-      "image": "/images/simulation/Resim6.jpg",
-      "coverImage": "/images/simulation/Resim6.jpg",
-      "classLevel": "11",
-      "keywords": ["carnot döngüsü", "ısı", "iş", "entropi", "verim"],
-      "physicsExplanation": {
-        "formulas": [
-          "Carnot Verimi: η = 1 - Tc/Th",
-          "İş: W = Qh - Qc",
-          "Entropi Değişimi: ΔS = Q/T"
-        ],
-        "concepts": [
-          "Carnot döngüsü",
-          "Isı ve iş",
-          "Entropi",
-          "Termodinamik yasaları",
-          "Isı motorları"
-        ]
-      },
-      "learningObjectives": [
-        "Termodinamik döngüleri anlama",
-        "Carnot verimini hesaplama",
-        "Entropi kavramını öğrenme",
-        "Isı motorlarının çalışma prensibini kavrama"
-      ],
-      "reviews": [
-        {
-          "user": "Ece S.",
-          "rating": 4,
-          "comment": "Termodinamik döngüleri çok iyi görselleştiriyor.",
-          "date": "2024-03-11"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/8n1i-7sW3HE",
-      "detailedDescription": "Bu simülasyon, termodinamik döngüleri interaktif bir şekilde incelemenizi sağlar. Carnot döngüsünü ve diğer termodinamik döngüleri gözlemleyebilir, farklı sıcaklık ve basınç değerleri için verim hesaplamaları yapabilirsiniz. Isı motorlarının çalışma prensibini ve termodinamiğin temel yasalarını anlamak için ideal bir araçtır.",
-      "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Termodinamik Döngülerin Endüstriyel Uygulamaları",
-            "description": "Buhar türbinleri ve içten yanmalı motorlarda termodinamik",
-            "author": "Dr. Selin Yılmaz",
-            "date": "2024-03-10",
-            "readTime": "7 dk",
-            "slug": "termodinamik-endustriyel-uygulamalar"
-          }
-        ],
-        "examQuestions": [
-          {
-            "year": "2023",
-            "examType": "AYT",
-            "question": "Bir Carnot motoru 500K ve 300K sıcaklıkları arasında çalışıyor. Motorun verimi nedir?",
-            "correctAnswer": "0.4",
-            "explanation": "Carnot verimi formülü η = 1 - Tc/Th kullanılarak hesaplanır."
-          }
-        ],
-        "examStats": {
-          "totalQuestions": 40,
-          "lastAskedYear": "2023",
-          "frequencyPercentage": 85,
-          "averageDifficulty": 4.2
+          "frequencyPercentage": 88,
+          "averageDifficulty": 3.5
         }
       }
     },
     {
-      "id": "magnetic-fields",
-      "title": "Manyetik Alanlar",
-      "slug": "magnetic-fields",
-      "description": "Manyetik alanları ve etkileşimlerini inceleyin",
-      "category": "elektromanyetizma",
+      "id": "yenilenebilir-enerji",
+      "title": "Yenilenebilir Enerji",
+      "slug": "yenilenebilir-enerji",
+      "description": "Yenilenebilir enerji kaynaklarını keşfedin",
+      "category": "enerji",
       "difficulty": "Orta",
       "completionTime": "25 dk",
-      "points": 140,
-      "gradient": "from-blue-500 to-indigo-500",
-      "unit": "Elektromanyetizma",
+      "points": 120,
+      "gradient": "from-green-500 to-emerald-500",
+      "unit": "Enerji",
       "unitOrder": 2,
-      "image": "/images/simulation/Resim5.jpg",
-      "coverImage": "/images/simulation/Resim5.jpg",
-      "classLevel": "10",
-      "keywords": [
-        "manyetik alan",
-        "akım",
-        "lorentz kuvveti",
-        "solenoid",
-        "manyetik akı"
-      ],
+      "image": "/images/simulation/EnerjiGorsel.png",
+      "coverImage": "/images/simulation/EnerjiGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "9",
+      "keywords": ["yenilenebilir enerji", "güneş", "rüzgar", "hidroelektrik"],
       "physicsExplanation": {
         "formulas": [
-          "Lorentz Kuvveti: F = q(v × B)",
-          "Biot-Savart Yasası",
-          "Manyetik Akı: Φ = BAcosθ"
+          "Güç: P = E / t",
+          "Enerji Dönüşümü: E = η × E_giriş",
+          "Güneş Enerjisi: E = A × I × η",
+          "Rüzgar Enerjisi: P = ½ρAv³",
+          "Hidroelektrik: P = ρghQ"
         ],
         "concepts": [
-          "Manyetik alan",
-          "Akım ve manyetizma",
-          "Lorentz kuvveti",
-          "Manyetik akı",
-          "Solenoid"
+          "Yenilenebilir enerji",
+          "Enerji dönüşümü",
+          "Fotovoltaik etki",
+          "Rüzgar türbinleri",
+          "Hidroelektrik güç",
+          "Jeotermal enerji",
+          "Enerji verimliliği",
+          "Sürdürülebilirlik"
         ]
       },
       "learningObjectives": [
-        "Manyetik alan kavramını anlama",
-        "Lorentz kuvvetini hesaplama",
-        "Manyetik akıyı ölçme",
-        "Solenoid davranışını inceleme"
+        "Yenilenebilir enerji kaynaklarını (güneş, rüzgar, hidroelektrik, jeotermal) tanıma",
+        "Enerji dönüşüm süreçlerini ve verimliliği anlama",
+        "Yenilenebilir ve yenilenemez enerji kaynakları arasındaki farkları öğrenme",
+        "Sürdürülebilir enerji çözümlerinin önemini kavrama",
+        "Çevre bilincini geliştirme"
       ],
-      "reviews": [
-        {
-          "user": "Kemal T.",
-          "rating": 5,
-          "comment": "Manyetik alanları çok iyi görselleştiriyor.",
-          "date": "2024-03-09"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/3hjyJpWz0mQ",
-      "detailedDescription": "Bu simülasyon, manyetik alanları ve etkileşimlerini interaktif bir şekilde incelemenizi sağlar. Farklı akım değerleri ve geometriler için manyetik alan çizgilerini gözlemleyebilir, Lorentz kuvvetini hesaplayabilirsiniz. Manyetik akı ve solenoid davranışını anlamak için ideal bir araçtır.",
+      "reviews": [],
+      "detailedDescription": "Yenilenebilir enerji kaynaklarını ve enerji dönüşümlerini interaktif simülasyon ile öğrenin. Güneş, rüzgar, hidroelektrik ve diğer yenilenebilir enerji kaynaklarının nasıl çalıştığını keşfedin. Enerji dönüşüm süreçlerini görselleştirerek sürdürülebilir enerji çözümlerini anlayın.",
+      "webglPath": "/webgl-app/RenewableEnergy",
       "relatedMaterials": {
-        "blogPosts": [
-          {
-            "title": "Manyetik Alanların Tıbbi Uygulamaları",
-            "description": "MRI ve manyetik rezonans görüntüleme",
-            "author": "Dr. Zeynep Kaya",
-            "date": "2024-03-08",
-            "readTime": "6 dk",
-            "slug": "manyetik-alanlar-tip-uygulamalari"
-          }
-        ],
+        "blogPosts": [],
         "examQuestions": [
           {
             "year": "2023",
             "examType": "AYT",
-            "question": "0.5 T manyetik alanda 2 m/s hızla hareket eden 1.6×10^-19 C yüklü bir parçacığa etki eden Lorentz kuvveti kaç N'dur?",
-            "correctAnswer": "1.6×10^-19 N",
-            "explanation": "Lorentz kuvveti formülü F = qvB kullanılarak hesaplanır."
-          }
-        ],
-        "examStats": {
-          "totalQuestions": 45,
-          "lastAskedYear": "2023",
-          "frequencyPercentage": 80,
-          "averageDifficulty": 3.8
-        }
-      }
-    },
-    {
-      "id": "nuclear-physics",
-      "title": "Nükleer Fizik",
-      "slug": "nuclear-physics",
-      "description": "Radyoaktivite ve nükleer tepkimeleri inceleyin",
-      "category": "nükleer",
-      "difficulty": "Zor",
-      "completionTime": "35 dk",
-      "points": 170,
-      "gradient": "from-green-500 to-teal-500",
-      "unit": "Modern Fizik",
-      "unitOrder": 4,
-      "image": "/images/simulation/Resim3.jpg",
-      "coverImage": "/images/simulation/Resim3.jpg",
-      "classLevel": "12",
-      "keywords": [
-        "radyoaktivite",
-        "yarı ömür",
-        "fisyon",
-        "füzyon",
-        "nükleer tepkime"
-      ],
-      "physicsExplanation": {
-        "formulas": [
-          "Yarı Ömür: N = N₀(1/2)^(t/T)",
-          "Kütle Enerji Eşdeğeri: E = mc²",
-          "Radyoaktif Bozunma: dN/dt = -λN"
-        ],
-        "concepts": [
-          "Radyoaktivite",
-          "Yarı ömür",
-          "Fisyon ve füzyon",
-          "Kütle enerji eşdeğeri",
-          "Nükleer tepkimeler"
-        ]
-      },
-      "learningObjectives": [
-        "Radyoaktiviteyi anlama",
-        "Yarı ömür hesaplamaları yapma",
-        "Fisyon ve füzyon tepkimelerini inceleme",
-        "Nükleer enerji kavramını öğrenme"
-      ],
-      "reviews": [
-        {
-          "user": "Selin A.",
-          "rating": 5,
-          "comment": "Nükleer fiziği çok iyi anlamamı sağladı.",
-          "date": "2024-03-07"
-        }
-      ],
-      "howItWorksVideo": "https://www.youtube.com/embed/FU6y1XIADdg",
-      "detailedDescription": "Bu simülasyon, nükleer fizik konularını interaktif bir şekilde incelemenizi sağlar. Radyoaktif bozunma süreçlerini gözlemleyebilir, yarı ömür hesaplamaları yapabilirsiniz. Fisyon ve füzyon tepkimelerini inceleyerek nükleer enerji kavramını daha iyi anlayabilirsiniz.",
-      "relatedMaterials": {
-        "blogPosts": [
+            "question": "Aşağıdakilerden hangisi yenilenebilir enerji kaynağı değildir?",
+            "correctAnswer": "Kömür",
+            "explanation": "Kömür fosil yakıttır ve yenilenebilir değildir. Güneş, rüzgar, hidroelektrik ve jeotermal enerji yenilenebilir enerji kaynaklarıdır."
+          },
           {
-            "title": "Nükleer Enerjinin Geleceği",
-            "description": "Füzyon reaktörleri ve temiz enerji",
-            "author": "Prof. Dr. Ahmet Yıldız",
-            "date": "2024-03-06",
-            "readTime": "8 dk",
-            "slug": "nukleer-enerji-gelecegi"
-          }
-        ],
-        "examQuestions": [
-          {
-            "year": "2023",
-            "examType": "AYT",
-            "question": "Yarı ömrü 5 gün olan bir radyoaktif maddenin 15 gün sonraki kütlesi başlangıçtakinin kaçta kaçı olur?",
-            "correctAnswer": "1/8",
-            "explanation": "Yarı ömür formülü N = N₀(1/2)^(t/T) kullanılarak hesaplanır."
+            "year": "2022",
+            "examType": "TYT",
+            "question": "Güneş panellerinin çalışma prensibi nedir?",
+            "correctAnswer": "Fotoelektrik etki",
+            "explanation": "Güneş panelleri fotovoltaik hücreler kullanarak güneş ışığını doğrudan elektrik enerjisine dönüştürür. Bu işlem fotoelektrik etki prensibine dayanır."
           }
         ],
         "examStats": {
           "totalQuestions": 38,
           "lastAskedYear": "2023",
           "frequencyPercentage": 75,
-          "averageDifficulty": 4.5
+          "averageDifficulty": 3.2
+        }
+      }
+    },
+    {
+      "id": "yercekimi",
+      "title": "Yerçekimi",
+      "slug": "yercekimi",
+      "description": "Yerçekimi kuvveti ve etkilerini inceleyin",
+      "category": "mekanik",
+      "difficulty": "Kolay",
+      "completionTime": "15 dk",
+      "points": 80,
+      "gradient": "from-purple-500 to-pink-500",
+      "unit": "Kuvvet ve Hareket",
+      "unitOrder": 1,
+      "image": "/images/simulation/YercekimiGorsel.png",
+      "coverImage": "/images/simulation/YercekimiGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "7",
+      "keywords": ["yerçekimi", "kütle", "ivme", "serbest düşme"],
+      "physicsExplanation": {
+        "formulas": [
+          "Yerçekimi Kuvveti: F = mg",
+          "Evrensel Çekim: F = G(m₁m₂)/r²",
+          "Yerçekimi İvmesi: g = 9.8 m/s²",
+          "Serbest Düşme: h = ½gt²",
+          "Ağırlık: W = mg"
+        ],
+        "concepts": [
+          "Yerçekimi",
+          "Evrensel çekim yasası",
+          "Kütle ve ağırlık",
+          "Serbest düşme",
+          "Yerçekimi ivmesi",
+          "Görünen ağırlık"
+        ]
+      },
+      "learningObjectives": [
+        "Yerçekimi kuvvetini ve evrensel çekim yasasını anlama",
+        "Kütle ve ağırlık kavramları arasındaki farkı öğrenme",
+        "Serbest düşme hareketini ve yerçekimi ivmesini kavrama",
+        "Farklı gezegenlerde yerçekimi farklarını keşfetme",
+        "Yerçekimi kuvvetinin günlük hayattaki etkilerini anlama"
+      ],
+      "reviews": [],
+      "detailedDescription": "Yerçekimi kuvveti ve etkilerini görselleştirerek öğrenin. Farklı kütlelerdeki cisimlerin yerçekimi etkisi altındaki davranışlarını inceleyin. Serbest düşme hareketini, kütle ve ağırlık kavramlarını interaktif simülasyon ile keşfedin.",
+      "webglPath": "/webgl-app/Gravity",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "TYT",
+            "question": "Yerçekimi kuvveti hangi faktörlere bağlıdır?",
+            "correctAnswer": "Kütleye ve mesafenin karesine",
+            "explanation": "Yerçekimi kuvveti F = G(m₁m₂)/r² formülü ile hesaplanır. Burada G evrensel çekim sabiti, m₁ ve m₂ kütleler, r ise mesafedir. Kuvvet kütlelerle doğru, mesafenin karesiyle ters orantılıdır."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "Dünya yüzeyinde yerçekimi ivmesi yaklaşık olarak kaç m/s²'dir?",
+            "correctAnswer": "9.8",
+            "explanation": "Dünya yüzeyinde yerçekimi ivmesi yaklaşık 9.8 m/s²'dir. Bu değer deniz seviyesinde ve ekvatorda biraz farklılık gösterebilir."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 45,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 82,
+          "averageDifficulty": 3.0
+        }
+      }
+    },
+    {
+      "id": "golge-ve-aydinlanma",
+      "title": "Gölge ve Aydınlanma",
+      "slug": "golge-ve-aydinlanma",
+      "description": "Işık, gölge ve aydınlanma kavramlarını keşfedin",
+      "category": "optik",
+      "difficulty": "Orta",
+      "completionTime": "20 dk",
+      "points": 100,
+      "gradient": "from-yellow-500 to-orange-500",
+      "unit": "Optik",
+      "unitOrder": 3,
+      "image": "/images/simulation/GolgeGorsel.png",
+      "coverImage": "/images/simulation/GolgeGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "6",
+      "keywords": ["ışık", "gölge", "aydınlanma", "ışık kaynağı"],
+      "physicsExplanation": {
+        "formulas": [
+          "Aydınlanma: E = I/r²",
+          "Işık Akısı: Φ = E × A",
+          "Işık Şiddeti: I = Φ/4π",
+          "Gölge Boyu: L = h × (d/r)"
+        ],
+        "concepts": [
+          "Işığın doğrusal yayılması",
+          "Gölge oluşumu",
+          "Tam gölge ve yarı gölge",
+          "Aydınlanma",
+          "Işık kaynağı türleri",
+          "Işık şiddeti",
+          "Mesafe ve aydınlanma ilişkisi"
+        ]
+      },
+      "learningObjectives": [
+        "Işığın doğrusal yayılması prensibini anlama",
+        "Gölge oluşumunu ve gölge türlerini (tam gölge, yarı gölge) öğrenme",
+        "Aydınlanma kavramını ve aydınlanma şiddetini kavrama",
+        "Işık kaynaklarını (noktasal, geniş kaynak) tanıma",
+        "Mesafe ve ışık şiddetinin aydınlanma üzerindeki etkisini keşfetme"
+      ],
+      "reviews": [],
+      "detailedDescription": "Gölge ve aydınlanma kavramlarını interaktif simülasyon ile öğrenin. Işığın doğrusal yayılmasını, gölge oluşumunu ve aydınlanma şiddetini keşfedin. Farklı ışık kaynakları ve mesafelerin gölge ve aydınlanma üzerindeki etkilerini gözlemleyin.",
+      "webglPath": "/webgl-app/Golge",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "TYT",
+            "question": "Gölge oluşumu hangi optik prensibe dayanır?",
+            "correctAnswer": "Işığın doğrusal yayılması",
+            "explanation": "Gölge oluşumu, ışığın doğrusal yayılması prensibine dayanır. Işık kaynağından çıkan ışınlar doğrusal olarak yayılır ve opak cisimler tarafından engellenerek gölge oluşturur."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "Aydınlanma şiddeti hangi faktörlere bağlıdır?",
+            "correctAnswer": "Işık kaynağının gücü ve mesafenin karesine",
+            "explanation": "Aydınlanma şiddeti E = I/r² formülü ile hesaplanır. Burada I ışık kaynağının şiddeti, r ise mesafedir. Aydınlanma, ışık kaynağının şiddetiyle doğru, mesafenin karesiyle ters orantılıdır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 42,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 78,
+          "averageDifficulty": 3.3
+        }
+      }
+    },
+    {
+      "id": "hava-direnci",
+      "title": "Hava Direnci",
+      "slug": "hava-direnci",
+      "description": "Hava direnci ve etkilerini inceleyin",
+      "category": "mekanik",
+      "difficulty": "Orta",
+      "completionTime": "20 dk",
+      "points": 100,
+      "gradient": "from-blue-500 to-indigo-500",
+      "unit": "Kuvvet ve Hareket",
+      "unitOrder": 1,
+      "image": "/images/simulation/HavaDirencGorsel.png",
+      "coverImage": "/images/simulation/HavaDirencGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "9",
+      "keywords": ["hava direnci", "sürtünme", "akışkanlar", "aerodinamik"],
+      "physicsExplanation": {
+        "formulas": ["F = ½ρv²CdA", "Direnç Kuvveti"],
+        "concepts": ["Hava direnci", "Sürtünme", "Aerodinamik", "Akışkanlar"]
+      },
+      "learningObjectives": [
+        "Hava direncini anlama",
+        "Sürtünme kuvvetini öğrenme",
+        "Aerodinamik kavramlarını kavrama"
+      ],
+      "reviews": [],
+      "detailedDescription": "Hava direnci ve etkilerini görselleştirerek öğrenin. Farklı hızlardaki cisimlerin hava direnci ile karşılaşmasını, sürükleme katsayısının etkisini ve aerodinamik prensipleri interaktif simülasyon ile keşfedin.",
+      "webglPath": "/webgl-app/HavaDirenci",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Hava direnci kuvveti hangi faktörlere bağlıdır?",
+            "correctAnswer": "Hızın karesi, hava yoğunluğu, cismin kesit alanı ve sürükleme katsayısı",
+            "explanation": "Hava direnci F = ½ρv²CdA formülü ile hesaplanır. Burada ρ hava yoğunluğu, v hız, Cd sürükleme katsayısı, A ise cismin kesit alanıdır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 35,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 72,
+          "averageDifficulty": 3.4
+        }
+      }
+    },
+    {
+      "id": "isi-alisverisi",
+      "title": "Isı Alışverişi",
+      "slug": "isi-alisverisi",
+      "description": "Isı transferi ve alışverişini inceleyin",
+      "category": "termodinamik",
+      "difficulty": "Orta",
+      "completionTime": "25 dk",
+      "points": 120,
+      "gradient": "from-red-500 to-orange-500",
+      "unit": "Termodinamik",
+      "unitOrder": 3,
+      "image": "/images/simulation/IsıGorsel.png",
+      "coverImage": "/images/simulation/IsıGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "8",
+      "keywords": ["ısı", "sıcaklık", "enerji transferi", "termal denge"],
+      "physicsExplanation": {
+        "formulas": [
+          "Isı Miktarı: Q = mcΔT",
+          "Isı İletimi: Q/t = kA(ΔT/d)",
+          "Stefan-Boltzmann: P = σAT⁴",
+          "Termal Denge: Q_alınan = Q_verilen"
+        ],
+        "concepts": [
+          "Isı ve sıcaklık",
+          "Isı transferi yolları (iletim, konveksiyon, ışıma)",
+          "Isı kapasitesi",
+          "Termal denge",
+          "Isı iletkenliği",
+          "Özgül ısı",
+          "Enerji korunumu"
+        ]
+      },
+      "learningObjectives": [
+        "Isı ve sıcaklık kavramları arasındaki farkı anlama",
+        "Isı transfer yollarını (iletim, konveksiyon, ışıma) öğrenme",
+        "Termal denge ve ısı kapasitesi kavramlarını kavrama",
+        "Farklı malzemelerin ısı iletkenliğini keşfetme",
+        "Isı transferinin günlük hayattaki uygulamalarını anlama"
+      ],
+      "reviews": [],
+      "detailedDescription": "Isı alışverişi ve transferini interaktif simülasyon ile öğrenin. Farklı sıcaklıktaki cisimler arasındaki ısı transferini, iletim, konveksiyon ve ışıma yollarını görselleştirerek keşfedin. Termal denge kavramını ve ısı kapasitesini inceleyin.",
+      "webglPath": "/webgl-app/Heat",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "TYT",
+            "question": "Isı ve sıcaklık arasındaki fark nedir?",
+            "correctAnswer": "Isı enerji, sıcaklık ise ölçümdür",
+            "explanation": "Isı bir enerji türüdür ve joule (J) ile ölçülür. Sıcaklık ise bir ölçümdür ve derece Celsius (°C) veya Kelvin (K) ile ölçülür. Isı, sıcaklık farkından dolayı transfer olan enerjidir."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "Isı transferi hangi yollarla gerçekleşir?",
+            "correctAnswer": "İletim, konveksiyon ve ışıma",
+            "explanation": "Isı transferi üç yolla gerçekleşir: iletim (katılarda), konveksiyon (sıvı ve gazlarda) ve ışıma (tüm ortamlarda, boşlukta bile)."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 44,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 80,
+          "averageDifficulty": 3.3
+        }
+      }
+    },
+    {
+      "id": "laser-ve-ayna-yansimlari",
+      "title": "Laser ve Ayna Yansımları",
+      "slug": "laser-ve-ayna-yansimlari",
+      "description": "Laser ışınları ve ayna yansımalarını keşfedin",
+      "category": "optik",
+      "difficulty": "Zor",
+      "completionTime": "30 dk",
+      "points": 150,
+      "gradient": "from-pink-500 to-rose-500",
+      "unit": "Optik",
+      "unitOrder": 3,
+      "image": "/images/simulation/LaserGorsel.png",
+      "coverImage": "/images/simulation/LaserGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "10",
+      "keywords": ["laser", "ayna", "yansıma", "optik", "ışık"],
+      "physicsExplanation": {
+        "formulas": ["Yansıma Yasası: θi = θr", "Snell Yasası"],
+        "concepts": ["Laser", "Yansıma", "Ayna", "Optik", "Işık"]
+      },
+      "learningObjectives": [
+        "Laser ışınlarını anlama",
+        "Yansıma yasalarını öğrenme",
+        "Ayna yansımalarını kavrama"
+      ],
+      "reviews": [],
+      "detailedDescription": "Laser ışınları ve ayna yansımalarını interaktif simülasyon ile öğrenin. Laser ışınlarının özelliklerini, yansıma yasalarını ve ayna yansımalarını görselleştirerek keşfedin. Farklı açılardaki yansımaları ve optik prensipleri inceleyin.",
+      "webglPath": "/webgl-app/Laser",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Yansıma yasasına göre, gelme açısı ve yansıma açısı arasındaki ilişki nedir?",
+            "correctAnswer": "Gelme açısı yansıma açısına eşittir",
+            "explanation": "Yansıma yasasına göre, gelme açısı (θi) yansıma açısına (θr) eşittir: θi = θr. Bu yasa tüm yansımalar için geçerlidir."
+          },
+          {
+            "year": "2022",
+            "examType": "TYT",
+            "question": "Laser ışığının özelliklerinden hangisi doğrudur?",
+            "correctAnswer": "Laser ışığı tek renklidir ve tutarlıdır",
+            "explanation": "Laser (Light Amplification by Stimulated Emission of Radiation) ışığı tek renkli (monokromatik), tutarlı (koherent) ve yönlendirilmiş (düşük dağılımlı) bir ışık demetidir."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 41,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 79,
+          "averageDifficulty": 3.8
+        }
+      }
+    },
+    {
+      "id": "ph-olcucu",
+      "title": "Ph Ölçücü",
+      "slug": "ph-olcucu",
+      "description": "Asit-baz dengesi ve pH ölçümünü inceleyin",
+      "category": "kimya",
+      "difficulty": "Orta",
+      "completionTime": "20 dk",
+      "points": 100,
+      "gradient": "from-cyan-500 to-blue-500",
+      "unit": "Kimyasal Reaksiyonlar",
+      "unitOrder": 4,
+      "image": "/images/simulation/PHGorsel.png",
+      "coverImage": "/images/simulation/PHGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "9",
+      "keywords": ["ph", "asit", "baz", "kimya", "ölçüm"],
+      "physicsExplanation": {
+        "formulas": [
+          "pH = -log[H⁺]",
+          "pOH = -log[OH⁻]",
+          "pH + pOH = 14 (25°C'de)",
+          "Kw = [H⁺][OH⁻] = 10⁻¹⁴",
+          "Asit Kuvveti: Ka = [H⁺][A⁻]/[HA]"
+        ],
+        "concepts": [
+          "pH ve pOH",
+          "Asit-baz teorisi",
+          "Hidrojen iyonu konsantrasyonu",
+          "Kimyasal denge",
+          "İyonlaşma sabiti",
+          "Tampon çözeltiler",
+          "pH göstergeleri",
+          "Asit-baz reaksiyonları"
+        ]
+      },
+      "learningObjectives": [
+        "pH kavramını ve pH ölçeğini anlama",
+        "Asit-baz dengesini ve iyonlaşma kavramlarını öğrenme",
+        "pH ölçümünü ve pH göstergelerini kavrama",
+        "Asit ve bazların özelliklerini keşfetme",
+        "Tampon çözeltilerin önemini anlama"
+      ],
+      "reviews": [],
+      "detailedDescription": "pH ölçümü ve asit-baz dengesini interaktif simülasyon ile öğrenin. Farklı çözeltilerin pH değerlerini ölçerek asitlik ve bazlık kavramlarını keşfedin. pH ölçeğini, asit-baz reaksiyonlarını ve tampon çözeltileri görselleştirerek öğrenin.",
+      "webglPath": "/webgl-app/ph",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "TYT",
+            "question": "pH değeri 7'den küçük olan bir çözelti nasıl tanımlanır?",
+            "correctAnswer": "Asidik",
+            "explanation": "pH değeri 0-14 arasında ölçülür. pH < 7 asidik, pH = 7 nötr, pH > 7 bazik (alkali) çözeltileri gösterir."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "pH = -log[H⁺] formülünde [H⁺] neyi temsil eder?",
+            "correctAnswer": "Hidrojen iyonu konsantrasyonu",
+            "explanation": "[H⁺] hidrojen iyonu (proton) konsantrasyonunu temsil eder. pH değeri, hidrojen iyonu konsantrasyonunun negatif logaritmasıdır."
+          },
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Saf suyun pH değeri kaçtır?",
+            "correctAnswer": "7",
+            "explanation": "Saf su nötr bir çözeltidir ve 25°C'de pH değeri 7'dir. Bu, [H⁺] = [OH⁻] = 10⁻⁷ M olduğu anlamına gelir."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 47,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 83,
+          "averageDifficulty": 3.6
+        }
+      }
+    },
+    {
+      "id": "ses-dalgalari",
+      "title": "Ses Dalgaları",
+      "slug": "ses-dalgalari",
+      "description": "Ses dalgaları ve özelliklerini keşfedin",
+      "category": "dalgalar",
+      "difficulty": "Orta",
+      "completionTime": "25 dk",
+      "points": 120,
+      "gradient": "from-purple-500 to-indigo-500",
+      "unit": "Dalgalar",
+      "unitOrder": 3,
+      "image": "/images/simulation/SesGorsel.png",
+      "coverImage": "/images/simulation/SesGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "8",
+      "keywords": ["ses", "dalga", "frekans", "genlik", "ses hızı"],
+      "physicsExplanation": {
+        "formulas": [
+          "Dalga Hızı: v = fλ",
+          "Frekans: f = v/λ",
+          "Dalga Boyu: λ = v/f",
+          "Ses Hızı (Havada): v ≈ 331 + 0.6T m/s",
+          "Enerji: E = ½ρA²ω²"
+        ],
+        "concepts": [
+          "Ses dalgaları",
+          "Frekans ve periyot",
+          "Genlik ve şiddet",
+          "Dalga boyu",
+          "Ses hızı",
+          "Ortam etkisi",
+          "Doppler etkisi",
+          "Rezonans"
+        ]
+      },
+      "learningObjectives": [
+        "Ses dalgalarının özelliklerini (frekans, genlik, dalga boyu) anlama",
+        "Ses hızının ortam özelliklerine bağlılığını öğrenme",
+        "Frekans, dalga boyu ve hız arasındaki ilişkiyi kavrama",
+        "Ses dalgalarının yayılma prensiplerini keşfetme",
+        "Sesin günlük hayattaki uygulamalarını anlama"
+      ],
+      "reviews": [],
+      "detailedDescription": "Ses dalgaları ve özelliklerini interaktif simülasyon ile öğrenin. Ses dalgalarının frekans, genlik, dalga boyu ve hız gibi özelliklerini görselleştirerek keşfedin. Farklı frekanslardaki seslerin davranışlarını ve ses hızının ortama bağlılığını inceleyin.",
+      "webglPath": "/webgl-app/Ses",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "TYT",
+            "question": "Ses dalgalarının hızı hangi faktörlere bağlıdır?",
+            "correctAnswer": "Ortamın sıcaklığına ve özelliklerine",
+            "explanation": "Ses hızı ortamın özelliklerine (yoğunluk, elastiklik modülü) ve sıcaklığına bağlıdır. Havada yaklaşık 343 m/s, suda 1500 m/s, çelikte 5000 m/s'dir."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "Ses dalgasının frekansı ile dalga boyu arasındaki ilişki nedir?",
+            "correctAnswer": "Frekans = Hız / Dalga boyu",
+            "explanation": "Ses dalgası için v = fλ formülü geçerlidir. Burada v hız, f frekans, λ dalga boyudur. Dolayısıyla f = v/λ'dır."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 43,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 81,
+          "averageDifficulty": 3.4
+        }
+      }
+    },
+    {
+      "id": "tork-tahteravalli",
+      "title": "Tork Tahteravalli",
+      "slug": "tork-tahteravalli",
+      "description": "Tork ve denge kavramlarını inceleyin",
+      "category": "mekanik",
+      "difficulty": "Zor",
+      "completionTime": "30 dk",
+      "points": 150,
+      "gradient": "from-green-500 to-teal-500",
+      "unit": "Kuvvet ve Hareket",
+      "unitOrder": 1,
+      "image": "/images/simulation/TorkGorsel.png",
+      "coverImage": "/images/simulation/TorkGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "11",
+      "keywords": ["tork", "denge", "moment", "kuvvet", "tahteravalli"],
+      "physicsExplanation": {
+        "formulas": [
+          "Tork: τ = r × F",
+          "Tork Büyüklüğü: τ = rFsinθ",
+          "Denge Koşulu: Στ = 0",
+          "Kuvvet Kolu: r⊥ = rsinθ",
+          "Net Tork: τ_net = Στ_i"
+        ],
+        "concepts": [
+          "Tork (moment)",
+          "Kuvvet kolu",
+          "Denge koşulları",
+          "Moment kolu",
+          "Dönme ekseni",
+          "Statik denge",
+          "Tahteravalli prensibi",
+          "Açısal momentum"
+        ]
+      },
+      "learningObjectives": [
+        "Tork (moment) kavramını ve hesaplama yöntemlerini anlama",
+        "Denge koşullarını (Στ = 0) öğrenme",
+        "Kuvvet kolu ve tork ilişkisini kavrama",
+        "Tahteravalli ve denge sistemlerini analiz etme",
+        "Torkun günlük hayattaki uygulamalarını keşfetme"
+      ],
+      "reviews": [],
+      "detailedDescription": "Tork ve denge kavramlarını tahteravalli simülasyonu ile öğrenin. Farklı kütlelerdeki cisimlerin tahteravallideki konumlarını değiştirerek tork ve denge prensiplerini görselleştirin. Moment hesaplamalarını ve denge koşullarını interaktif olarak keşfedin.",
+      "webglPath": "/webgl-app/Tork",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Tork (moment) hangi faktörlere bağlıdır?",
+            "correctAnswer": "Kuvvet ve kuvvet kolu (mesafe)",
+            "explanation": "Tork τ = r × F formülü ile hesaplanır. Burada r kuvvet kolu (mesafe), F ise kuvvettir. Tork, kuvvet ve kuvvet kolunun çarpımına eşittir."
+          },
+          {
+            "year": "2022",
+            "examType": "AYT",
+            "question": "Bir tahteravallinin dengede olması için gerekli koşul nedir?",
+            "correctAnswer": "Her iki taraftaki torklar eşit olmalıdır (Στ = 0)",
+            "explanation": "Denge koşulu için toplam tork sıfır olmalıdır: Στ = 0. Bu, her iki taraftaki torkların eşit olması anlamına gelir. Kütleler eşit olmasa bile, mesafeler ayarlanarak denge sağlanabilir."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 39,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 76,
+          "averageDifficulty": 4.1
+        }
+      }
+    },
+    {
+      "id": "elementler",
+      "title": "Elementler",
+      "slug": "elementler",
+      "description": "Kimyasal elementleri ve özelliklerini keşfedin",
+      "category": "kimya",
+      "difficulty": "Orta",
+      "completionTime": "25 dk",
+      "points": 120,
+      "gradient": "from-amber-500 to-yellow-500",
+      "unit": "Kimyasal Yapı",
+      "unitOrder": 4,
+      "image": "/images/simulation/ElementGorsel.png",
+      "coverImage": "/images/simulation/ElementGorsel.png",
+      "previewGif": "/gifs/simulation/blackhole.gif",
+      "classLevel": "10",
+      "keywords": ["element", "periyodik tablo", "atom", "kimya"],
+      "physicsExplanation": {
+        "formulas": [
+          "Atom Numarası: Z = proton sayısı",
+          "Kütle Numarası: A = proton + nötron",
+          "Nötron Sayısı: N = A - Z",
+          "İyon Yükü: q = proton - elektron"
+        ],
+        "concepts": [
+          "Element",
+          "Periyodik tablo",
+          "Atom yapısı",
+          "Proton, nötron, elektron",
+          "Periyot ve grup",
+          "Periyodik özellikler",
+          "Atom yarıçapı",
+          "İyonlaşma enerjisi",
+          "Elektron ilgisi",
+          "Elektronegativite"
+        ]
+      },
+      "learningObjectives": [
+        "Periyodik tabloyu ve elementlerin sınıflandırılmasını anlama",
+        "Elementlerin atom yapılarını (proton, nötron, elektron) öğrenme",
+        "Periyodik özellikleri (atom yarıçapı, iyonlaşma enerjisi, elektron ilgisi) kavrama",
+        "Element gruplarını (alkali metaller, halojenler, soygazlar) tanıma",
+        "Periyodik eğilimleri ve elementler arasındaki ilişkileri keşfetme"
+      ],
+      "reviews": [],
+      "detailedDescription": "Kimyasal elementleri ve özelliklerini interaktif simülasyon ile öğrenin. Periyodik tabloyu keşfedin, elementlerin atom yapılarını inceleyin. Elementlerin fiziksel ve kimyasal özelliklerini, periyodik eğilimleri ve gruplar arasındaki benzerlikleri görselleştirerek öğrenin.",
+      "webglPath": "/webgl-app/Elements",
+      "relatedMaterials": {
+        "blogPosts": [],
+        "examQuestions": [
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Periyodik tabloda elementler nasıl sıralanmıştır?",
+            "correctAnswer": "Atom numarasına (proton sayısına) göre",
+            "explanation": "Periyodik tabloda elementler atom numarasına (proton sayısına) göre artan sırada dizilmiştir. Modern periyodik yasa, elementlerin özelliklerinin atom numaralarına periyodik olarak bağlı olduğunu söyler."
+          },
+          {
+            "year": "2022",
+            "examType": "TYT",
+            "question": "Aynı periyotta (yatay sırada) soldan sağa gidildikçe atom yarıçapı nasıl değişir?",
+            "correctAnswer": "Azalır",
+            "explanation": "Aynı periyotta soldan sağa gidildikçe atom numarası artar, çekirdek yükü artar ve elektronlar daha güçlü çekilir. Bu nedenle atom yarıçapı azalır."
+          },
+          {
+            "year": "2023",
+            "examType": "AYT",
+            "question": "Periyodik tabloda aynı grupta (dikey sırada) yukarıdan aşağıya gidildikçe elektron ilgisi nasıl değişir?",
+            "correctAnswer": "Genellikle azalır",
+            "explanation": "Aynı grupta yukarıdan aşağıya gidildikçe atom yarıçapı artar ve elektron ilgisi genellikle azalır. Ancak bu genel bir eğilimdir ve bazı istisnalar olabilir."
+          }
+        ],
+        "examStats": {
+          "totalQuestions": 48,
+          "lastAskedYear": "2023",
+          "frequencyPercentage": 85,
+          "averageDifficulty": 3.7
         }
       }
     }

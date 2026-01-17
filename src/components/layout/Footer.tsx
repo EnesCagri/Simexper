@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Github,
@@ -56,20 +57,26 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@simexper.com",
-    href: "mailto:info@simexper.com",
+    value: "simexper@nilskodlama.com",
+    href: "mailto:simexper@nilskodlama.com",
   },
   {
     icon: Phone,
     label: "Telefon",
-    value: "+90 (555) 123 4567",
-    href: "tel:+905551234567",
+    value: "+90 505 425 08 48",
+    href: "tel:+905054250848",
+  },
+  {
+    icon: Phone,
+    label: "Telefon 2",
+    value: "+90 551 151 56 26",
+    href: "tel:+905511515626",
   },
   {
     icon: MapPin,
     label: "Adres",
-    value: "Teknopark İstanbul",
-    href: "https://maps.google.com/?q=Teknopark+İstanbul",
+    value: "Medeniyet Üniversitesi Teknopark",
+    href: "https://maps.google.com/?q=Medeniyet+Üniversitesi+Teknopark",
   },
 ];
 
@@ -239,13 +246,39 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="relative mt-16 pt-8 sm:mt-20 lg:mt-24">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm leading-5 text-gray-400">
-              &copy; {new Date().getFullYear()} Simexper. Tüm hakları saklıdır.
-            </p>
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col gap-4">
+            {/* Copyright and Developer Info */}
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-sm leading-5 text-gray-400">
+                &copy; {new Date().getFullYear()} Simexper. Tüm hakları
+                saklıdır.
+              </p>
+              <p className="text-sm leading-5 text-gray-400">
+                Enes Çağrı Bayraktutan tarafından geliştirilmiştir
+              </p>
+            </div>
+
+            {/* Nils Kodlama and Tech Stack */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+              {/* Nils Logo */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-2"
+              >
+                <span className="text-xs text-gray-500">NİLS Kodlama</span>
+                <Image
+                  src="/images/general/nils logo.png"
+                  alt="Nils Kodlama"
+                  width={80}
+                  height={30}
+                  className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </motion.div>
               <span className="inline-flex items-center space-x-1 text-sm text-gray-400">
-                <span>Powered by</span>
+                <span>Built with</span>
                 <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent font-semibold">
                   Next.js
                 </span>
